@@ -10,16 +10,16 @@ export default function About() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animate(entry.target.querySelectorAll('.about-item'), {
-              translateY: { to: 0, from: 30 },
+              translateY: { to: 0, from: 24 },
               opacity: { to: 1, from: 0 },
-              duration: 800,
-              delay: stagger(120),
-              ease: 'out-expo',
+              duration: 550,
+              delay: stagger(45),
+              ease: 'out-cubic',
             });
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.08, rootMargin: '0px 0px 60px 0px' }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();

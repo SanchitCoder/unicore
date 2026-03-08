@@ -78,11 +78,11 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
 
     if (logoRef.current) {
       animate(logoRef.current, {
-        scale: { to: 1, from: 0.5 },
+        scale: { to: 1, from: 0.6 },
         opacity: { to: 1, from: 0 },
-        duration: 1500,
-        ease: 'out-elastic(1, .8)',
-        delay: 300,
+        duration: 800,
+        ease: 'out-cubic',
+        delay: 200,
       });
     }
 
@@ -91,8 +91,8 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
       if (container) {
         animate(container, {
           opacity: { to: 0, from: 1 },
-          duration: 800,
-          ease: 'inOut-quad',
+          duration: 500,
+          ease: 'out-cubic',
           onComplete: () => {
             onComplete();
           },

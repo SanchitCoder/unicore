@@ -20,12 +20,12 @@ export default function ValueProposition() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animate(entry.target.querySelectorAll('.vp-item'), {
-              translateY: { to: 0, from: 40 },
+              translateY: { to: 0, from: 28 },
               opacity: { to: 1, from: 0 },
-              scale: { to: 1, from: 0.95 },
-              duration: 800,
-              delay: stagger(80),
-              ease: 'out-expo',
+              scale: { to: 1, from: 0.98 },
+              duration: 550,
+              delay: stagger(40),
+              ease: 'out-cubic',
             });
           }
         });

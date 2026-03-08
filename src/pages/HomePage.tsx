@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom';
 import IntroLoader from '../components/IntroLoader';
 import Hero from '../components/Hero';
 import About from '../components/About';
-import ProductLines from '../components/ProductLines';
+import HomeProductCategories from '../components/HomeProductCategories';
 import ValueProposition from '../components/ValueProposition';
-import ManufacturingExcellence from '../components/ManufacturingExcellence';
+import HomeIndustriesSection from '../components/HomeIndustriesSection';
 import BulkOrders from '../components/BulkOrders';
 import CTA from '../components/CTA';
 import Layout from '../components/Layout';
@@ -36,9 +36,9 @@ export default function HomePage() {
     <Layout>
       <Hero />
       <About />
-      <ProductLines />
+      <HomeProductCategories />
       <ValueProposition />
-      <ManufacturingExcellence />
+      <HomeIndustriesSection />
       <BulkOrders />
       <CTA />
     </Layout>

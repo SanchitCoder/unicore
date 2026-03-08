@@ -12,23 +12,23 @@ export default function CTA() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animate(entry.target.querySelectorAll('.cta-content'), {
-              translateY: { to: 0, from: 40 },
+              translateY: { to: 0, from: 28 },
               opacity: { to: 1, from: 0 },
-              duration: 1000,
-              delay: stagger(120),
-              ease: 'out-expo',
+              duration: 600,
+              delay: stagger(50),
+              ease: 'out-cubic',
             });
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: '0px 0px 80px 0px' }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="relative py-20 md:py-28 px-6 overflow-hidden">
+    <section id="contact-cta" ref={sectionRef} className="relative py-20 md:py-28 px-6 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-teal-600" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -39,7 +39,7 @@ export default function CTA() {
           Contact UNICORE today for bulk supply enquiries.
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-4 justify-center mb-14">
-          <Link to="/#contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>
+          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>
         </div>
 
         <div className="cta-content flex flex-wrap justify-center gap-8 md:gap-12 text-white/95">

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
 
 const stats = [
@@ -14,23 +15,23 @@ export default function Hero() {
   useEffect(() => {
     if (heroRef.current) {
       animate(heroRef.current.querySelectorAll('.hero-text'), {
-        translateY: { to: 0, from: 50 },
+        translateY: { to: 0, from: 40 },
         opacity: { to: 1, from: 0 },
-        duration: 1200,
-        delay: stagger(150),
-        ease: 'out-expo',
+        duration: 650,
+        delay: stagger(50),
+        ease: 'out-cubic',
       });
       const statEls = heroRef.current.querySelectorAll('.hero-stat');
       if (statEls.length) {
         setTimeout(() => {
           animate(statEls, {
-            translateY: { to: 0, from: 20 },
+            translateY: { to: 0, from: 16 },
             opacity: { to: 1, from: 0 },
-            duration: 800,
-            delay: stagger(70),
-            ease: 'out-expo',
+            duration: 500,
+            delay: stagger(40),
+            ease: 'out-cubic',
           });
-        }, 500);
+        }, 300);
       }
     }
   }, []);
@@ -52,14 +53,17 @@ export default function Hero() {
 
       <div ref={heroRef} className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="hero-text text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-          Industrial Air coolers and Fans for Large Scale Industrial Application
+          Industrial Air Coolers & Industrial Fans for Large-Scale Industrial Applications
         </h1>
-        <p className="hero-text text-lg md:text-xl text-white/95 mb-10 max-w-2xl">
+        <p className="hero-text text-lg md:text-xl text-white/95 mb-4 max-w-2xl">
           High-performance cooling and ventilation systems designed for factories, warehouses, workshops, and commercial facilities across India.
         </p>
+        <p className="hero-text text-lg md:text-xl text-white/95 mb-10 max-w-2xl">
+          UNICORE delivers reliable bulk supply solutions backed by 25+ years of manufacturing expertise.
+        </p>
         <div className="hero-text flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" className="btn-primary-large rounded-lg inline-block text-center">Request Bulk Quote</a>
-          <a href="#contact" className="btn-secondary-large rounded-lg inline-block text-center">Become a Distributor</a>
+          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Request Bulk Quote</Link>
+          <Link to="/contact" className="btn-secondary-large rounded-lg inline-block text-center">Become a Distributor</Link>
         </div>
       </div>
 

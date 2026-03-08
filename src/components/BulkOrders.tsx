@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
 
 const services = [
@@ -17,11 +18,11 @@ export default function BulkOrders() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             animate(entry.target.querySelectorAll('.bulk-item'), {
-              translateY: { to: 0, from: 40 },
+              translateY: { to: 0, from: 28 },
               opacity: { to: 1, from: 0 },
-              duration: 800,
-              delay: stagger(80),
-              ease: 'out-expo',
+              duration: 550,
+              delay: stagger(40),
+              ease: 'out-cubic',
             });
           }
         });
@@ -54,8 +55,8 @@ export default function BulkOrders() {
           Connect with our team to discuss bulk pricing and partnership opportunities.
         </p>
         <div className="bulk-item flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contact" className="btn-primary-large rounded-lg inline-block text-center">Submit Bulk Enquiry</a>
-          <a href="#contact" className="px-8 py-4 bg-transparent text-slate-800 text-lg font-bold rounded-lg border-2 border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 inline-block text-center">Apply for Distribution</a>
+          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Submit Bulk Enquiry</Link>
+          <Link to="/contact" className="px-8 py-4 bg-transparent text-slate-800 text-lg font-bold rounded-lg border-2 border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 inline-block text-center">Apply for Distribution</Link>
         </div>
       </div>
     </section>

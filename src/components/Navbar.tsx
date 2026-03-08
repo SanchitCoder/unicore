@@ -1,6 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { animate } from 'animejs';
 
 function NavLink({
   to,
@@ -42,9 +41,7 @@ function NavLink({
 }
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -59,51 +56,23 @@ export default function Navbar() {
     }
   }, [location.pathname, location.hash]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      if (scrolled !== isScrolled) {
-        setIsScrolled(scrolled);
-        if (navRef.current) {
-          animate(navRef.current, {
-            backgroundColor: scrolled
-              ? { to: 'rgba(15, 23, 42, 0.95)', from: 'rgba(15, 23, 42, 0)' }
-              : { to: 'rgba(15, 23, 42, 0)', from: 'rgba(15, 23, 42, 0.95)' },
-            duration: 400,
-            ease: 'inOut-quad',
-          });
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolled]);
-
   return (
-    <nav
-      ref={navRef}
-      className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
-      style={{
-        backgroundColor: isScrolled ? 'rgba(15, 23, 42, 0.95)' : 'rgba(15, 23, 42, 0)',
-        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-      }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src="/unicore-logo.png" alt="UNICORE" className="h-10 w-auto object-contain" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
-          <NavLink to="/" className="nav-link">Home</NavLink>
+        <div className="hidden md:flex items-center gap-4 ml-10">
+          <NavLink to="/" hash="#home" className={`nav-link ${location.pathname === '/' ? 'text-teal-300' : ''}`}>Home</NavLink>
           <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'text-teal-300' : ''}`}>
             About Us
           </Link>
-          <NavLink to="/" hash="#products" className="nav-link">Products</NavLink>
-          <NavLink to="/" hash="#manufacturing" className="nav-link">Manufacturing</NavLink>
-          <NavLink to="/" hash="#contact" className="nav-link">Contact</NavLink>
+          <Link to="/products" className={`nav-link ${location.pathname === '/products' ? 'text-teal-300' : ''}`}>Products</Link>
+          <Link to="/ventilation" className={`nav-link ${location.pathname === '/ventilation' ? 'text-teal-300' : ''}`}>Industrial Ventilation Systems</Link>
+          <Link to="/industries" className={`nav-link ${location.pathname === '/industries' ? 'text-teal-300' : ''}`}>Industries we serve</Link>
+          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'text-teal-300' : ''}`}>Industrial Cooling Solutions</Link>
         </div>
-
-        <Link to="/#contact" className="btn-primary-dark hidden md:block">Request Quote</Link>
 
         <button
           type="button"
@@ -130,14 +99,12 @@ export default function Navbar() {
         }`}
       >
         <div className="px-6 py-4 pb-6 bg-slate-900/98 border-t border-white/10 flex flex-col gap-3">
-          <NavLink to="/" className="nav-link block py-2" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
-          <Link to="/about" className="nav-link block py-2" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-          <NavLink to="/" hash="#products" className="nav-link block py-2" onClick={() => setMobileMenuOpen(false)}>Products</NavLink>
-          <NavLink to="/" hash="#manufacturing" className="nav-link block py-2" onClick={() => setMobileMenuOpen(false)}>Manufacturing</NavLink>
-          <NavLink to="/" hash="#contact" className="nav-link block py-2" onClick={() => setMobileMenuOpen(false)}>Contact</NavLink>
-          <Link to="/#contact" className="btn-primary-dark w-full text-center py-3 mt-2" onClick={() => setMobileMenuOpen(false)}>
-            Request Quote
-          </Link>
+          <NavLink to="/" hash="#home" className={`nav-link block py-2 ${location.pathname === '/' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
+          <Link to="/about" className={`nav-link block py-2 ${location.pathname === '/about' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/products" className={`nav-link block py-2 ${location.pathname === '/products' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>Products</Link>
+          <Link to="/ventilation" className={`nav-link block py-2 ${location.pathname === '/ventilation' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>Industrial Ventilation Systems</Link>
+          <Link to="/industries" className={`nav-link block py-2 ${location.pathname === '/industries' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>Industries we serve</Link>
+          <Link to="/contact" className={`nav-link block py-2 ${location.pathname === '/contact' ? 'text-teal-300' : ''}`} onClick={() => setMobileMenuOpen(false)}>Industrial Cooling Solutions</Link>
         </div>
       </div>
     </nav>

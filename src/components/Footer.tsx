@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {productLinks.map((link, i) => (
                 <li key={i}>
-                  <Link to="/#products" className="text-white/80 hover:text-white transition-colors text-sm">{link}</Link>
+                  <Link to="/products" className="text-white/80 hover:text-white transition-colors text-sm">{link}</Link>
                 </li>
               ))}
             </ul>
@@ -58,8 +58,8 @@ export default function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-white/80 hover:text-white transition-colors text-sm">About</Link></li>
-              <li><Link to="/#manufacturing" className="text-white/80 hover:text-white transition-colors text-sm">Manufacturing</Link></li>
-              <li><Link to="/#products" className="text-white/80 hover:text-white transition-colors text-sm">Quality</Link></li>
+              <li><Link to="/industries" className="text-white/80 hover:text-white transition-colors text-sm">Manufacturing</Link></li>
+              <li><Link to="/products" className="text-white/80 hover:text-white transition-colors text-sm">Quality</Link></li>
               <li><a href="#" className="text-white/80 hover:text-white transition-colors text-sm">Careers</a></li>
               <li><a href="#" className="text-white/80 hover:text-white transition-colors text-sm">News</a></li>
             </ul>
