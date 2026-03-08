@@ -28,21 +28,21 @@ export default function CTA() {
   }, []);
 
   return (
-    <section id="contact-cta" ref={sectionRef} className="relative py-20 md:py-28 px-6 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-800 via-slate-700 to-teal-600" />
+    <section id="contact-cta" ref={sectionRef} className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-5 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark via-unicore-dark-light to-unicore-accent" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="cta-content text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <h2 className="cta-content text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 leading-tight">
           Power your operations with dependable industrial cooling and ventilation systems designed for scale, efficiency, and long-term performance.
         </h2>
-        <p className="cta-content text-lg md:text-xl text-white/90 mb-10">
+        <p className="cta-content text-base sm:text-lg text-white/90 mb-4 sm:mb-6">
           Contact UNICORE today for bulk supply enquiries.
         </p>
-        <div className="cta-content flex flex-col sm:flex-row gap-4 justify-center mb-14">
+        <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
           <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>
         </div>
 
-        <div className="cta-content flex flex-wrap justify-center gap-8 md:gap-12 text-white/95">
+        <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm">
           <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white hover:scale-105 transition-all duration-300">
             <Phone className="w-5 h-5 flex-shrink-0" />
             <span>(+91) 9876543210</span>

@@ -54,37 +54,37 @@ export default function Industries() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-blue-950">
+    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-unicore-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">Industries We Serve</h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">Industries We Serve</h2>
+          <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-unicore-accent to-unicore-dark-light mx-auto mb-3 sm:mb-4"></div>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-1">
             Delivering specialized cooling and ventilation solutions across diverse industrial sectors
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
               <div
                 key={index}
-                className="industry-box group relative bg-gradient-to-br from-blue-900/50 to-blue-800/30 rounded-xl p-8 border-b-4 border-transparent hover:border-green-500 transition-all duration-500 cursor-pointer overflow-hidden"
+                className="industry-box group relative bg-gradient-to-br from-unicore-dark-light/80 to-unicore-dark/50 rounded-xl p-4 sm:p-5 border-b-4 border-transparent hover:border-unicore-accent transition-all duration-500 cursor-pointer overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-green-500/0 to-green-500/0 group-hover:from-green-500/10 group-hover:to-transparent transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-unicore-accent/0 to-unicore-accent/0 group-hover:from-unicore-accent/10 group-hover:to-transparent transition-all duration-500"></div>
 
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="p-3 bg-gradient-to-br from-green-500/30 to-blue-500/30 rounded-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <Icon className="w-8 h-8 text-green-400" />
+                  <div className="p-3 bg-gradient-to-br from-unicore-accent/30 to-unicore-dark-light/30 rounded-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Icon className="w-8 h-8 text-unicore-accent" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors duration-300 flex-1">
+                  <h3 className="text-xl font-bold text-white group-hover:text-unicore-accent transition-colors duration-300 flex-1">
                     {industry.title}
                   </h3>
                 </div>
 
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-unicore-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             );
           })}

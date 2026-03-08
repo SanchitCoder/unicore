@@ -34,27 +34,27 @@ export default function HomeIndustriesSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 px-6 bg-white">
+    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="ind-item text-3xl md:text-4xl font-bold text-slate-800 mb-6 text-center">
+        <h2 className="ind-item text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
           Industries We Serve
         </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mx-auto mb-8" />
-        <p className="ind-item text-lg text-slate-600 text-center mb-8">
+        <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
+        <p className="ind-item text-lg text-design-mid text-center mb-8">
           Our industrial cooling and ventilation systems are widely used in:
         </p>
         <ul className="ind-item space-y-4 mb-8">
           {industries.map((item, i) => (
             <li
               key={i}
-              className="flex items-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-teal-400 hover:shadow-md hover:scale-[1.01] transition-all duration-300"
+              className="flex items-center gap-3 p-4 rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md hover:scale-[1.01] transition-all duration-300"
             >
-              <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
-              <span className="text-slate-700 font-medium">{item}</span>
+              <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+              <span className="text-design-mid font-medium">{item}</span>
             </li>
           ))}
         </ul>
-        <p className="ind-item text-lg text-slate-600 text-center">
+        <p className="ind-item text-lg text-design-mid text-center">
           We understand operational challenges in large-scale environments and provide solutions designed for continuous performance.
         </p>
       </div>

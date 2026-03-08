@@ -10,10 +10,10 @@ const productCategories = [
 ];
 
 const exhaustFanModels = [
-  { name: 'PURE Air HDEF 12" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '300 mm', blade: 'MS Sheet with Aluminium Hub', power: '90 W', voltage: '220–240 V' },
-  { name: 'PURE Air HDEF 15" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '380 mm', power: '145 W' },
-  { name: 'PURE Air HDEF 24" Industrial Exhaust Fan', speed: '900 RPM', sweep: '600 mm', power: '600 W' },
-  { name: 'SUPREME PLUS Industrial Exhaust Fan', speed: '1360 RPM', sweep: '450 mm', power: '320 W' },
+  { name: 'PURE Air HDEF 12" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '300 mm', blade: 'MS Sheet with Aluminium Hub', power: '90 W', voltage: '220–240 V', imageSrc: 'https://picsum.photos/seed/exhaust1/600/400', imageAlt: 'PURE Air HDEF 12" Exhaust Fan' },
+  { name: 'PURE Air HDEF 15" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '380 mm', power: '145 W', imageSrc: 'https://picsum.photos/seed/exhaust2/600/400', imageAlt: 'PURE Air HDEF 15" Exhaust Fan' },
+  { name: 'PURE Air HDEF 24" Industrial Exhaust Fan', speed: '900 RPM', sweep: '600 mm', power: '600 W', imageSrc: 'https://picsum.photos/seed/exhaust3/600/400', imageAlt: 'PURE Air HDEF 24" Exhaust Fan' },
+  { name: 'SUPREME PLUS Industrial Exhaust Fan', speed: '1360 RPM', sweep: '450 mm', power: '320 W', imageSrc: 'https://picsum.photos/seed/exhaust4/600/400', imageAlt: 'SUPREME PLUS Exhaust Fan' },
 ];
 
 const exhaustFanFeatures = [
@@ -26,9 +26,9 @@ const exhaustFanFeatures = [
 ];
 
 const pedestalFanModels = [
-  { name: 'AIR JET 16" Industrial Pedestal Fan', speed: '2400 RPM', sweep: '400 mm', blade: 'Plastic', power: '105 W' },
-  { name: 'EURUS PLUS OSC 18" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '450 mm', blade: 'Aluminum', power: '130 W' },
-  { name: 'SUPER STAR 20" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '500 mm', blade: 'Aluminum', power: '135 W' },
+  { name: 'AIR JET 16" Industrial Pedestal Fan', speed: '2400 RPM', sweep: '400 mm', blade: 'Plastic', power: '105 W', imageSrc: 'https://picsum.photos/seed/pedestal1/600/400', imageAlt: 'AIR JET 16" Pedestal Fan' },
+  { name: 'EURUS PLUS OSC 18" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '450 mm', blade: 'Aluminum', power: '130 W', imageSrc: 'https://picsum.photos/seed/pedestal2/600/400', imageAlt: 'EURUS PLUS OSC 18" Pedestal Fan' },
+  { name: 'SUPER STAR 20" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '500 mm', blade: 'Aluminum', power: '135 W', imageSrc: 'https://picsum.photos/seed/pedestal3/600/400', imageAlt: 'SUPER STAR 20" Pedestal Fan' },
 ];
 
 const pedestalFanFeatures = [
@@ -40,9 +40,9 @@ const pedestalFanFeatures = [
 ];
 
 const circulatorFanModels = [
-  { name: 'AEROTHRUST 18" Air Circulator Fan', speed: '1400 RPM', power: '150 W', notes: 'Copper winding motor, Aluminum casted blades' },
-  { name: 'AEROTHRUST 24" Air Circulator Fan', speed: '1400 RPM', power: '200 W' },
-  { name: 'AEROTHRUST 30" Air Circulator Fan', speed: '1400 RPM', power: '260 W' },
+  { name: 'AEROTHRUST 18" Air Circulator Fan', speed: '1400 RPM', power: '150 W', notes: 'Copper winding motor, Aluminum casted blades', imageSrc: 'https://picsum.photos/seed/circ1/600/400', imageAlt: 'AEROTHRUST 18" Circulator Fan' },
+  { name: 'AEROTHRUST 24" Air Circulator Fan', speed: '1400 RPM', power: '200 W', imageSrc: 'https://picsum.photos/seed/circ2/600/400', imageAlt: 'AEROTHRUST 24" Circulator Fan' },
+  { name: 'AEROTHRUST 30" Air Circulator Fan', speed: '1400 RPM', power: '260 W', imageSrc: 'https://picsum.photos/seed/circ3/600/400', imageAlt: 'AEROTHRUST 30" Circulator Fan' },
 ];
 
 const circulatorFanFeatures = [
@@ -69,20 +69,6 @@ const bulkCustomers = [
   'Industrial Contractors',
   'Bulk Equipment Distributors',
 ];
-
-const productNavItems = [
-  { id: 'product-range', label: 'Product Range' },
-  { id: 'exhaust-fans', label: 'Exhaust Fans' },
-  { id: 'pedestal-fans', label: 'Pedestal Fans' },
-  { id: 'circulator-fans', label: 'Circulator Fans' },
-  { id: 'air-coolers', label: 'Air Coolers' },
-  { id: 'bulk-orders', label: 'Bulk & Distributor' },
-];
-
-function scrollToProductSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
 
 export default function ProductLines() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -137,263 +123,267 @@ export default function ProductLines() {
   return (
     <>
       {/* Blue hero box - same style as About UNICORE on About Us page */}
-      <section className="relative py-24 md:py-32 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-700 to-teal-700" />
-        <div ref={sectionRef} className="relative z-10 max-w-4xl mx-auto">
+      <section className="relative py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-5 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
+        <div ref={sectionRef} className="relative z-10 max-w-4xl mx-auto w-full">
           <div className="product-line-item text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
               Industrial Cooling & Ventilation Products – UNICORE
             </h1>
-            <p className="text-white/90 text-lg leading-relaxed mb-4">
+            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">
               UNICORE offers a wide range of industrial cooling and ventilation products designed for factories, warehouses, workshops, manufacturing plants, and commercial facilities. Our product range includes industrial air coolers, heavy duty exhaust fans, air circulator fans, and high-performance pedestal fans built for powerful airflow and long-term industrial use.
             </p>
-            <p className="text-white/90 text-lg leading-relaxed mb-4">
+            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">
               Designed in collaboration with experienced manufacturers, UNICORE products deliver efficient air circulation, durability, and reliable performance for large industrial environments.
             </p>
-            <p className="text-white/90 text-lg leading-relaxed">
+            <p className="text-white/90 text-base sm:text-lg leading-relaxed">
               Whether you need bulk industrial fans, ventilation systems, or cooling solutions for factories, UNICORE provides dependable products for large-scale requirements.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="products" className="py-20 md:py-28 px-6 bg-white scroll-mt-24">
-        <div ref={contentRef} className="max-w-4xl mx-auto">
+      <section id="products" className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
+        <div ref={contentRef} className="max-w-4xl mx-auto w-full overflow-hidden">
         {/* In-section navigation */}
-        <nav className="product-line-item mb-16 md:mb-20" aria-label="Product sections">
-          <div className="sticky top-20 z-30 py-4 -mx-2 px-4 rounded-xl bg-slate-100/90 border border-slate-200 backdrop-blur-sm">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">On this page</p>
-            <div className="flex flex-wrap gap-2">
-              {productNavItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => scrollToProductSection(item.id)}
-                  className="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:border-teal-400 hover:text-teal-700 hover:bg-teal-50/50 transition-all duration-300"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </nav>
-
         {/* H2: Our Industrial Product Range */}
-        <div id="product-range" className="product-line-item mb-16 md:mb-20 scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="product-range" className="product-line-item mb-8 sm:mb-10 md:mb-12 scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-2 sm:mb-3">
             Our Industrial Product Range
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-4">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE supplies a complete range of industrial air cooling and ventilation equipment for large spaces. Our products are engineered to handle high airflow requirements, continuous operation, and demanding industrial conditions.
           </p>
-          <p className="text-slate-600 mb-4">Product categories include:</p>
+          <p className="text-design-mid mb-4">Product categories include:</p>
           <ul className="list-none space-y-2 mb-4">
             {productCategories.map((cat, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-700">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 <span className="font-medium">{cat}</span>
               </li>
             ))}
           </ul>
-          <p className="text-slate-600 text-lg leading-relaxed">
+          <p className="text-design-mid text-lg leading-relaxed">
             These products are widely used in factories, warehouses, workshops, logistics hubs, and commercial facilities across India.
           </p>
         </div>
 
         {/* H2: Heavy Duty Industrial Exhaust Fans */}
-        <div id="exhaust-fans" className="product-line-item mb-16 md:mb-20 scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="exhaust-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
             Heavy Duty Industrial Exhaust Fans
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE Heavy Duty Exhaust Fans are designed to remove hot air, smoke, dust, and humidity from industrial spaces. These fans help maintain proper ventilation and improve airflow inside factories and production units.
           </p>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Key Features</h3>
-          <ul className="list-none space-y-2 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <ul className="list-none space-y-1.5 mb-4">
             {exhaustFanFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-600">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 {f}
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Available Models</h3>
-          <div className="space-y-4 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {exhaustFanModels.map((m, i) => (
-              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-                <p className="font-semibold text-slate-800 mb-2">{m.name}</p>
-                <div className="grid gap-1 text-slate-600 text-sm">
-                  <span>Speed: {m.speed}</span>
-                  <span>Sweep Size: {m.sweep}</span>
-                  {m.blade && <span>Blade Type: {m.blade}</span>}
-                  <span>Power: {m.power}</span>
-                  {m.voltage && <span>Voltage: {m.voltage}</span>}
+              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-3">
+                  <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
+                  <div className="grid gap-0.5 text-design-mid text-xs">
+                    <span>Speed: {m.speed}</span>
+                    <span>Sweep: {m.sweep}</span>
+                    {m.blade && <span className="line-clamp-1">Blade: {m.blade}</span>}
+                    <span>Power: {m.power}</span>
+                    {m.voltage && <span>Voltage: {m.voltage}</span>}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-slate-600 text-lg leading-relaxed">
+          <p className="text-design-mid text-lg leading-relaxed">
             These exhaust fans are ideal for factories, warehouses, industrial kitchens, workshops, and large production units.
           </p>
         </div>
 
         {/* H2: Industrial Pedestal Fans (Farrata Fans) */}
-        <div id="pedestal-fans" className="product-line-item mb-16 md:mb-20 scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="pedestal-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
             Industrial Pedestal Fans (Farrata Fans)
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE Industrial Pedestal Fans, also known as Farrata Fans, provide strong air throw and efficient cooling for large industrial areas. These fans are commonly used in factories, workshops, warehouses, packaging units, and commercial spaces where high air circulation is required.
           </p>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Key Features</h3>
-          <ul className="list-none space-y-2 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <ul className="list-none space-y-1.5 mb-4">
             {pedestalFanFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-600">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 {f}
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Available Models</h3>
-          <div className="space-y-4 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {pedestalFanModels.map((m, i) => (
-              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-                <p className="font-semibold text-slate-800 mb-2">{m.name}</p>
-                <div className="grid gap-1 text-slate-600 text-sm">
-                  <span>Speed: {m.speed}</span>
-                  <span>Sweep Size: {m.sweep}</span>
-                  <span>Blade Type: {m.blade}</span>
-                  <span>Power: {m.power}</span>
+              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-3">
+                  <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
+                  <div className="grid gap-0.5 text-design-mid text-xs">
+                    <span>Speed: {m.speed}</span>
+                    <span>Sweep: {m.sweep}</span>
+                    <span>Blade: {m.blade}</span>
+                    <span>Power: {m.power}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-slate-600 text-lg leading-relaxed">
+          <p className="text-design-mid text-lg leading-relaxed">
             These fans are suitable for industrial floors, production units, warehouses, and large indoor working environments.
           </p>
         </div>
 
         {/* H2: Industrial Air Circulator Fans */}
-        <div id="circulator-fans" className="product-line-item mb-16 md:mb-20 scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="circulator-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
             Industrial Air Circulator Fans
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE Air Circulator Fans are designed to provide uniform airflow across large industrial spaces. These fans help improve ventilation and maintain comfortable working conditions in factories.
           </p>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Key Features</h3>
-          <ul className="list-none space-y-2 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <ul className="list-none space-y-1.5 mb-4">
             {circulatorFanFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-600">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 {f}
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Available Models</h3>
-          <div className="space-y-4 mb-6">
+          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {circulatorFanModels.map((m, i) => (
-              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-                <p className="font-semibold text-slate-800 mb-2">{m.name}</p>
-                <div className="grid gap-1 text-slate-600 text-sm">
-                  <span>Speed: {m.speed}</span>
-                  <span>Power: {m.power}</span>
-                  {m.notes && <span>{m.notes}</span>}
+              <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-3">
+                  <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
+                  <div className="grid gap-0.5 text-design-mid text-xs">
+                    <span>Speed: {m.speed}</span>
+                    <span>Power: {m.power}</span>
+                    {m.notes && <span className="line-clamp-1">{m.notes}</span>}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-slate-600 text-lg leading-relaxed">
+          <p className="text-design-mid text-lg leading-relaxed">
             These fans are widely used in industrial plants, warehouses, assembly lines, and manufacturing facilities.
           </p>
         </div>
 
         {/* H2: Industrial Air Coolers */}
-        <div id="air-coolers" className="product-line-item mb-16 md:mb-20 scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="air-coolers" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
             Industrial Air Coolers
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE Industrial Air Coolers are designed to provide efficient cooling for large industrial spaces such as factories, warehouses, and workshops. With high airflow capacity and durable construction, these coolers deliver reliable cooling even in demanding environments.
           </p>
-          <h3 className="text-xl font-bold text-slate-800 mb-3">Key Features</h3>
-          <ul className="list-none space-y-2 mb-8">
+          <h3 className="text-xl font-bold text-design-dark mb-3">Key Features</h3>
+          <ul className="list-none space-y-1.5 mb-4">
             {airCoolerFeatures.map((f, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-600">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 {f}
               </li>
             ))}
           </ul>
 
-          <div className="space-y-8">
-            <div className="model-card-zoom opacity-0 scale-[0.92] p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-              <h4 className="text-lg font-bold text-slate-800 mb-2">THAR Series Industrial Air Coolers</h4>
-              <p className="text-slate-600 text-sm mb-3">Models Available: THAR 800, THAR 1100</p>
-              <ul className="list-none space-y-1 text-slate-600 text-sm mb-3">
-                <li>• Airflow: Up to 12,000 CMH</li>
-                <li>• Rated Power: 800 W</li>
-                <li>• Manual 3 Speed Controller</li>
-                <li>• 3 Blade Axial Fan</li>
-              </ul>
-              <p className="text-slate-600 text-sm">Suitable for medium-sized factories, workshops, and industrial facilities.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                <img src="https://picsum.photos/seed/thar/600/400" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-3">
+                <h4 className="font-bold text-design-dark text-sm mb-1">THAR Series Industrial Air Coolers</h4>
+                <p className="text-design-mid text-xs mb-2">THAR 800, THAR 1100</p>
+                <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
+                  <li>• Airflow: Up to 12,000 CMH</li>
+                  <li>• 800 W • 3 Speed</li>
+                </ul>
+                <p className="text-design-mid text-xs">Medium-sized factories &amp; workshops.</p>
+              </div>
             </div>
 
-            <div className="model-card-zoom opacity-0 scale-[0.92] p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-              <h4 className="text-lg font-bold text-slate-800 mb-2">THUNDER Series Industrial Air Coolers</h4>
-              <p className="text-slate-600 text-sm mb-3">Models Available: THUNDER 1100, THUNDER 1500</p>
-              <ul className="list-none space-y-1 text-slate-600 text-sm mb-3">
-                <li>• Airflow: Up to 23,000 CMH</li>
-                <li>• Rated Power: 1100 – 1500 W</li>
-                <li>• 100% Copper Motor</li>
-                <li>• 70 Litre Water Tank</li>
-              </ul>
-              <p className="text-slate-600 text-sm">Ideal for large warehouses, manufacturing plants, and industrial production areas.</p>
+            <div className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                <img src="https://picsum.photos/seed/thunder/600/400" alt="THUNDER Series Industrial Air Coolers" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-3">
+                <h4 className="font-bold text-design-dark text-sm mb-1">THUNDER Series Industrial Air Coolers</h4>
+                <p className="text-design-mid text-xs mb-2">THUNDER 1100, THUNDER 1500</p>
+                <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
+                  <li>• Airflow: Up to 23,000 CMH</li>
+                  <li>• 1100–1500 W • 70L Tank</li>
+                </ul>
+                <p className="text-design-mid text-xs">Large warehouses &amp; manufacturing plants.</p>
+              </div>
             </div>
 
-            <div className="model-card-zoom opacity-0 scale-[0.92] p-6 rounded-2xl border border-slate-200 bg-slate-50/50 hover:scale-[1.03] hover:shadow-lg hover:border-teal-400/50 transition-all duration-300">
-              <h4 className="text-lg font-bold text-slate-800 mb-2">THUNDER Advanced Industrial Air Coolers</h4>
-              <p className="text-slate-600 text-sm mb-2">Advanced cooling systems with enhanced airflow control.</p>
-              <p className="text-slate-600 text-sm mb-3">Models Available: THUNDER 1100A, THUNDER 1500A, THUNDER 2200A, THUNDER 3000A</p>
-              <ul className="list-none space-y-1 text-slate-600 text-sm mb-3">
-                <li>• Airflow: Up to 30,000 CMH</li>
-                <li>• 12 Speed Frequency Converter</li>
-                <li>• Remote Control Operation</li>
-                <li>• High Performance Axial Fan</li>
-                <li>• Copper Motor Technology</li>
-              </ul>
-              <p className="text-slate-600 text-sm">These models are suitable for large industrial plants and high cooling demand environments.</p>
+            <div className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
+                <img src="https://picsum.photos/seed/thunder-adv/600/400" alt="THUNDER Advanced Industrial Air Coolers" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-3">
+                <h4 className="font-bold text-design-dark text-sm mb-1">THUNDER Advanced Industrial Air Coolers</h4>
+                <p className="text-design-mid text-xs mb-2">1100A, 1500A, 2200A, 3000A</p>
+                <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
+                  <li>• Airflow: Up to 30,000 CMH</li>
+                  <li>• 12 Speed • Remote Control</li>
+                </ul>
+                <p className="text-design-mid text-xs">Large plants, high cooling demand.</p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* H2: Bulk Industrial Orders & Distributor Enquiries */}
-        <div id="bulk-orders" className="product-line-item scroll-mt-28">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+        <div id="bulk-orders" className="product-line-item scroll-mt-24 sm:scroll-mt-28">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
             Bulk Industrial Orders & Distributor Enquiries
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-slate-600 mb-6" />
-          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
+          <p className="text-design-mid text-lg leading-relaxed mb-4">
             UNICORE focuses on supplying industrial cooling and ventilation products in bulk quantities to businesses and commercial buyers.
           </p>
-          <p className="text-slate-700 font-semibold mb-3">Our customers typically include:</p>
-          <ul className="list-none space-y-2 mb-6">
+          <p className="text-design-mid font-semibold mb-2">Our customers typically include:</p>
+          <ul className="list-none space-y-1.5 mb-4">
             {bulkCustomers.map((c, i) => (
-              <li key={i} className="flex items-center gap-2 text-slate-600">
-                <span className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
+              <li key={i} className="flex items-center gap-2 text-design-mid">
+                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 {c}
               </li>
             ))}
           </ul>
-          <p className="text-slate-600 text-lg leading-relaxed mb-8">
+          <p className="text-design-mid text-lg leading-relaxed mb-5">
             We support large order quantities, project-based supply, and distributor partnerships across India. For product specifications, pricing, and bulk enquiries, connect with our team.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Link to="/contact" className="btn-primary rounded-lg inline-block text-center">Request Product Catalogue</Link>
             <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Submit Bulk Enquiry</Link>
           </div>

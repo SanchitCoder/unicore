@@ -48,31 +48,31 @@ export default function Hero() {
         >
           <source src="/your-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-slate-900/70" aria-hidden />
+        <div className="absolute inset-0 bg-unicore-dark/70" aria-hidden />
       </div>
 
-      <div ref={heroRef} className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-32">
-        <h1 className="hero-text text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+      <div ref={heroRef} className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-5 py-14 sm:py-20 md:py-24">
+        <h1 className="hero-text text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3 leading-tight max-w-5xl">
           Industrial Air Coolers & Industrial Fans for Large-Scale Industrial Applications
         </h1>
-        <p className="hero-text text-lg md:text-xl text-white/95 mb-4 max-w-2xl">
+        <p className="hero-text text-base sm:text-lg md:text-xl text-white/95 mb-2 sm:mb-3 max-w-2xl">
           High-performance cooling and ventilation systems designed for factories, warehouses, workshops, and commercial facilities across India.
         </p>
-        <p className="hero-text text-lg md:text-xl text-white/95 mb-10 max-w-2xl">
+        <p className="hero-text text-base sm:text-lg md:text-xl text-white/95 mb-4 sm:mb-6 max-w-2xl">
           UNICORE delivers reliable bulk supply solutions backed by 25+ years of manufacturing expertise.
         </p>
-        <div className="hero-text flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="hero-text flex flex-col sm:flex-row gap-3 justify-center">
           <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Request Bulk Quote</Link>
           <Link to="/contact" className="btn-secondary-large rounded-lg inline-block text-center">Become a Distributor</Link>
         </div>
       </div>
 
-      <div className="relative z-10 w-full bg-slate-800/90 py-6">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div className="relative z-10 w-full bg-unicore-dark/90 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-5 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center">
           {stats.map((item, i) => (
             <div key={i} className="hero-stat transition-transform duration-300 hover:scale-105">
-              <div className="text-2xl md:text-3xl font-bold text-white">{item.value}</div>
-              <div className="text-sm md:text-base text-white/80 uppercase tracking-wide">{item.label}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{item.value}</div>
+              <div className="text-xs sm:text-sm md:text-base text-white/80 uppercase tracking-wide">{item.label}</div>
             </div>
           ))}
         </div>

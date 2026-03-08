@@ -37,23 +37,23 @@ export default function ValueProposition() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 px-6 bg-white">
+    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="vp-item text-3xl md:text-4xl font-bold text-slate-800 mb-4 text-center">Why Choose UNICORE</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <h2 className="vp-item text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">Why Choose UNICORE</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
           {features.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div key={i} className="vp-item group text-center md:text-left p-6 rounded-2xl border border-transparent hover:border-teal-400/50 hover:shadow-xl transition-all duration-300">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-teal-500 bg-white text-slate-800 mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div key={i} className="vp-item group text-center md:text-left p-4 sm:p-5 rounded-xl border border-transparent hover:border-unicore-accent/50 hover:shadow-xl transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <Icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors duration-300">{item.title}</h3>
+                <h3 className="text-xl font-bold text-design-dark group-hover:text-unicore-accent transition-colors duration-300">{item.title}</h3>
               </div>
             );
           })}
         </div>
-        <p className="vp-item text-slate-600 text-lg text-center max-w-3xl mx-auto">
+        <p className="vp-item text-design-mid text-lg text-center max-w-3xl mx-auto">
           UNICORE is structured to support businesses that require performance, durability, and consistent bulk supply.
         </p>
       </div>

@@ -59,37 +59,37 @@ export default function WhyChoose() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-gradient-to-b from-blue-900 to-blue-950">
+    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-gradient-to-b from-unicore-dark-light to-unicore-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">Why Choose UNICORE</h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-green-400 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div className="text-center mb-6 sm:mb-8 md:mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">Why Choose UNICORE</h2>
+          <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-unicore-accent to-unicore-dark-light mx-auto mb-3 sm:mb-4"></div>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-1">
             Your trusted partner for industrial cooling and ventilation solutions
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="feature-item group relative bg-gradient-to-br from-blue-800/40 to-blue-900/40 rounded-xl p-8 border border-green-500/20 hover:border-green-500 transition-all duration-500 cursor-pointer"
+                className="feature-item group relative bg-gradient-to-br from-unicore-dark-light/60 to-unicore-dark/60 rounded-xl p-4 sm:p-5 border border-unicore-accent/20 hover:border-unicore-accent transition-all duration-500 cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover:from-green-500/5 group-hover:to-blue-500/5 rounded-xl transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-unicore-accent/0 to-unicore-accent/0 group-hover:from-unicore-accent/5 group-hover:to-unicore-dark-light/5 rounded-xl transition-all duration-500"></div>
 
                 <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="mb-4 p-4 bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-full group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                    <Icon className="w-10 h-10 text-green-400" />
+                  <div className="mb-4 p-4 bg-gradient-to-br from-unicore-accent/20 to-unicore-dark-light/20 rounded-full group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                    <Icon className="w-10 h-10 text-unicore-accent" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-white group-hover:text-green-400 transition-colors duration-300">
+                  <h3 className="text-lg font-semibold text-white group-hover:text-unicore-accent transition-colors duration-300">
                     {feature.title}
                   </h3>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-xl"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-unicore-accent to-unicore-dark-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-xl"></div>
               </div>
             );
           })}
