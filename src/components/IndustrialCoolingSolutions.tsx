@@ -68,7 +68,7 @@ export default function IndustrialCoolingSolutions() {
       <div className="max-w-4xl mx-auto">
         {/* H1 + intro */}
         <div className="mb-8 md:mb-10">
-          <h1 className="ics-item text-3xl md:text-4xl lg:text-5xl font-bold text-design-dark mb-4 leading-tight">
+          <h1 className="ics-item text-3xl md:text-4xl lg:text-5xl font-semibold text-design-dark mb-4 leading-tight">
             Industrial Cooling Solutions for Factories, Warehouses and Large Facilities
           </h1>
           <p className="ics-item text-lg text-design-mid leading-relaxed mb-4">
@@ -84,11 +84,11 @@ export default function IndustrialCoolingSolutions() {
 
         {/* Industrial Air Cooling Systems */}
         <div className="ics-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Industrial Air Cooling Systems
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE industrial air coolers are designed to provide powerful cooling for large spaces where traditional cooling systems are not practical.
           </p>
           <p className="text-design-mid font-semibold mb-2">Key benefits include:</p>
@@ -116,11 +116,11 @@ export default function IndustrialCoolingSolutions() {
 
         {/* Cooling Large Industrial Spaces */}
         <div className="ics-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Cooling Large Industrial Spaces
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             Industrial environments often face challenges such as heat buildup, poor ventilation, and limited airflow. UNICORE cooling solutions help improve working conditions by providing consistent airflow and temperature reduction.
           </p>
           <p className="text-design-mid font-semibold mb-2">Our systems help:</p>
@@ -139,11 +139,11 @@ export default function IndustrialCoolingSolutions() {
 
         {/* Designed for Industrial Applications */}
         <div className="ics-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Designed for Industrial Applications
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE cooling systems are designed to support a wide range of industrial environments including:
           </p>
           <ul className="space-y-1.5 mb-4">
@@ -154,18 +154,18 @@ export default function IndustrialCoolingSolutions() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             Each system is built to deliver consistent cooling performance even in large and demanding spaces.
           </p>
         </div>
 
         {/* Bulk Supply Capability */}
         <div className="ics-item">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Bulk Supply Capability
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE specializes in supplying industrial cooling equipment in large quantities to businesses, contractors, and facility managers.
           </p>
           <p className="text-design-mid font-semibold mb-2">We support:</p>
@@ -180,7 +180,7 @@ export default function IndustrialCoolingSolutions() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             For product specifications or bulk enquiries, contact our team to discuss your requirements.
           </p>
         </div>

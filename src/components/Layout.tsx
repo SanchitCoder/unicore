@@ -8,9 +8,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-white flex flex-col overflow-x-hidden w-full max-w-[100vw] min-w-0">
+    <div className="min-h-screen bg-white flex flex-col overflow-x-hidden w-full max-w-full min-w-0" style={{ minWidth: 0 }}>
       <Navbar />
-      <main className="flex-1 min-w-0 w-full max-w-full">{children}</main>
+      <main className="flex-1 min-w-0 w-full max-w-full overflow-x-hidden">{children}</main>
       <Footer />
     </div>
   );

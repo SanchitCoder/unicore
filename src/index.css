@@ -16,30 +16,48 @@
   html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden;
-    max-width: 100vw;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
   }
 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #212529;
-    overflow-x: hidden;
-    min-width: 320px;
-    max-width: 100vw;
+    overflow-x: clip;
+    overflow-y: auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
     overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   #root {
+    width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
     min-height: 100vh;
+    position: relative;
   }
 
   img,
-  video {
+  video,
+  iframe {
     max-width: 100%;
     height: auto;
     display: block;
+  }
+
+  /* Contain horizontal overflow on small viewports */
+  @media (max-width: 1024px) {
+    html, body, #root {
+      overflow-x: clip;
+      max-width: 100%;
+    }
   }
 
   body.dark-bg {
@@ -47,13 +65,24 @@
     color: #ffffff;
   }
 
+  /* B2B: professional, subtle, modern – headings semibold, clear hierarchy */
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
   }
 
   p {
+    font-weight: 400;
     line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Ensure body text is visible and readable on all screens */
+  @media (max-width: 640px) {
+    html {
+      font-size: 16px;
+    }
   }
 }
 
@@ -71,15 +100,15 @@
   }
 
   .btn-primary-large {
-    @apply px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-unicore-accent text-white text-sm sm:text-base font-bold rounded-lg shadow-lg hover:bg-unicore-accent-hover hover:scale-105 transition-all duration-300 min-h-[40px] inline-flex items-center justify-center;
+    @apply px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-unicore-accent text-white text-sm sm:text-base font-semibold rounded-lg shadow-md hover:bg-unicore-accent-hover transition-all duration-300 min-h-[40px] inline-flex items-center justify-center;
   }
 
   .btn-secondary-large {
-    @apply px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-transparent text-white text-sm sm:text-base font-bold rounded-lg border-2 border-white hover:bg-white/10 hover:scale-105 transition-all duration-300 min-h-[40px] inline-flex items-center justify-center;
+    @apply px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 bg-transparent text-white text-sm sm:text-base font-semibold rounded-lg border-2 border-white hover:bg-white/10 transition-all duration-300 min-h-[40px] inline-flex items-center justify-center;
   }
 
   .nav-link {
-    @apply relative text-white font-medium uppercase tracking-wide hover:text-unicore-accent transition-colors duration-300;
+    @apply relative text-white font-medium text-sm sm:text-base uppercase tracking-wider hover:text-unicore-accent transition-colors duration-300;
   }
 
   .nav-link::after {

@@ -28,11 +28,11 @@ export default function About() {
   return (
     <section id="about" ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="about-item text-3xl md:text-4xl font-bold text-design-dark mb-4">About UNICORE</h2>
-        <p className="about-item text-lg text-design-mid mb-4">
+        <h2 className="about-item text-3xl md:text-4xl font-semibold text-design-dark mb-4">About UNICORE</h2>
+        <p className="about-item text-lg text-design-mid font-normal mb-4">
           UNICORE is a trusted industrial appliance brand specializing in industrial air coolers, industrial fans, and commercial cooling systems. Built in collaboration with established manufacturers, the brand combines decades of engineering experience with strong production capabilities to serve large-scale industrial requirements.
         </p>
-        <p className="about-item text-lg text-design-mid">
+        <p className="about-item text-lg text-design-mid font-normal">
           With a clear focus on bulk procurement and B2B partnerships, UNICORE ensures consistent product quality, dependable supply, and performance-driven solutions for demanding environments.
         </p>
       </div>

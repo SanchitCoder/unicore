@@ -53,7 +53,7 @@ export default function Products() {
     <section id="products" ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-unicore-dark">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">Our Product Categories</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3">Our Product Categories</h2>
           <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-unicore-accent to-unicore-dark-light mx-auto"></div>
         </div>
 
@@ -72,11 +72,11 @@ export default function Products() {
                     <Icon className="w-12 h-12 text-unicore-accent" />
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-unicore-accent transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 group-hover:text-unicore-accent transition-colors duration-300">
                     {product.title}
                   </h3>
 
-                  <p className="text-white/90 mb-4 leading-relaxed">
+                  <p className="text-white/90 font-normal mb-4 leading-relaxed">
                     {product.description}
                   </p>
 

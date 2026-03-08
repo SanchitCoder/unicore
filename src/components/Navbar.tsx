@@ -57,7 +57,7 @@ export default function Navbar() {
   }, [location.pathname, location.hash]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-unicore-dark w-full max-w-[100vw] min-w-0">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-unicore-dark w-full max-w-full min-w-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between gap-2 min-w-0 w-full">
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src="/unicore-logo.png" alt="UNICORE" className="h-8 sm:h-10 w-auto object-contain max-w-[140px] sm:max-w-none" />

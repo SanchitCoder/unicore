@@ -51,12 +51,12 @@ export default function ProductImageCards({
     <section ref={sectionRef} className={`py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg ${className}`.trim()}>
       <div className="max-w-6xl mx-auto w-full overflow-hidden">
         {title && (
-          <h2 className="prod-card-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-1 text-center">
+          <h2 className="prod-card-item text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-1 text-center">
             {title}
           </h2>
         )}
         {subtitle && (
-          <p className="prod-card-item text-design-mid text-sm sm:text-base text-center mb-4 sm:mb-6 max-w-2xl mx-auto px-1">
+          <p className="prod-card-item text-design-mid text-sm sm:text-base font-normal text-center mb-4 sm:mb-6 max-w-2xl mx-auto px-1">
             {subtitle}
           </p>
         )}
@@ -77,10 +77,10 @@ export default function ProductImageCards({
                 </div>
               </div>
               <div className="p-3 sm:p-4">
-                <h3 className="text-base sm:text-lg font-bold text-design-dark mb-1 group-hover:text-unicore-accent transition-colors">
+                <h3 className="text-base sm:text-lg font-semibold text-design-dark mb-1 group-hover:text-unicore-accent transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-2 line-clamp-3">{card.description}</p>
+                <p className="text-design-mid text-xs sm:text-sm font-normal leading-relaxed mb-2 line-clamp-3">{card.description}</p>
                 {card.linkTo ? (
                   <Link
                     to={card.linkTo}

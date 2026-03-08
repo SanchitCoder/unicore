@@ -53,13 +53,13 @@ export default function ManufacturingExcellence() {
       <div className="max-w-4xl mx-auto">
         {/* H1 + intro */}
         <div className="mb-8 md:mb-10">
-          <h1 className="mfg-item text-3xl md:text-4xl lg:text-5xl font-bold text-design-dark mb-4 leading-tight">
+          <h1 className="mfg-item text-3xl md:text-4xl lg:text-5xl font-semibold text-design-dark mb-4 leading-tight">
             Industrial Cooling & Ventilation Solutions for Multiple Industries
           </h1>
-          <p className="mfg-item text-lg text-design-mid leading-relaxed mb-4">
+          <p className="mfg-item text-lg text-design-mid font-normal leading-relaxed mb-4">
             UNICORE provides industrial cooling and ventilation solutions for a wide range of industries where maintaining airflow and temperature control is critical for operations.
           </p>
-          <p className="mfg-item text-lg text-design-mid leading-relaxed">
+          <p className="mfg-item text-lg text-design-mid font-normal leading-relaxed">
             Our products are designed to support large industrial facilities, manufacturing environments, and commercial infrastructure.
           </p>
         </div>
@@ -71,10 +71,10 @@ export default function ManufacturingExcellence() {
               key={i}
               className="mfg-item group rounded-xl p-4 sm:p-5 border border-design-border bg-white hover:border-unicore-accent hover:shadow-lg hover:scale-[1.01] transition-all duration-300"
             >
-              <h2 className="text-xl md:text-2xl font-bold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
+              <h2 className="text-xl md:text-2xl font-semibold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
                 {item.title}
               </h2>
-              <p className="text-design-mid leading-relaxed">
+              <p className="text-design-mid font-normal leading-relaxed">
                 {item.description}
               </p>
             </div>

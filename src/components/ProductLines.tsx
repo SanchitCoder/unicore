@@ -127,16 +127,16 @@ export default function ProductLines() {
         <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
         <div ref={sectionRef} className="relative z-10 max-w-4xl mx-auto w-full">
           <div className="product-line-item text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight">
               Industrial Cooling & Ventilation Products – UNICORE
             </h1>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">
+            <p className="text-white/90 text-base sm:text-lg font-normal leading-relaxed mb-3 sm:mb-4">
               UNICORE offers a wide range of industrial cooling and ventilation products designed for factories, warehouses, workshops, manufacturing plants, and commercial facilities. Our product range includes industrial air coolers, heavy duty exhaust fans, air circulator fans, and high-performance pedestal fans built for powerful airflow and long-term industrial use.
             </p>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">
+            <p className="text-white/90 text-base sm:text-lg font-normal leading-relaxed mb-3 sm:mb-4">
               Designed in collaboration with experienced manufacturers, UNICORE products deliver efficient air circulation, durability, and reliable performance for large industrial environments.
             </p>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed">
+            <p className="text-white/90 text-base sm:text-lg font-normal leading-relaxed">
               Whether you need bulk industrial fans, ventilation systems, or cooling solutions for factories, UNICORE provides dependable products for large-scale requirements.
             </p>
           </div>
@@ -148,14 +148,14 @@ export default function ProductLines() {
         {/* In-section navigation */}
         {/* H2: Our Industrial Product Range */}
         <div id="product-range" className="product-line-item mb-8 sm:mb-10 md:mb-12 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-2 sm:mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 sm:mb-3">
             Our Industrial Product Range
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE supplies a complete range of industrial air cooling and ventilation equipment for large spaces. Our products are engineered to handle high airflow requirements, continuous operation, and demanding industrial conditions.
           </p>
-          <p className="text-design-mid mb-4">Product categories include:</p>
+          <p className="text-design-mid font-normal mb-4">Product categories include:</p>
           <ul className="list-none space-y-2 mb-4">
             {productCategories.map((cat, i) => (
               <li key={i} className="flex items-center gap-2 text-design-mid">
@@ -164,21 +164,21 @@ export default function ProductLines() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These products are widely used in factories, warehouses, workshops, logistics hubs, and commercial facilities across India.
           </p>
         </div>
 
         {/* H2: Heavy Duty Industrial Exhaust Fans */}
         <div id="exhaust-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Heavy Duty Industrial Exhaust Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE Heavy Duty Exhaust Fans are designed to remove hot air, smoke, dust, and humidity from industrial spaces. These fans help maintain proper ventilation and improve airflow inside factories and production units.
           </p>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Key Features</h3>
           <ul className="list-none space-y-1.5 mb-4">
             {exhaustFanFeatures.map((f, i) => (
               <li key={i} className="flex items-center gap-2 text-design-mid">
@@ -187,7 +187,7 @@ export default function ProductLines() {
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {exhaustFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
@@ -207,21 +207,21 @@ export default function ProductLines() {
               </div>
             ))}
           </div>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These exhaust fans are ideal for factories, warehouses, industrial kitchens, workshops, and large production units.
           </p>
         </div>
 
         {/* H2: Industrial Pedestal Fans (Farrata Fans) */}
         <div id="pedestal-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Pedestal Fans (Farrata Fans)
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE Industrial Pedestal Fans, also known as Farrata Fans, provide strong air throw and efficient cooling for large industrial areas. These fans are commonly used in factories, workshops, warehouses, packaging units, and commercial spaces where high air circulation is required.
           </p>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Key Features</h3>
           <ul className="list-none space-y-1.5 mb-4">
             {pedestalFanFeatures.map((f, i) => (
               <li key={i} className="flex items-center gap-2 text-design-mid">
@@ -230,7 +230,7 @@ export default function ProductLines() {
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {pedestalFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
@@ -249,21 +249,21 @@ export default function ProductLines() {
               </div>
             ))}
           </div>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These fans are suitable for industrial floors, production units, warehouses, and large indoor working environments.
           </p>
         </div>
 
         {/* H2: Industrial Air Circulator Fans */}
         <div id="circulator-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Air Circulator Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE Air Circulator Fans are designed to provide uniform airflow across large industrial spaces. These fans help improve ventilation and maintain comfortable working conditions in factories.
           </p>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Key Features</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Key Features</h3>
           <ul className="list-none space-y-1.5 mb-4">
             {circulatorFanFeatures.map((f, i) => (
               <li key={i} className="flex items-center gap-2 text-design-mid">
@@ -272,7 +272,7 @@ export default function ProductLines() {
               </li>
             ))}
           </ul>
-          <h3 className="text-xl font-bold text-design-dark mb-2">Available Models</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {circulatorFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-lg border border-design-border bg-white overflow-hidden hover:scale-[1.02] hover:shadow-md hover:border-unicore-accent/50 transition-all duration-300">
@@ -290,21 +290,21 @@ export default function ProductLines() {
               </div>
             ))}
           </div>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These fans are widely used in industrial plants, warehouses, assembly lines, and manufacturing facilities.
           </p>
         </div>
 
         {/* H2: Industrial Air Coolers */}
         <div id="air-coolers" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Air Coolers
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE Industrial Air Coolers are designed to provide efficient cooling for large industrial spaces such as factories, warehouses, and workshops. With high airflow capacity and durable construction, these coolers deliver reliable cooling even in demanding environments.
           </p>
-          <h3 className="text-xl font-bold text-design-dark mb-3">Key Features</h3>
+          <h3 className="text-xl font-semibold text-design-dark mb-3">Key Features</h3>
           <ul className="list-none space-y-1.5 mb-4">
             {airCoolerFeatures.map((f, i) => (
               <li key={i} className="flex items-center gap-2 text-design-mid">
@@ -320,7 +320,7 @@ export default function ProductLines() {
                 <img src="https://picsum.photos/seed/thar/600/400" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-design-dark text-sm mb-1">THAR Series Industrial Air Coolers</h4>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">THAR Series Industrial Air Coolers</h4>
                 <p className="text-design-mid text-xs mb-2">THAR 800, THAR 1100</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
                   <li>• Airflow: Up to 12,000 CMH</li>
@@ -335,7 +335,7 @@ export default function ProductLines() {
                 <img src="https://picsum.photos/seed/thunder/600/400" alt="THUNDER Series Industrial Air Coolers" className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-design-dark text-sm mb-1">THUNDER Series Industrial Air Coolers</h4>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Series Industrial Air Coolers</h4>
                 <p className="text-design-mid text-xs mb-2">THUNDER 1100, THUNDER 1500</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
                   <li>• Airflow: Up to 23,000 CMH</li>
@@ -350,7 +350,7 @@ export default function ProductLines() {
                 <img src="https://picsum.photos/seed/thunder-adv/600/400" alt="THUNDER Advanced Industrial Air Coolers" className="w-full h-full object-cover" />
               </div>
               <div className="p-3">
-                <h4 className="font-bold text-design-dark text-sm mb-1">THUNDER Advanced Industrial Air Coolers</h4>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Advanced Industrial Air Coolers</h4>
                 <p className="text-design-mid text-xs mb-2">1100A, 1500A, 2200A, 3000A</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-2">
                   <li>• Airflow: Up to 30,000 CMH</li>
@@ -364,11 +364,11 @@ export default function ProductLines() {
 
         {/* H2: Bulk Industrial Orders & Distributor Enquiries */}
         <div id="bulk-orders" className="product-line-item scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Bulk Industrial Orders & Distributor Enquiries
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE focuses on supplying industrial cooling and ventilation products in bulk quantities to businesses and commercial buyers.
           </p>
           <p className="text-design-mid font-semibold mb-2">Our customers typically include:</p>
@@ -380,7 +380,7 @@ export default function ProductLines() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed mb-5">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-5">
             We support large order quantities, project-based supply, and distributor partnerships across India. For product specifications, pricing, and bulk enquiries, connect with our team.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">

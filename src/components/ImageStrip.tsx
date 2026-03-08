@@ -35,7 +35,7 @@ export default function ImageStrip({ title, images, className = '' }: ImageStrip
     <section ref={sectionRef} className={`py-6 sm:py-8 md:py-10 px-4 sm:px-5 ${className}`.trim()}>
       <div className="max-w-6xl mx-auto w-full overflow-hidden">
         {title && (
-          <h2 className="strip-item text-lg sm:text-xl md:text-2xl font-bold text-design-dark mb-3 sm:mb-4 text-center">
+          <h2 className="strip-item text-lg sm:text-xl md:text-2xl font-semibold text-design-dark mb-3 sm:mb-4 text-center">
             {title}
           </h2>
         )}

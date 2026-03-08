@@ -52,11 +52,11 @@ export default function ImageTextSection({
           {subtitle}
         </p>
       )}
-      <h2 className="img-txt-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-2 sm:mb-3">
+      <h2 className="img-txt-item text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 sm:mb-3">
         {title}
       </h2>
       {paragraphs.map((p, i) => (
-        <p key={i} className="img-txt-item text-design-mid text-sm sm:text-base leading-relaxed mb-2 sm:mb-3">
+        <p key={i} className="img-txt-item text-design-mid text-sm sm:text-base font-normal leading-relaxed mb-2 sm:mb-3">
           {p}
         </p>
       ))}
@@ -64,7 +64,7 @@ export default function ImageTextSection({
         <div className="img-txt-item grid grid-cols-3 gap-3 mt-4">
           {stats.map((stat, i) => (
             <div key={i}>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-design-dark">{stat.value}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark">{stat.value}</div>
               <div className="text-sm text-design-mid uppercase tracking-wide">{stat.label}</div>
             </div>
           ))}

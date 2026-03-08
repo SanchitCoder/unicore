@@ -32,26 +32,26 @@ export default function CTA() {
       <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark via-unicore-dark-light to-unicore-accent" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="cta-content text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+        <h2 className="cta-content text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-2 sm:mb-3 leading-snug">
           Power your operations with dependable industrial cooling and ventilation systems designed for scale, efficiency, and long-term performance.
         </h2>
-        <p className="cta-content text-base sm:text-lg text-white/90 mb-4 sm:mb-6">
+        <p className="cta-content text-base sm:text-lg text-white/90 font-normal mb-4 sm:mb-6">
           Contact UNICORE today for bulk supply enquiries.
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
           <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>
         </div>
 
-        <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm">
-          <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white hover:scale-105 transition-all duration-300">
+        <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm font-normal">
+          <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white transition-colors duration-300 font-medium">
             <Phone className="w-5 h-5 flex-shrink-0" />
             <span>(+91) 9876543210</span>
           </a>
-          <a href="mailto:info@unicore.com" className="flex items-center gap-2 hover:text-white hover:scale-105 transition-all duration-300">
+          <a href="mailto:info@unicore.com" className="flex items-center gap-2 hover:text-white transition-colors duration-300 font-medium">
             <Mail className="w-5 h-5 flex-shrink-0" />
             <span>info@unicore.com</span>
           </a>
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 font-medium">
             <MapPin className="w-5 h-5 flex-shrink-0" />
             <span>Global Headquarters</span>
           </span>

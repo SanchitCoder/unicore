@@ -57,9 +57,9 @@ export default function Industries() {
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-unicore-dark">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">Industries We Serve</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3">Industries We Serve</h2>
           <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-unicore-accent to-unicore-dark-light mx-auto mb-3 sm:mb-4"></div>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-1">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 font-normal max-w-2xl mx-auto px-1">
             Delivering specialized cooling and ventilation solutions across diverse industrial sectors
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function Industries() {
                     <Icon className="w-8 h-8 text-unicore-accent" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-unicore-accent transition-colors duration-300 flex-1">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-unicore-accent transition-colors duration-300 flex-1">
                     {industry.title}
                   </h3>
                 </div>

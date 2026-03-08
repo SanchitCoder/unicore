@@ -37,7 +37,7 @@ export default function ExploreSection() {
   return (
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg">
       <div className="max-w-6xl mx-auto">
-        <h2 className="explore-item text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+        <h2 className="explore-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
           Explore UNICORE
         </h2>
         <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-4" />
@@ -56,10 +56,10 @@ export default function ExploreSection() {
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl border-2 border-unicore-accent text-design-dark mb-4 group-hover:bg-unicore-accent/10 transition-colors duration-300">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-design-dark mb-2 group-hover:text-unicore-accent transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-design-dark mb-2 group-hover:text-unicore-accent transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-design-mid text-sm">{item.description}</p>
+                <p className="text-design-mid text-sm font-normal">{item.description}</p>
                 <span className="inline-flex items-center gap-1 mt-3 text-unicore-accent font-semibold text-sm group-hover:gap-2 transition-all duration-300">
                   Learn more →
                 </span>

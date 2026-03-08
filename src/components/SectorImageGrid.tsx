@@ -48,12 +48,12 @@ export default function SectorImageGrid({
     <section ref={sectionRef} className={`py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white ${className}`.trim()}>
       <div className="max-w-6xl mx-auto w-full overflow-hidden">
         {title && (
-          <h2 className="sector-card-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-2 text-center">
+          <h2 className="sector-card-item text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 text-center">
             {title}
           </h2>
         )}
         {subtitle && (
-          <p className="sector-card-item text-design-mid text-sm sm:text-base text-center mb-4 sm:mb-6 max-w-2xl mx-auto px-1">
+          <p className="sector-card-item text-design-mid text-sm sm:text-base font-normal text-center mb-4 sm:mb-6 max-w-2xl mx-auto px-1">
             {subtitle}
           </p>
         )}
@@ -73,7 +73,7 @@ export default function SectorImageGrid({
                 aria-hidden
               />
               <div className="absolute inset-0 flex flex-col justify-end p-3 sm:p-4">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1">{sector.title}</h3>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-1">{sector.title}</h3>
                 <span className="inline-flex items-center gap-1 text-unicore-accent font-medium text-sm w-fit">
                   <span>Explore</span>
                   <ArrowUpRight className="w-4 h-4" />

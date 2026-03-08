@@ -44,7 +44,7 @@ export default function HomeProductCategories() {
   return (
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg">
       <div className="max-w-6xl mx-auto">
-        <h2 className="pcat-item text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+        <h2 className="pcat-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
           Our Product Categories
         </h2>
         <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-6" />
@@ -54,10 +54,10 @@ export default function HomeProductCategories() {
               key={i}
               className="pcat-item group p-4 sm:p-5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
             >
-              <h3 className="text-xl font-bold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
+              <h3 className="text-xl font-semibold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-design-mid leading-relaxed mb-4">{item.description}</p>
+              <p className="text-design-mid font-normal leading-relaxed mb-4">{item.description}</p>
               <Link
                 to="/products"
                 className="inline-flex items-center gap-1 text-unicore-accent font-semibold text-sm group-hover:gap-2 transition-all duration-300"

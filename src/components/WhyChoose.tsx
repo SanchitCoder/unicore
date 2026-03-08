@@ -62,9 +62,9 @@ export default function WhyChoose() {
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-gradient-to-b from-unicore-dark-light to-unicore-dark">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6 sm:mb-8 md:mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">Why Choose UNICORE</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3">Why Choose UNICORE</h2>
           <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-unicore-accent to-unicore-dark-light mx-auto mb-3 sm:mb-4"></div>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto px-1">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 font-normal max-w-2xl mx-auto px-1">
             Your trusted partner for industrial cooling and ventilation solutions
           </p>
         </div>

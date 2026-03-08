@@ -36,11 +36,11 @@ export default function HomeIndustriesSection() {
   return (
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="ind-item text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+        <h2 className="ind-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
           Industries We Serve
         </h2>
         <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-        <p className="ind-item text-lg text-design-mid text-center mb-8">
+        <p className="ind-item text-lg text-design-mid font-normal text-center mb-8">
           Our industrial cooling and ventilation systems are widely used in:
         </p>
         <ul className="ind-item space-y-4 mb-8">
@@ -54,7 +54,7 @@ export default function HomeIndustriesSection() {
             </li>
           ))}
         </ul>
-        <p className="ind-item text-lg text-design-mid text-center">
+        <p className="ind-item text-lg text-design-mid font-normal text-center">
           We understand operational challenges in large-scale environments and provide solutions designed for continuous performance.
         </p>
       </div>

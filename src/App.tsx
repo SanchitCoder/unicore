@@ -9,14 +9,16 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden" style={{ minWidth: 0 }}>
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/ventilation" element={<VentilationPage />} />
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

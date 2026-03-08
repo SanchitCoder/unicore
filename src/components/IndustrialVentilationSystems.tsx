@@ -59,7 +59,7 @@ export default function IndustrialVentilationSystems() {
       <div className="max-w-4xl mx-auto">
         {/* H1 + intro */}
         <div className="mb-8 md:mb-10">
-          <h1 className="ivs-item text-3xl md:text-4xl lg:text-5xl font-bold text-design-dark mb-4 leading-tight">
+          <h1 className="ivs-item text-3xl md:text-4xl lg:text-5xl font-semibold text-design-dark mb-4 leading-tight">
             Industrial Ventilation Systems and High-Performance Industrial Fans
           </h1>
           <p className="ivs-item text-lg text-design-mid leading-relaxed mb-4">
@@ -75,14 +75,14 @@ export default function IndustrialVentilationSystems() {
 
         {/* Industrial Exhaust Fans */}
         <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Industrial Exhaust Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE heavy duty exhaust fans are designed to remove hot air, smoke, dust, and humidity from industrial environments.
           </p>
-          <p className="text-design-mid font-semibold mb-2">Key features include:</p>
+          <p className="text-design-mid font-medium mb-2">Key features include:</p>
           <ul className="space-y-1.5 mb-4">
             {exhaustFanFeatures.map((item, i) => (
               <li
@@ -94,21 +94,21 @@ export default function IndustrialVentilationSystems() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These fans help maintain proper air circulation and improve ventilation in large industrial spaces.
           </p>
         </div>
 
         {/* Air Circulator Fans */}
         <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Air Circulator Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE air circulator fans help distribute airflow evenly across large areas, ensuring consistent ventilation.
           </p>
-          <p className="text-design-mid font-semibold mb-3">Key benefits include:</p>
+          <p className="text-design-mid font-medium mb-3">Key benefits include:</p>
           <ul className="space-y-2 mb-6">
             {circulatorBenefits.map((item, i) => (
               <li
@@ -120,21 +120,21 @@ export default function IndustrialVentilationSystems() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             These fans are widely used in factories, warehouses, and production units where effective air movement is required.
           </p>
         </div>
 
         {/* Ventilation for Large Industrial Spaces */}
         <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
             Ventilation for Large Industrial Spaces
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             Industrial ventilation plays a critical role in maintaining a safe and productive working environment.
           </p>
-          <p className="text-design-mid font-semibold mb-3">UNICORE ventilation systems help:</p>
+          <p className="text-design-mid font-medium mb-3">UNICORE ventilation systems help:</p>
           <ul className="space-y-2 mb-6">
             {ventilationHelp.map((item, i) => (
               <li
@@ -146,21 +146,21 @@ export default function IndustrialVentilationSystems() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             Our ventilation products are designed to support the needs of modern industrial environments.
           </p>
         </div>
 
         {/* Bulk Orders and Distributor Enquiries */}
         <div className="ivs-item">
-          <h2 className="text-2xl md:text-3xl font-bold text-design-dark mb-4">
+          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-4">
             Bulk Orders and Distributor Enquiries
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg leading-relaxed mb-4">
+          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
             UNICORE supplies industrial fans and ventilation systems in bulk quantities to businesses across multiple industries.
           </p>
-          <p className="text-design-mid font-semibold mb-3">We work with:</p>
+          <p className="text-design-mid font-medium mb-3">We work with:</p>
           <ul className="space-y-2 mb-8">
             {bulkPartners.map((item, i) => (
               <li
@@ -172,7 +172,7 @@ export default function IndustrialVentilationSystems() {
               </li>
             ))}
           </ul>
-          <p className="text-design-mid text-lg leading-relaxed">
+          <p className="text-design-mid text-lg font-normal leading-relaxed">
             For product details, technical specifications, or bulk supply enquiries, connect with the UNICORE team.
           </p>
         </div>

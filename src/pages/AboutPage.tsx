@@ -75,7 +75,7 @@ export default function AboutPage() {
       <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-5 sm:px-6 md:px-5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
         <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto text-center w-full px-2 sm:px-0">
-          <h1 className="about-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
+          <h1 className="about-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 sm:mb-4">
             About UNICORE
           </h1>
           <p className="about-hero-item text-lg sm:text-xl md:text-2xl text-white/90 mb-4 sm:mb-5">
@@ -104,17 +104,17 @@ export default function AboutPage() {
       {/* Introduction */}
       <section id="introduction" ref={introRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
             Introduction
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
             UNICORE is a trusted brand providing reliable industrial cooling and ventilation solutions for factories, warehouses, workshops, and large commercial environments.
           </p>
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
             Built on a strong foundation of 25+ years of manufacturing experience, UNICORE collaborates with established manufacturers of industrial air coolers, industrial fans, and ventilation systems to bring together a comprehensive range of high-performance products under a single brand.
           </p>
-          <p className="about-animate text-lg text-design-mid leading-relaxed">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
             Our focus is to provide durable, efficient, and large-scale cooling solutions that support the operational needs of industrial businesses across India.
           </p>
         </div>
@@ -141,8 +141,8 @@ export default function AboutPage() {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-4">
                 <Target className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-design-dark mb-3">Our Mission</h3>
-              <p className="text-design-mid leading-relaxed">
+              <h3 className="text-xl font-semibold text-design-dark mb-3">Our Mission</h3>
+              <p className="text-design-mid font-normal leading-relaxed">
                 To provide efficient and dependable industrial cooling solutions that help businesses maintain comfortable and productive working environments.
               </p>
             </div>
@@ -150,8 +150,8 @@ export default function AboutPage() {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-4">
                 <Eye className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-design-dark mb-3">Our Vision</h3>
-              <p className="text-design-mid leading-relaxed">
+              <h3 className="text-xl font-semibold text-design-dark mb-3">Our Vision</h3>
+              <p className="text-design-mid font-normal leading-relaxed">
                 To become a trusted supplier of industrial cooling and ventilation equipment across India, supporting manufacturing units and commercial facilities with high-quality products.
               </p>
             </div>
@@ -162,17 +162,17 @@ export default function AboutPage() {
       {/* Our Background */}
       <section id="background" ref={backgroundRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
             Our Background
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
             UNICORE was established with the vision of simplifying the sourcing of industrial cooling equipment for businesses that require bulk quantities and reliable performance.
           </p>
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
             Through collaboration with experienced manufacturers in the cooling and ventilation industry, UNICORE brings together multiple industrial appliances into a unified product portfolio.
           </p>
-          <p className="about-animate text-lg text-design-mid leading-relaxed">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
             Each product is designed to meet the demanding conditions of industrial environments while maintaining efficiency, durability, and consistent airflow performance.
           </p>
         </div>
@@ -193,11 +193,11 @@ export default function AboutPage() {
       {/* What We Offer */}
       <section id="what-we-offer" ref={offerRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
             What We Offer
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
             UNICORE provides a wide range of industrial cooling and air circulation products, including:
           </p>
           <ul className="about-animate space-y-2 mb-5">
@@ -211,7 +211,7 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-          <p className="about-animate text-lg text-design-mid leading-relaxed">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
             Our solutions are widely used in factories, warehouses, workshops, and production facilities where maintaining airflow and temperature control is essential.
           </p>
         </div>
@@ -230,11 +230,11 @@ export default function AboutPage() {
       {/* Our Approach */}
       <section id="approach" ref={approachRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-bold text-design-dark mb-4 text-center">
+          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
             Our Approach
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid leading-relaxed mb-5">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-5">
             UNICORE focuses on delivering reliable cooling and ventilation solutions in bulk quantities to meet the needs of industrial buyers. Our approach includes:
           </p>
           <ul className="space-y-4">
