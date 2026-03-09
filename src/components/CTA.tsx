@@ -33,10 +33,10 @@ export default function CTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2 className="cta-content text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-2 sm:mb-3 leading-snug">
-          Power your operations with dependable industrial cooling and ventilation systems designed for scale, efficiency, and long-term performance.
+          Reliable cooling and ventilation for your operations.
         </h2>
         <p className="cta-content text-base sm:text-lg text-white/90 font-normal mb-4 sm:mb-6">
-          Contact UNICORE today for bulk supply enquiries.
+          Get in touch for bulk orders and partnerships.
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
           <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>

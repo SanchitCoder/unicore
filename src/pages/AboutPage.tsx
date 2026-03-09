@@ -1,17 +1,17 @@
-import { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react';
 import { animate, stagger } from 'animejs';
-import { Target, Eye, CheckCircle } from 'lucide-react';
+import { Target, Eye, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import Layout from '../components/Layout';
 import ImageTextSection from '../components/ImageTextSection';
 import ImageStrip from '../components/ImageStrip';
+import { stockImages } from '../lib/stockImages';
 
 const whatWeOffer = [
-  'Industrial Air Coolers',
-  'Heavy Duty Exhaust Fans',
-  'Air Circulator Fans',
-  'Industrial Pedestal Fans',
-  'Ventilation Systems for Industrial Facilities',
+  { title: 'Industrial Air Coolers', imageSrc: stockImages.cooling, imageAlt: 'Industrial air coolers' },
+  { title: 'Heavy Duty Exhaust Fans', imageSrc: stockImages.ventilation, imageAlt: 'Heavy duty exhaust fans' },
+  { title: 'Air Circulator Fans', imageSrc: stockImages.equipment, imageAlt: 'Air circulator fans' },
+  { title: 'Industrial Pedestal Fans', imageSrc: stockImages.workshop, imageAlt: 'Industrial pedestal fans' },
+  { title: 'Ventilation Systems for Industrial Facilities', imageSrc: stockImages.facility, imageAlt: 'Ventilation systems' },
 ];
 
 const ourApproach = [
@@ -23,11 +23,11 @@ const ourApproach = [
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const introRef = useRef<HTMLDivElement>(null);
   const missionRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const offerRef = useRef<HTMLDivElement>(null);
   const approachRef = useRef<HTMLDivElement>(null);
+  const [offerIndex, setOfferIndex] = useState(0);
 
   useEffect(() => {
     if (heroRef.current) {
@@ -59,7 +59,6 @@ export default function AboutPage() {
       { threshold: 0.15 }
     );
     const refs = [
-      introRef.current,
       missionRef.current,
       backgroundRef.current,
       offerRef.current,
@@ -74,11 +73,12 @@ export default function AboutPage() {
       {/* Hero - extra top padding on mobile so heading isn't hidden under fixed navbar */}
       <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-5 sm:px-6 md:px-5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(46,203,182,0.12)_0%,transparent_50%)]" aria-hidden />
         <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto text-center w-full px-2 sm:px-0">
-          <h1 className="about-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 sm:mb-4">
+          <h1 className="about-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 tracking-tight drop-shadow-hero">
             About UNICORE
           </h1>
-          <p className="about-hero-item text-lg sm:text-xl md:text-2xl text-white/90 mb-4 sm:mb-5">
+          <p className="about-hero-item text-lg sm:text-xl md:text-2xl text-white/95 mb-4 sm:mb-5 drop-shadow-hero">
             Trusted industrial cooling and ventilation solutions for businesses across India
           </p>
         </div>
@@ -99,38 +99,6 @@ export default function AboutPage() {
         imageSrc="https://picsum.photos/seed/about-expertise/800/600"
         imageAlt="Industrial manufacturing facility"
         imageOnRight={true}
-      />
-
-      {/* Introduction */}
-      <section id="introduction" ref={introRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-            Introduction
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
-            UNICORE is a trusted brand providing reliable industrial cooling and ventilation solutions for factories, warehouses, workshops, and large commercial environments.
-          </p>
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
-            Built on a strong foundation of 25+ years of manufacturing experience, UNICORE collaborates with established manufacturers of industrial air coolers, industrial fans, and ventilation systems to bring together a comprehensive range of high-performance products under a single brand.
-          </p>
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
-            Our focus is to provide durable, efficient, and large-scale cooling solutions that support the operational needs of industrial businesses across India.
-          </p>
-        </div>
-      </section>
-
-      <ImageTextSection
-        subtitle="Our story"
-        title="Quality and Partnership at Scale"
-        paragraphs={[
-          'We work with established manufacturers to bring you a unified range of industrial cooling and ventilation products. Every product is tested for durability and performance in real-world industrial conditions.',
-          'From factories to warehouses, UNICORE solutions are built to run continuously and deliver consistent results.',
-        ]}
-        imageSrc="https://picsum.photos/seed/about-quality/800/600"
-        imageAlt="Industrial facility"
-        imageOnRight={false}
-        className="bg-white"
       />
 
       {/* Mission & Vision */}
@@ -190,28 +158,64 @@ export default function AboutPage() {
         className="bg-design-bg"
       />
 
-      {/* What We Offer */}
+      {/* What We Offer - Carousel */}
       <section id="what-we-offer" ref={offerRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
             What We Offer
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-6 text-center">
             UNICORE provides a wide range of industrial cooling and air circulation products, including:
           </p>
-          <ul className="about-animate space-y-2 mb-5">
-            {whatWeOffer.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-center gap-3 p-4 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.01] transition-all duration-300"
+
+          <div className="about-animate relative flex justify-center">
+            <div className="overflow-hidden w-full max-w-sm">
+              <div
+                className="flex transition-transform duration-300 ease-out"
+                style={{ transform: `translateX(-${offerIndex * 100}%)` }}
               >
-                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                <span className="text-design-mid font-medium">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
+                {whatWeOffer.map((item, i) => (
+                  <div
+                    key={i}
+                    className="w-full flex-shrink-0 px-0.5"
+                  >
+                    <div className="rounded-lg overflow-hidden bg-white border border-design-border/80 hover:border-design-mid/50 transition-colors duration-200">
+                      <div className="aspect-[5/3] overflow-hidden bg-design-bg">
+                        <img
+                          src={item.imageSrc}
+                          alt={item.imageAlt}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="px-3 py-2.5">
+                        <h3 className="text-sm font-medium text-design-dark leading-snug">{item.title}</h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOfferIndex((i) => (i <= 0 ? whatWeOffer.length - 1 : i - 1))}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 w-8 h-8 rounded-full bg-white/90 border border-design-border/80 shadow-sm flex items-center justify-center text-design-mid hover:text-unicore-accent hover:border-unicore-accent/50 transition-colors z-10"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setOfferIndex((i) => (i >= whatWeOffer.length - 1 ? 0 : i + 1))}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-8 h-8 rounded-full bg-white/90 border border-design-border/80 shadow-sm flex items-center justify-center text-design-mid hover:text-unicore-accent hover:border-unicore-accent/50 transition-colors z-10"
+              aria-label="Next"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mt-6 text-center">
             Our solutions are widely used in factories, warehouses, workshops, and production facilities where maintaining airflow and temperature control is essential.
           </p>
         </div>

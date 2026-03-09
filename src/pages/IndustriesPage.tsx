@@ -1,48 +1,41 @@
+import { useRef, useEffect } from 'react';
+import { animate, stagger } from 'animejs';
 import Layout from '../components/Layout';
 import ManufacturingExcellence from '../components/ManufacturingExcellence';
-import SectorImageGrid from '../components/SectorImageGrid';
 import ImageTextSection from '../components/ImageTextSection';
-import ImageStrip from '../components/ImageStrip';
-
-const sectorCards = [
-  { title: 'Factories', imageSrc: 'https://picsum.photos/seed/sector-factory/600/400', imageAlt: 'Factory' },
-  { title: 'Warehouses', imageSrc: 'https://picsum.photos/seed/sector-warehouse/600/400', imageAlt: 'Warehouse' },
-  { title: 'Manufacturing Units', imageSrc: 'https://picsum.photos/seed/sector-mfg/600/400', imageAlt: 'Manufacturing' },
-  { title: 'Workshops', imageSrc: 'https://picsum.photos/seed/sector-workshop/600/400', imageAlt: 'Workshop' },
-  { title: 'Logistics Centers', imageSrc: 'https://picsum.photos/seed/sector-logistics/600/400', imageAlt: 'Logistics' },
-  { title: 'Commercial Facilities', imageSrc: 'https://picsum.photos/seed/sector-commercial/600/400', imageAlt: 'Commercial' },
-];
 
 export default function IndustriesPage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (heroRef.current) {
+      animate(heroRef.current.querySelectorAll('.industry-hero-item'), {
+        translateY: { to: 0, from: 28 },
+        opacity: { to: 1, from: 0 },
+        duration: 600,
+        delay: stagger(50),
+        ease: 'out-cubic',
+      });
+    }
+  }, []);
+
   return (
     <Layout>
-      <div className="pt-16 sm:pt-20">
-        <SectorImageGrid
-          title="Trusted Across Multiple Industrial Sectors"
-          subtitle="Delivering specialized cooling and ventilation solutions across diverse industrial sectors."
-          sectors={sectorCards}
-        />
-      </div>
-      <ImageTextSection
-        title="Cooling and Ventilation Where You Need It"
-        paragraphs={[
-          'Manufacturing plants, warehouses, workshops, and commercial facilities all face unique climate challenges. UNICORE solutions are deployed across these sectors to improve comfort, protect equipment, and support productivity.',
-        ]}
-        imageSrc="https://picsum.photos/seed/ind-cooling/800/600"
-        imageAlt="Industrial sectors"
-        imageOnRight={false}
-        className="bg-design-bg"
-      />
+      {/* Hero - same style as Products page */}
+      <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-5 sm:px-6 md:px-5 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(46,203,182,0.15)_0%,transparent_50%)]" aria-hidden />
+        <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto text-center w-full px-2 sm:px-0">
+          <h1 className="industry-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 tracking-tight drop-shadow-hero">
+            Industries We Serve
+          </h1>
+          <p className="industry-hero-item text-lg sm:text-xl md:text-2xl text-white/95 mb-4 sm:mb-5 drop-shadow-hero">
+            Cooling and ventilation solutions for factories, warehouses, workshops, and commercial facilities
+          </p>
+        </div>
+      </section>
+
       <ManufacturingExcellence />
-      <ImageStrip
-        title="Industries We Serve"
-        images={[
-          { src: 'https://picsum.photos/seed/ind1/600/400', alt: 'Manufacturing' },
-          { src: 'https://picsum.photos/seed/ind2/600/400', alt: 'Warehousing' },
-          { src: 'https://picsum.photos/seed/ind3/600/400', alt: 'Commercial' },
-        ]}
-        className="bg-white"
-      />
       <ImageTextSection
         title="Partner with UNICORE for Your Sector"
         paragraphs={[

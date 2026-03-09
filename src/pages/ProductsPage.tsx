@@ -1,50 +1,40 @@
+import { useRef, useEffect } from 'react';
+import { animate, stagger } from 'animejs';
 import Layout from '../components/Layout';
 import ProductLines from '../components/ProductLines';
-import ProductImageCards from '../components/ProductImageCards';
 import ImageTextSection from '../components/ImageTextSection';
-import ImageStrip from '../components/ImageStrip';
-
-const productShowcaseCards = [
-  {
-    title: 'Exhaust Fans',
-    description: 'Heavy-duty exhaust fans for industrial ventilation and air extraction.',
-    imageSrc: 'https://picsum.photos/seed/prod-exhaust/600/400',
-    imageAlt: 'Industrial exhaust fan',
-    linkTo: '/products#exhaust-fans',
-  },
-  {
-    title: 'Pedestal Fans',
-    description: 'High-performance industrial pedestal fans for large spaces.',
-    imageSrc: 'https://picsum.photos/seed/prod-pedestal/600/400',
-    imageAlt: 'Industrial pedestal fan',
-    linkTo: '/products#pedestal-fans',
-  },
-  {
-    title: 'Air Circulators',
-    description: 'Powerful air circulator fans for consistent airflow in workshops.',
-    imageSrc: 'https://picsum.photos/seed/prod-circulator/600/400',
-    imageAlt: 'Air circulator fan',
-    linkTo: '/products#circulator-fans',
-  },
-  {
-    title: 'Industrial Air Coolers',
-    description: 'Evaporative cooling systems for factories and warehouses.',
-    imageSrc: 'https://picsum.photos/seed/prod-cooler/600/400',
-    imageAlt: 'Industrial air cooler',
-    linkTo: '/products#air-coolers',
-  },
-];
 
 export default function ProductsPage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (heroRef.current) {
+      animate(heroRef.current.querySelectorAll('.product-hero-item'), {
+        translateY: { to: 0, from: 28 },
+        opacity: { to: 1, from: 0 },
+        duration: 600,
+        delay: stagger(50),
+        ease: 'out-cubic',
+      });
+    }
+  }, []);
+
   return (
     <Layout>
-      <div className="pt-16 sm:pt-20">
-        <ProductImageCards
-          title="Industrial Cooling & Ventilation Equipment"
-          subtitle="High-performance equipment designed for large-scale industrial applications."
-          cards={productShowcaseCards}
-        />
-      </div>
+      {/* Hero - extra top padding on mobile so heading isn't hidden under fixed navbar */}
+      <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-5 sm:px-6 md:px-5 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(46,203,182,0.15)_0%,transparent_50%)]" aria-hidden />
+        <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto text-center w-full px-2 sm:px-0">
+          <h1 className="product-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 tracking-tight drop-shadow-hero">
+            Products
+          </h1>
+          <p className="product-hero-item text-lg sm:text-xl md:text-2xl text-white/95 mb-4 sm:mb-5 drop-shadow-hero">
+            Industrial cooling and ventilation equipment built for reliability and scale
+          </p>
+        </div>
+      </section>
+
       <ImageTextSection
         title="Engineered for Industrial Demands"
         paragraphs={[
@@ -57,15 +47,6 @@ export default function ProductsPage() {
         className="bg-white"
       />
       <ProductLines />
-      <ImageStrip
-        title="Applications Across Industries"
-        images={[
-          { src: 'https://picsum.photos/seed/app1/600/400', alt: 'Factory' },
-          { src: 'https://picsum.photos/seed/app2/600/400', alt: 'Production' },
-          { src: 'https://picsum.photos/seed/app3/600/400', alt: 'Cooling' },
-        ]}
-        className="bg-design-bg"
-      />
     </Layout>
   );
 }

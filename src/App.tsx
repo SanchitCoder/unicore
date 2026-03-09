@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PageTransition from './components/PageTransition';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProductsPage from './pages/ProductsPage';
@@ -11,12 +12,12 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen w-full max-w-full overflow-x-hidden" style={{ minWidth: 0 }}>
         <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/ventilation" element={<VentilationPage />} />
-        <Route path="/industries" element={<IndustriesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+          <Route path="/" element={<PageTransition><HomePage /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
+          <Route path="/products" element={<PageTransition><ProductsPage /></PageTransition>} />
+          <Route path="/ventilation" element={<PageTransition><VentilationPage /></PageTransition>} />
+          <Route path="/industries" element={<PageTransition><IndustriesPage /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         </Routes>
       </div>
     </BrowserRouter>

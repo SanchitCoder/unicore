@@ -52,7 +52,7 @@ export default function ImageTextSection({
           {subtitle}
         </p>
       )}
-      <h2 className="img-txt-item text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 sm:mb-3">
+      <h2 className="img-txt-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4 tracking-tight">
         {title}
       </h2>
       {paragraphs.map((p, i) => (
@@ -74,7 +74,7 @@ export default function ImageTextSection({
   );
 
   const imageBlock = (
-    <div className="img-txt-item rounded-xl overflow-hidden shadow-md border border-design-border bg-design-bg aspect-[4/3] min-h-[180px] sm:min-h-[220px] md:min-h-[240px] w-full">
+    <div className="img-txt-item rounded-2xl overflow-hidden shadow-card border border-design-border/80 bg-design-bg aspect-[4/3] min-h-[180px] sm:min-h-[220px] md:min-h-[240px] w-full transition-shadow duration-300 group-hover:shadow-card-hover">
       <img
         src={imageSrc}
         alt={imageAlt}
@@ -84,9 +84,9 @@ export default function ImageTextSection({
   );
 
   return (
-    <section ref={sectionRef} className={`py-8 sm:py-10 md:py-12 lg:py-14 px-5 sm:px-6 md:px-8 bg-white ${className}`.trim()}>
+    <section ref={sectionRef} className={`py-10 sm:py-12 md:py-16 lg:py-20 px-5 sm:px-6 md:px-8 ${className}`.trim()}>
       <div className="max-w-6xl mx-auto w-full overflow-hidden px-1 sm:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center group">
           <div className={imageOnRight ? '' : 'md:order-2'}>{textBlock}</div>
           <div className={imageOnRight ? '' : 'md:order-1'}>{imageBlock}</div>
         </div>

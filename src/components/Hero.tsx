@@ -52,10 +52,10 @@ export default function Hero() {
       </div>
 
       <div ref={heroRef} className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-5 py-14 sm:py-20 md:py-24">
-        <h1 className="hero-text text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white mb-2 sm:mb-3 leading-snug max-w-5xl">
+        <h1 className="hero-text text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3 leading-tight tracking-tight max-w-5xl drop-shadow-hero">
           Industrial Air Coolers & Industrial Fans for Large-Scale Industrial Applications
         </h1>
-        <p className="hero-text text-base sm:text-lg md:text-xl text-white/95 font-normal mb-2 sm:mb-3 max-w-2xl">
+        <p className="hero-text text-base sm:text-lg md:text-xl text-white/95 font-normal mb-2 sm:mb-3 max-w-2xl drop-shadow-hero">
           High-performance cooling and ventilation systems designed for factories, warehouses, workshops, and commercial facilities across India.
         </p>
         <p className="hero-text text-base sm:text-lg md:text-xl text-white/95 font-normal mb-4 sm:mb-6 max-w-2xl">

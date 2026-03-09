@@ -22,8 +22,8 @@ export default function Footer() {
   const [email, setEmail] = useState('');
 
   return (
-    <footer className="bg-unicore-dark text-white w-full max-w-full min-w-0 overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-5 py-8 sm:py-10 md:py-12 min-w-0">
+    <footer className="bg-unicore-dark text-white w-full max-w-full min-w-0 overflow-x-hidden border-t border-unicore-accent/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-5 py-10 sm:py-12 md:py-14 min-w-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white/95">Products</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest mb-4 text-white">Products</h4>
             <ul className="space-y-2">
               {productLinks.map((link, i) => (
                 <li key={i}>
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white/95">Company</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest mb-4 text-white">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-white/80 hover:text-white transition-colors text-sm font-normal">About</Link></li>
               <li><Link to="/industries" className="text-white/80 hover:text-white transition-colors text-sm font-normal">Manufacturing</Link></li>
@@ -66,16 +66,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-white/95">Get In Touch</h4>
+            <h4 className="font-semibold text-sm uppercase tracking-widest mb-4 text-white">Get In Touch</h4>
             <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email Address"
-                className="flex-1 min-w-0 px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-unicore-accent text-sm"
+                className="flex-1 min-w-0 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-unicore-accent/50 focus:border-unicore-accent text-sm transition-colors"
               />
-              <button type="submit" className="px-4 py-2.5 min-h-[44px] bg-unicore-accent text-white font-medium rounded-lg hover:bg-unicore-accent-hover transition-colors text-sm whitespace-nowrap">
+              <button type="submit" className="px-5 py-2.5 min-h-[44px] bg-unicore-accent text-white font-semibold rounded-xl hover:bg-unicore-accent-hover shadow-btn hover:shadow-btn-hover transition-all duration-300 text-sm whitespace-nowrap">
                 Subscribe
               </button>
             </form>

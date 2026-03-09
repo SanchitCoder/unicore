@@ -1,16 +1,17 @@
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
-
-const services = [
-  'High-volume industrial orders',
-  'Project-based supply',
-  'Regional distributor partnerships',
-  'Structured B2B procurement agreements',
-];
 
 export default function BulkOrders() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    enquiryType: 'bulk' as 'bulk' | 'distribution',
+    message: '',
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,31 +34,110 @@ export default function BulkOrders() {
     return () => observer.disconnect();
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setForm({ name: '', company: '', email: '', phone: '', enquiryType: 'bulk', message: '' });
+  };
+
   return (
-    <section id="bulk-orders" ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="bulk-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
+    <section id="bulk-orders" ref={sectionRef} className="py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-5 bg-design-bg">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="bulk-item text-3xl md:text-4xl font-bold text-design-dark mb-3 text-center tracking-tight">
           Bulk Orders & Distributor Opportunities
         </h2>
-        <p className="bulk-item text-lg md:text-xl text-design-mid font-normal text-center max-w-3xl mx-auto mb-6">
-          Looking for a reliable industrial cooler supplier or industrial fan manufacturer for bulk procurement?
+        <p className="bulk-item text-design-mid text-center mb-8">
+          Looking for a reliable industrial cooler supplier or industrial fan manufacturer for bulk procurement? Submit your details below.
         </p>
-        <p className="bulk-item text-design-mid font-semibold text-center mb-5">UNICORE supports:</p>
-        <ul className="bulk-item grid md:grid-cols-2 gap-3 max-w-2xl mx-auto mb-8">
-          {services.map((item, i) => (
-            <li key={i} className="flex items-center gap-2 text-design-mid">
-              <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="bulk-item text-design-mid font-normal text-center mb-6">
-          Connect with our team to discuss bulk pricing and partnership opportunities.
-        </p>
-        <div className="bulk-item flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Submit Bulk Enquiry</Link>
-          <Link to="/contact" className="px-8 py-4 bg-transparent text-design-dark text-lg font-semibold rounded-lg border-2 border-unicore-dark hover:bg-unicore-dark hover:text-white transition-all duration-300 inline-block text-center">Apply for Distribution</Link>
-        </div>
+
+        {submitted ? (
+          <div className="bulk-item rounded-2xl border border-unicore-accent/30 bg-unicore-accent/5 p-8 text-center shadow-card">
+            <p className="text-design-dark font-semibold mb-2">Thank you for your enquiry.</p>
+            <p className="text-design-mid text-sm">Our team will get back to you shortly to discuss bulk pricing and partnership opportunities.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="bulk-item space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="bulk-orders-name" className="block text-sm font-medium text-design-dark mb-1.5">Name</label>
+                <input
+                  id="bulk-orders-name"
+                  type="text"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                  className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="bulk-orders-company" className="block text-sm font-medium text-design-dark mb-1.5">Company</label>
+                <input
+                  id="bulk-orders-company"
+                  type="text"
+                  value={form.company}
+                  onChange={(e) => setForm((f) => ({ ...f, company: e.target.value }))}
+                  className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm"
+                  placeholder="Company name"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="bulk-orders-email" className="block text-sm font-medium text-design-dark mb-1.5">Email</label>
+                <input
+                  id="bulk-orders-email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                  className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm"
+                  placeholder="you@company.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="bulk-orders-phone" className="block text-sm font-medium text-design-dark mb-1.5">Phone</label>
+                <input
+                  id="bulk-orders-phone"
+                  type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                  className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm"
+                  placeholder="Phone number"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="bulk-orders-type" className="block text-sm font-medium text-design-dark mb-1.5">I am interested in</label>
+              <select
+                id="bulk-orders-type"
+                value={form.enquiryType}
+                onChange={(e) => setForm((f) => ({ ...f, enquiryType: e.target.value as 'bulk' | 'distribution' }))}
+                className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm"
+              >
+                <option value="bulk">Submit Bulk Enquiry</option>
+                <option value="distribution">Apply for Distribution</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="bulk-orders-message" className="block text-sm font-medium text-design-dark mb-1.5">Message</label>
+              <textarea
+                id="bulk-orders-message"
+                rows={4}
+                value={form.message}
+                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                className="w-full px-3 py-2.5 rounded-xl border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm resize-y min-h-[100px]"
+                placeholder="Tell us about your requirements, order quantity, or distribution partnership interest..."
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover hover:shadow-btn-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-all duration-300 text-sm"
+            >
+              Submit Enquiry
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );
