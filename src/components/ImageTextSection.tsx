@@ -74,7 +74,7 @@ export default function ImageTextSection({
   );
 
   const imageBlock = (
-    <div className="img-txt-item rounded-2xl overflow-hidden shadow-card border border-design-border/80 bg-design-bg aspect-[4/3] min-h-[180px] sm:min-h-[220px] md:min-h-[240px] w-full transition-shadow duration-300 group-hover:shadow-card-hover">
+    <div className="img-txt-item rounded-2xl overflow-hidden shadow-card border border-design-border/80 bg-design-bg aspect-[4/3] max-h-44 min-h-[140px] sm:max-h-none sm:min-h-[220px] md:min-h-[240px] w-full transition-shadow duration-300 group-hover:shadow-card-hover">
       <img
         src={imageSrc}
         alt={imageAlt}
@@ -87,8 +87,8 @@ export default function ImageTextSection({
     <section ref={sectionRef} className={`py-10 sm:py-12 md:py-16 lg:py-20 px-5 sm:px-6 md:px-8 ${className}`.trim()}>
       <div className="max-w-6xl mx-auto w-full overflow-hidden px-1 sm:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center group">
-          <div className={imageOnRight ? '' : 'md:order-2'}>{textBlock}</div>
-          <div className={imageOnRight ? '' : 'md:order-1'}>{imageBlock}</div>
+          <div className={`order-2 ${imageOnRight ? 'md:order-1' : 'md:order-2'}`}>{textBlock}</div>
+          <div className={`order-1 ${imageOnRight ? 'md:order-2' : 'md:order-1'}`}>{imageBlock}</div>
         </div>
       </div>
     </section>

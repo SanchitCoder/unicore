@@ -1,19 +1,26 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
+import { stockImages } from '../lib/stockImages';
 
 const categories = [
   {
     title: 'Industrial Air Coolers',
     description: 'High-capacity cooling systems engineered for large industrial spaces. Designed for efficient airflow, wide coverage, and durable performance in manufacturing units and warehouses.',
+    imageSrc: stockImages.cooling,
+    imageAlt: 'Industrial air coolers',
   },
   {
     title: 'Industrial Fans',
     description: 'Heavy-duty ventilation solutions built for continuous air circulation and reliable operation in industrial and commercial environments.',
+    imageSrc: stockImages.ventilation,
+    imageAlt: 'Industrial fans',
   },
   {
     title: 'Commercial Cooling Systems',
     description: 'Advanced cooling and airflow systems developed to support large facilities with consistent and energy-efficient performance.',
+    imageSrc: stockImages.commercial,
+    imageAlt: 'Commercial cooling systems',
   },
 ];
 
@@ -52,18 +59,27 @@ export default function HomeProductCategories() {
           {categories.map((item, i) => (
             <div
               key={i}
-              className="pcat-item group p-4 sm:p-5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+              className="pcat-item group rounded-xl bg-white border border-design-border overflow-hidden hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
-                {item.title}
-              </h3>
-              <p className="text-design-mid font-normal leading-relaxed mb-4">{item.description}</p>
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-1 text-unicore-accent font-semibold text-sm group-hover:gap-2 transition-all duration-300"
-              >
-                Learn more →
-              </Link>
+              <div className="aspect-[16/10] max-h-36 w-full bg-design-bg overflow-hidden">
+                <img
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4 sm:p-5">
+                <h3 className="text-xl font-semibold text-design-dark mb-3 group-hover:text-unicore-accent transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <p className="text-design-mid font-normal leading-relaxed mb-4">{item.description}</p>
+                <Link
+                  to="/products"
+                  className="inline-flex items-center gap-1 text-unicore-accent font-semibold text-sm group-hover:gap-2 transition-all duration-300"
+                >
+                  Learn more →
+                </Link>
+              </div>
             </div>
           ))}
         </div>

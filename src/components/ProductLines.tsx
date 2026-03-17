@@ -138,7 +138,7 @@ export default function ProductLines() {
         {/* In-section navigation */}
         {/* H2: Our Industrial Product Range */}
         <div id="product-range" className="product-line-item mb-8 sm:mb-10 md:mb-12 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 sm:mb-3">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-2 sm:mb-3">
             Our Industrial Product Range
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
@@ -149,12 +149,12 @@ export default function ProductLines() {
 
         {/* H2: Heavy Duty Industrial Exhaust Fans */}
         <div id="exhaust-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Heavy Duty Industrial Exhaust Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
           <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {exhaustFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
@@ -181,12 +181,12 @@ export default function ProductLines() {
 
         {/* H2: Industrial Pedestal Fans (Farrata Fans) */}
         <div id="pedestal-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Pedestal Fans (Farrata Fans)
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
           <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {pedestalFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
@@ -212,12 +212,12 @@ export default function ProductLines() {
 
         {/* H2: Industrial Air Circulator Fans */}
         <div id="circulator-fans" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Air Circulator Fans
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
           <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {circulatorFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
@@ -242,12 +242,12 @@ export default function ProductLines() {
 
         {/* H2: Industrial Air Coolers */}
         <div id="air-coolers" className="product-line-item mb-6 sm:mb-8 md:mb-10 scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Industrial Air Coolers
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
           <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
                 <img src="https://picsum.photos/seed/thar/600/400" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-cover" />
@@ -300,7 +300,7 @@ export default function ProductLines() {
 
         {/* Bulk Industrial Orders & Distributor Enquiries – Form */}
         <div id="bulk-orders" className="product-line-item scroll-mt-24 sm:scroll-mt-28">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl font-semibold text-design-dark mb-3 sm:mb-4">
             Bulk Industrial Orders & Distributor Enquiries
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-6" />

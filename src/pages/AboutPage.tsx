@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { animate, stagger } from 'animejs';
-import { Target, Eye, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Target, Eye, CheckCircle } from 'lucide-react';
 import Layout from '../components/Layout';
 import ImageTextSection from '../components/ImageTextSection';
 import ImageStrip from '../components/ImageStrip';
@@ -66,6 +66,13 @@ export default function AboutPage() {
     ].filter(Boolean) as HTMLElement[];
     refs.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setOfferIndex((i) => (i >= whatWeOffer.length - 1 ? 0 : i + 1));
+    }, 2000);
+    return () => clearInterval(id);
   }, []);
 
   return (
@@ -196,23 +203,6 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-
-            <button
-              type="button"
-              onClick={() => setOfferIndex((i) => (i <= 0 ? whatWeOffer.length - 1 : i - 1))}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 w-8 h-8 rounded-full bg-white/90 border border-design-border/80 shadow-sm flex items-center justify-center text-design-mid hover:text-unicore-accent hover:border-unicore-accent/50 transition-colors z-10"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              type="button"
-              onClick={() => setOfferIndex((i) => (i >= whatWeOffer.length - 1 ? 0 : i + 1))}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-8 h-8 rounded-full bg-white/90 border border-design-border/80 shadow-sm flex items-center justify-center text-design-mid hover:text-unicore-accent hover:border-unicore-accent/50 transition-colors z-10"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
           </div>
 
           <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mt-6 text-center">

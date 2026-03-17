@@ -40,7 +40,10 @@ export default function ValueProposition() {
     <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="vp-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">Why Choose UNICORE</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
+        <p className="vp-item text-design-mid text-lg font-normal text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          UNICORE is structured to support businesses that require performance, durability, and consistent bulk supply.
+        </p>
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
           {features.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -53,9 +56,6 @@ export default function ValueProposition() {
             );
           })}
         </div>
-        <p className="vp-item text-design-mid text-lg font-normal text-center max-w-3xl mx-auto">
-          UNICORE is structured to support businesses that require performance, durability, and consistent bulk supply.
-        </p>
       </div>
     </section>
   );
