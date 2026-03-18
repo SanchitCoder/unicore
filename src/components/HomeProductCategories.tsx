@@ -1,25 +1,24 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
-import { stockImages } from '../lib/stockImages';
 
 const categories = [
   {
     title: 'Industrial Air Coolers',
     description: 'High-capacity cooling systems engineered for large industrial spaces. Designed for efficient airflow, wide coverage, and durable performance in manufacturing units and warehouses.',
-    imageSrc: stockImages.cooling,
+    imageSrc: '/energy-efficient-cooler.png',
     imageAlt: 'Industrial air coolers',
   },
   {
     title: 'Industrial Fans',
     description: 'Heavy-duty ventilation solutions built for continuous air circulation and reliable operation in industrial and commercial environments.',
-    imageSrc: stockImages.ventilation,
+    imageSrc: '/industrial-coolers-fans.png',
     imageAlt: 'Industrial fans',
   },
   {
     title: 'Commercial Cooling Systems',
     description: 'Advanced cooling and airflow systems developed to support large facilities with consistent and energy-efficient performance.',
-    imageSrc: stockImages.commercial,
+    imageSrc: '/commercial-cooling.png',
     imageAlt: 'Commercial cooling systems',
   },
 ];

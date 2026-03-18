@@ -1,24 +1,76 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
-import { X } from 'lucide-react';
 
 const exhaustFanModels = [
-  { name: 'PURE Air HDEF 12" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '300 mm', blade: 'MS Sheet with Aluminium Hub', power: '90 W', voltage: '220–240 V', imageSrc: 'https://picsum.photos/seed/exhaust1/600/400', imageAlt: 'PURE Air HDEF 12" Exhaust Fan' },
-  { name: 'PURE Air HDEF 15" Industrial Exhaust Fan', speed: '1400 RPM', sweep: '380 mm', power: '145 W', imageSrc: 'https://picsum.photos/seed/exhaust2/600/400', imageAlt: 'PURE Air HDEF 15" Exhaust Fan' },
-  { name: 'PURE Air HDEF 24" Industrial Exhaust Fan', speed: '900 RPM', sweep: '600 mm', power: '600 W', imageSrc: 'https://picsum.photos/seed/exhaust3/600/400', imageAlt: 'PURE Air HDEF 24" Exhaust Fan' },
-  { name: 'SUPREME PLUS Industrial Exhaust Fan', speed: '1360 RPM', sweep: '450 mm', power: '320 W', imageSrc: 'https://picsum.photos/seed/exhaust4/600/400', imageAlt: 'SUPREME PLUS Exhaust Fan' },
+  {
+    name: 'SUPREME PLUS Industrial Exhaust Fan',
+    speed: '1360 RPM',
+    sweep: '450 mm',
+    blade: 'Aluminum Hub with MS Blade',
+    power: '320 W',
+    voltage: 'AC 220 – 240 V, 50 Hz',
+    usage: 'Industrial',
+    blades: '4 Leaf',
+    imageSrc: '/products/supreme-plus/main.jpg',
+    imageAlt: 'SUPREME PLUS industrial exhaust fan',
+  },
 ];
 
 const pedestalFanModels = [
-  { name: 'AIR JET 16" Industrial Pedestal Fan', speed: '2400 RPM', sweep: '400 mm', blade: 'Plastic', power: '105 W', imageSrc: 'https://picsum.photos/seed/pedestal1/600/400', imageAlt: 'AIR JET 16" Pedestal Fan' },
-  { name: 'EURUS PLUS OSC 18" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '450 mm', blade: 'Aluminum', power: '130 W', imageSrc: 'https://picsum.photos/seed/pedestal2/600/400', imageAlt: 'EURUS PLUS OSC 18" Pedestal Fan' },
-  { name: 'SUPER STAR 20" Industrial Pedestal Fan', speed: '1350 RPM', sweep: '500 mm', blade: 'Aluminum', power: '135 W', imageSrc: 'https://picsum.photos/seed/pedestal3/600/400', imageAlt: 'SUPER STAR 20" Pedestal Fan' },
+  {
+    name: 'EURUS 18" WALL (Oscillating)',
+    speed: '1400 rpm',
+    sweep: '450 mm',
+    blade: 'Aluminum Blade (light weight)',
+    power: '105 W',
+    voltage: 'AC 220 – 240 V, 50 Hz',
+    usage: 'Domestic Fans',
+    blades: '3 Leaf',
+    motor: 'Aluminum Windings',
+    imageSrc: '/products/eurus-18/main.jpg',
+    imageAlt: 'EURUS 18 inch wall oscillating fan',
+  },
+  {
+    name: 'SUPER STAR 20" (Non-Oscillating)',
+    speed: '1350 rpm',
+    sweep: '500 mm',
+    blade: 'Aluminum Blade (light weight)',
+    power: '135 W',
+    voltage: 'AC 220 – 240 V, 50 Hz',
+    usage: 'Domestic Fans',
+    blades: '3 Leaf',
+    imageSrc: '/products/super-star-20/main.jpg',
+    imageAlt: 'SUPER STAR 20 inch non-oscillating pedestal fan',
+  },
 ];
 
 const circulatorFanModels = [
-  { name: 'AEROTHRUST 18" Air Circulator Fan', speed: '1400 RPM', power: '150 W', notes: 'Copper winding motor, Aluminum casted blades', imageSrc: 'https://picsum.photos/seed/circ1/600/400', imageAlt: 'AEROTHRUST 18" Circulator Fan' },
-  { name: 'AEROTHRUST 24" Air Circulator Fan', speed: '1400 RPM', power: '200 W', imageSrc: 'https://picsum.photos/seed/circ2/600/400', imageAlt: 'AEROTHRUST 24" Circulator Fan' },
-  { name: 'AEROTHRUST 30" Air Circulator Fan', speed: '1400 RPM', power: '260 W', imageSrc: 'https://picsum.photos/seed/circ3/600/400', imageAlt: 'AEROTHRUST 30" Circulator Fan' },
+  {
+    name: 'AEROTHRUST 18" (Oscillating)',
+    speed: '1400 rpm',
+    sweep: '450 mm',
+    blade: 'Aluminum Casted Blade',
+    power: '105 W',
+    voltage: 'AC 220 – 240 V, 50 Hz',
+    usage: 'Industrial',
+    blades: '3 Leaf',
+    motor: 'Copper Winding',
+    imageSrc: '/products/aerothrust-18/main.jpg',
+    imageAlt: 'AEROTHRUST 18 inch air circulator fan',
+  },
+  {
+    name: 'AEROTHRUST 24" (Oscillating)',
+    speed: '1400 rpm',
+    sweep: '600 mm',
+    blade: 'Aluminum Casted Blade',
+    power: '200 W',
+    voltage: 'AC 220 – 240 V, 50 Hz',
+    usage: 'Industrial',
+    blades: '3 Leaf',
+    motor: 'Copper Winding',
+    imageSrc: '/products/aerothrust-24/main.jpg',
+    imageAlt: 'AEROTHRUST 24 inch air circulator fan',
+  },
 ];
 
 export default function ProductLines() {
@@ -33,28 +85,9 @@ export default function ProductLines() {
     message: '',
   });
   const [bulkFormSubmitted, setBulkFormSubmitted] = useState(false);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [quoteProduct, setQuoteProduct] = useState('');
-  const [quoteFormSubmitted, setQuoteFormSubmitted] = useState(false);
-  const [quoteForm, setQuoteForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-  });
-
-  const openQuoteModal = (productName: string) => {
-    setQuoteProduct(productName);
-    setQuoteFormSubmitted(false);
-    setQuoteForm({ name: '', email: '', phone: '', company: '', message: '' });
-    setQuoteModalOpen(true);
-  };
-
-  const handleQuoteFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setQuoteFormSubmitted(true);
-    setQuoteForm({ name: '', email: '', phone: '', company: '', message: '' });
+  const openProductDetails = (productName: string) => {
+    const url = new URL(`/product-details/${encodeURIComponent(productName)}`, window.location.origin).toString();
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const handleBulkFormSubmit = (e: React.FormEvent) => {
@@ -157,8 +190,8 @@ export default function ProductLines() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {exhaustFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
@@ -167,9 +200,11 @@ export default function ProductLines() {
                     <span>Sweep: {m.sweep}</span>
                     {m.blade && <span className="line-clamp-1">Blade: {m.blade}</span>}
                     <span>Power: {m.power}</span>
-                    {m.voltage && <span>Voltage: {m.voltage}</span>}
+                    {m.voltage && <span>Power Req.: {m.voltage}</span>}
+                    {m.usage && <span>Usage: {m.usage}</span>}
+                    {m.blades && <span>Blades: {m.blades}</span>}
                   </div>
-                  <button type="button" onClick={() => openQuoteModal(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                  <button type="button" onClick={() => openProductDetails(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
                 </div>
               </div>
             ))}
@@ -189,8 +224,8 @@ export default function ProductLines() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {pedestalFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
@@ -199,8 +234,11 @@ export default function ProductLines() {
                     <span>Sweep: {m.sweep}</span>
                     <span>Blade: {m.blade}</span>
                     <span>Power: {m.power}</span>
+                    {m.voltage && <span>Power Req.: {m.voltage}</span>}
+                    {m.usage && <span>Usage: {m.usage}</span>}
+                    {m.blades && <span>Blades: {m.blades}</span>}
                   </div>
-                  <button type="button" onClick={() => openQuoteModal(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                  <button type="button" onClick={() => openProductDetails(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
                 </div>
               </div>
             ))}
@@ -220,17 +258,21 @@ export default function ProductLines() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mb-4">
             {circulatorFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-cover" />
+                <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
                   <div className="grid gap-0.5 text-design-mid text-xs mb-3">
                     <span>Speed: {m.speed}</span>
+                    <span>Sweep: {m.sweep}</span>
+                    {m.blade && <span className="line-clamp-1">Blade: {m.blade}</span>}
                     <span>Power: {m.power}</span>
-                    {m.notes && <span className="line-clamp-1">{m.notes}</span>}
+                    {m.voltage && <span>Power Req.: {m.voltage}</span>}
+                    {m.usage && <span>Usage: {m.usage}</span>}
+                    {m.blades && <span>Blades: {m.blades}</span>}
                   </div>
-                  <button type="button" onClick={() => openQuoteModal(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                  <button type="button" onClick={() => openProductDetails(m.name)} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
                 </div>
               </div>
             ))}
@@ -249,8 +291,8 @@ export default function ProductLines() {
           <h3 className="text-xl font-semibold text-design-dark mb-2">Available Models</h3>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                <img src="https://picsum.photos/seed/thar/600/400" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-cover" />
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                <img src="/energy-efficient-cooler.png" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">THAR Series Industrial Air Coolers</h4>
@@ -260,13 +302,13 @@ export default function ProductLines() {
                   <li>• 800 W • 3 Speed</li>
                 </ul>
                 <p className="text-design-mid text-xs mb-3">Medium-sized factories &amp; workshops.</p>
-                <button type="button" onClick={() => openQuoteModal('THAR Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                <button type="button" onClick={() => openProductDetails('THAR Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                <img src="https://picsum.photos/seed/thunder/600/400" alt="THUNDER Series Industrial Air Coolers" className="w-full h-full object-cover" />
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                <img src="/commercial-cooling.png" alt="THUNDER Series Industrial Air Coolers" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Series Industrial Air Coolers</h4>
@@ -276,13 +318,13 @@ export default function ProductLines() {
                   <li>• 1100–1500 W • 70L Tank</li>
                 </ul>
                 <p className="text-design-mid text-xs mb-3">Large warehouses &amp; manufacturing plants.</p>
-                <button type="button" onClick={() => openQuoteModal('THUNDER Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                <button type="button" onClick={() => openProductDetails('THUNDER Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
-              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg">
-                <img src="https://picsum.photos/seed/thunder-adv/600/400" alt="THUNDER Advanced Industrial Air Coolers" className="w-full h-full object-cover" />
+              <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
+                <img src="/industrial-coolers-fans.png" alt="THUNDER Advanced Industrial Air Coolers" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Advanced Industrial Air Coolers</h4>
@@ -292,7 +334,7 @@ export default function ProductLines() {
                   <li>• 12 Speed • Remote Control</li>
                 </ul>
                 <p className="text-design-mid text-xs mb-3">Large plants, high cooling demand.</p>
-                <button type="button" onClick={() => openQuoteModal('THUNDER Advanced Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Request Quote</button>
+                <button type="button" onClick={() => openProductDetails('THUNDER Advanced Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
           </div>
@@ -395,59 +437,6 @@ export default function ProductLines() {
         </div>
       </div>
     </section>
-
-      {/* Request Quote modal */}
-      {quoteModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-black/50" onClick={() => setQuoteModalOpen(false)} aria-hidden />
-          <div className="relative w-full max-w-md max-h-[90vh] overflow-y-auto rounded-xl bg-white shadow-xl border border-design-border">
-            <div className="sticky top-0 flex items-center justify-between px-4 py-3 border-b border-design-border bg-white rounded-t-xl">
-              <h3 className="text-lg font-semibold text-design-dark">Request Quote</h3>
-              <button type="button" onClick={() => setQuoteModalOpen(false)} className="p-1.5 rounded-lg text-design-mid hover:bg-design-bg hover:text-design-dark transition-colors" aria-label="Close">
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-4">
-              {quoteProduct && (
-                <p className="text-sm text-design-mid mb-4 p-2.5 rounded-lg bg-design-bg">
-                  <span className="font-medium text-design-dark">Product:</span> {quoteProduct}
-                </p>
-              )}
-              {quoteFormSubmitted ? (
-                <div className="py-6 text-center">
-                  <p className="text-design-dark font-medium mb-1">Thank you for your request.</p>
-                  <p className="text-design-mid text-sm mb-4">We’ll get back to you with a quote shortly.</p>
-                  <button type="button" onClick={() => setQuoteModalOpen(false)} className="px-4 py-2 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">Close</button>
-                </div>
-              ) : (
-                <form onSubmit={handleQuoteFormSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="quote-name" className="block text-sm font-medium text-design-dark mb-1.5">Name</label>
-                    <input id="quote-name" type="text" required value={quoteForm.name} onChange={(e) => setQuoteForm((f) => ({ ...f, name: e.target.value }))} className="w-full px-3 py-2.5 rounded-lg border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label htmlFor="quote-email" className="block text-sm font-medium text-design-dark mb-1.5">Email</label>
-                    <input id="quote-email" type="email" required value={quoteForm.email} onChange={(e) => setQuoteForm((f) => ({ ...f, email: e.target.value }))} className="w-full px-3 py-2.5 rounded-lg border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm" placeholder="you@company.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="quote-phone" className="block text-sm font-medium text-design-dark mb-1.5">Phone</label>
-                    <input id="quote-phone" type="tel" value={quoteForm.phone} onChange={(e) => setQuoteForm((f) => ({ ...f, phone: e.target.value }))} className="w-full px-3 py-2.5 rounded-lg border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm" placeholder="Phone number" />
-                  </div>
-                  <div>
-                    <label htmlFor="quote-company" className="block text-sm font-medium text-design-dark mb-1.5">Company</label>
-                    <input id="quote-company" type="text" value={quoteForm.company} onChange={(e) => setQuoteForm((f) => ({ ...f, company: e.target.value }))} className="w-full px-3 py-2.5 rounded-lg border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm" placeholder="Company name" />
-                  </div>
-                  <div>
-                    <label htmlFor="quote-message" className="block text-sm font-medium text-design-dark mb-1.5">Message</label>
-                    <textarea id="quote-message" rows={3} value={quoteForm.message} onChange={(e) => setQuoteForm((f) => ({ ...f, message: e.target.value }))} className="w-full px-3 py-2.5 rounded-lg border border-design-border bg-white text-design-dark placeholder-design-mid/70 focus:outline-none focus:ring-2 focus:ring-unicore-accent/30 focus:border-unicore-accent text-sm resize-y" placeholder="Quantity, specifications, or any questions..." />
-                  </div>
-                  <button type="submit" className="w-full py-2.5 rounded-lg bg-unicore-accent text-white font-medium hover:bg-unicore-accent-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-colors text-sm">Submit Request</button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

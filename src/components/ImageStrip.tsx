@@ -5,9 +5,10 @@ interface ImageStripProps {
   title?: string;
   images: { src: string; alt: string }[];
   className?: string;
+  imageFit?: 'cover' | 'contain';
 }
 
-export default function ImageStrip({ title, images, className = '' }: ImageStripProps) {
+export default function ImageStrip({ title, images, className = '', imageFit = 'cover' }: ImageStripProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export default function ImageStrip({ title, images, className = '' }: ImageStrip
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className={`w-full h-full ${imageFit === 'contain' ? 'object-contain' : 'object-cover'} hover:scale-105 transition-transform duration-500`}
               />
             </div>
           ))}

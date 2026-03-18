@@ -6,6 +6,7 @@ import ProductsPage from './pages/ProductsPage';
 import VentilationPage from './pages/VentilationPage';
 import IndustriesPage from './pages/IndustriesPage';
 import ContactPage from './pages/ContactPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/ventilation" element={<PageTransition><VentilationPage /></PageTransition>} />
           <Route path="/industries" element={<PageTransition><IndustriesPage /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+          <Route path="/product-details/:productId" element={<PageTransition><ProductDetailsPage /></PageTransition>} />
         </Routes>
       </div>
     </BrowserRouter>

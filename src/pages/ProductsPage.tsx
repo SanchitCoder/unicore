@@ -41,8 +41,8 @@ export default function ProductsPage() {
           'Every UNICORE product is designed to withstand continuous operation in demanding environments. From heavy-duty exhaust fans to high-capacity air coolers, we focus on reliability, efficiency, and long service life.',
           'Our range covers ventilation, circulation, and evaporative cooling so you can find the right solution for your facility.',
         ]}
-        imageSrc="https://picsum.photos/seed/products-eng/800/600"
-        imageAlt="Industrial engineering"
+        imageSrc="/industries-we-serve.png"
+        imageAlt="UNICORE industrial solutions"
         imageOnRight={true}
         className="bg-white"
       />

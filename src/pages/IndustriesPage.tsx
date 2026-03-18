@@ -41,9 +41,10 @@ export default function IndustriesPage() {
         paragraphs={[
           'Whether you run a factory, a logistics hub, or a large commercial space, we can support your cooling and ventilation needs with bulk supply and consistent quality.',
         ]}
-        imageSrc="https://picsum.photos/seed/ind-partner/800/600"
+        imageSrc="/industries-we-serve.png"
         imageAlt="Industrial partnership"
         imageOnRight={true}
+        imageFit="contain"
         className="bg-design-bg"
       />
     </Layout>

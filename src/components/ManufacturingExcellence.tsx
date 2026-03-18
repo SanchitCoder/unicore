@@ -1,36 +1,35 @@
 import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
-import { stockImages } from '../lib/stockImages';
 
 const industrySections = [
   {
     title: 'Manufacturing Industries',
     description: 'Factories and manufacturing plants generate significant heat due to machinery and continuous production processes. UNICORE cooling and ventilation systems help improve air circulation, worker comfort, and operational efficiency.',
-    imageSrc: stockImages.manufacturing,
+    imageSrc: '/industrial-coolers-fans.png',
     imageAlt: 'Manufacturing facility',
   },
   {
     title: 'Warehouses & Logistics Centers',
     description: 'Large warehouses require proper ventilation to maintain air circulation and reduce heat buildup. UNICORE solutions help create a more comfortable environment for storage operations and workforce productivity.',
-    imageSrc: stockImages.warehouse,
+    imageSrc: '/commercial-cooling.png',
     imageAlt: 'Warehouse and logistics',
   },
   {
     title: 'Industrial Workshops',
     description: 'Workshops require strong airflow to maintain ventilation and remove heat from machines and tools. UNICORE industrial fans and coolers help maintain consistent airflow across large workshop areas.',
-    imageSrc: stockImages.workshop,
+    imageSrc: '/image.png',
     imageAlt: 'Industrial workshop',
   },
   {
     title: 'Production & Assembly Units',
     description: 'Assembly lines and production areas require controlled airflow to maintain safe working conditions. UNICORE systems provide reliable ventilation and cooling support for continuous operations.',
-    imageSrc: stockImages.equipment,
+    imageSrc: '/energy-efficient-cooler.png',
     imageAlt: 'Production and assembly',
   },
   {
     title: 'Commercial & Institutional Facilities',
     description: 'Large commercial spaces and institutions require efficient cooling and ventilation to maintain indoor comfort. UNICORE products help support high airflow requirements for large enclosed areas.',
-    imageSrc: stockImages.commercial,
+    imageSrc: '/industries-we-serve.png',
     imageAlt: 'Commercial facilities',
   },
 ];
@@ -88,7 +87,7 @@ export default function ManufacturingExcellence() {
                     <img
                       src={item.imageSrc}
                       alt={item.imageAlt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>

@@ -4,14 +4,13 @@ import { Target, Eye, CheckCircle } from 'lucide-react';
 import Layout from '../components/Layout';
 import ImageTextSection from '../components/ImageTextSection';
 import ImageStrip from '../components/ImageStrip';
-import { stockImages } from '../lib/stockImages';
 
 const whatWeOffer = [
-  { title: 'Industrial Air Coolers', imageSrc: stockImages.cooling, imageAlt: 'Industrial air coolers' },
-  { title: 'Heavy Duty Exhaust Fans', imageSrc: stockImages.ventilation, imageAlt: 'Heavy duty exhaust fans' },
-  { title: 'Air Circulator Fans', imageSrc: stockImages.equipment, imageAlt: 'Air circulator fans' },
-  { title: 'Industrial Pedestal Fans', imageSrc: stockImages.workshop, imageAlt: 'Industrial pedestal fans' },
-  { title: 'Ventilation Systems for Industrial Facilities', imageSrc: stockImages.facility, imageAlt: 'Ventilation systems' },
+  { title: 'Industrial Air Coolers', imageSrc: '/energy-efficient-cooler.png', imageAlt: 'Industrial air coolers' },
+  { title: 'Heavy Duty Exhaust Fans', imageSrc: '/industrial-coolers-fans.png', imageAlt: 'Heavy duty exhaust fans' },
+  { title: 'Air Circulator Fans', imageSrc: '/image.png', imageAlt: 'Air circulator fans' },
+  { title: 'Industrial Pedestal Fans', imageSrc: '/commercial-cooling.png', imageAlt: 'Industrial pedestal fans' },
+  { title: 'Ventilation Systems for Industrial Facilities', imageSrc: '/industries-we-serve.png', imageAlt: 'Ventilation systems' },
 ];
 
 const ourApproach = [
@@ -103,9 +102,10 @@ export default function AboutPage() {
           { value: '500+', label: 'Clients' },
           { value: '100%', label: 'Satisfaction' },
         ]}
-        imageSrc="https://picsum.photos/seed/about-expertise/800/600"
+        imageSrc="/commercial-cooling.png"
         imageAlt="Industrial manufacturing facility"
         imageOnRight={true}
+        imageFit="contain"
       />
 
       {/* Mission & Vision */}
@@ -159,9 +159,10 @@ export default function AboutPage() {
         paragraphs={[
           'Our product portfolio is built to handle heat, dust, and long operating hours. Whether you need exhaust fans for ventilation or air coolers for large floors, we deliver equipment that meets industrial standards.',
         ]}
-        imageSrc="https://picsum.photos/seed/about-capabilities/800/600"
+        imageSrc="/energy-efficient-cooler.png"
         imageAlt="Industrial equipment"
         imageOnRight={true}
+        imageFit="contain"
         className="bg-design-bg"
       />
 
@@ -192,7 +193,7 @@ export default function AboutPage() {
                         <img
                           src={item.imageSrc}
                           alt={item.imageAlt}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       <div className="px-3 py-2.5">
@@ -214,11 +215,14 @@ export default function AboutPage() {
       <ImageStrip
         title="UNICORE in Action"
         images={[
-          { src: 'https://picsum.photos/seed/action1/600/400', alt: 'Warehouse' },
-          { src: 'https://picsum.photos/seed/action2/600/400', alt: 'Industrial' },
-          { src: 'https://picsum.photos/seed/action3/600/400', alt: 'Manufacturing' },
+          { src: '/commercial-cooling.png', alt: 'Commercial cooling' },
+          { src: '/industrial-coolers-fans.png', alt: 'Industrial ventilation' },
+          { src: '/energy-efficient-cooler.png', alt: 'Energy efficient cooling' },
+          { src: '/image.png', alt: 'Industrial cooling system' },
+          { src: '/industries-we-serve.png', alt: 'Industries we serve' },
         ]}
         className="bg-white"
+        imageFit="contain"
       />
 
       {/* Our Approach */}

@@ -10,6 +10,7 @@ interface ImageTextSectionProps {
   imageAlt: string;
   imageOnRight?: boolean;
   className?: string;
+  imageFit?: 'cover' | 'contain';
 }
 
 export default function ImageTextSection({
@@ -21,6 +22,7 @@ export default function ImageTextSection({
   imageAlt,
   imageOnRight = true,
   className = '',
+  imageFit = 'cover',
 }: ImageTextSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +35,11 @@ export default function ImageTextSection({
               translateY: { to: 0, from: 24 },
               opacity: { to: 1, from: 0 },
               duration: 550,
-              delay: (el, i) => i * 80,
+              delay: (el, i) => {
+                // Keep `el` referenced to satisfy `noUnusedLocals` under strict TS.
+                void el;
+                return i * 80;
+              },
               ease: 'out-cubic',
             });
           }
@@ -78,7 +84,7 @@ export default function ImageTextSection({
       <img
         src={imageSrc}
         alt={imageAlt}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
       />
     </div>
   );
