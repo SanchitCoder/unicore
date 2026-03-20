@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
@@ -39,7 +38,14 @@ export default function CTA() {
           Get in touch for bulk orders and partnerships.
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
-          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Contact UNICORE Today</Link>
+          <a
+            href="/bulk-orders"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary-large rounded-lg inline-block text-center"
+          >
+            Contact UNICORE Today
+          </a>
         </div>
 
         <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm font-normal">

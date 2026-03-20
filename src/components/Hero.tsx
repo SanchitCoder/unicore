@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
 
 const stats = [
@@ -62,7 +61,14 @@ export default function Hero() {
           UNICORE delivers reliable bulk supply solutions backed by 25+ years of manufacturing expertise.
         </p>
         <div className="hero-text flex justify-center mt-1 sm:mt-0">
-          <Link to="/contact" className="btn-primary-large rounded-lg inline-block text-center">Request Bulk Quote</Link>
+          <a
+            href="/bulk-orders"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary-large rounded-lg inline-block text-center"
+          >
+            Request Bulk Quote
+          </a>
         </div>
       </div>
 

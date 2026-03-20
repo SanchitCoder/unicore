@@ -4,9 +4,9 @@ import IntroLoader from '../components/IntroLoader';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import HomeProductCategories from '../components/HomeProductCategories';
-import ValueProposition from '../components/ValueProposition';
+import HomeAssuranceSection from '../components/HomeAssuranceSection';
+import ProductsIndustryExcellenceSection from '../components/products/ProductsIndustryExcellenceSection';
 import HomeIndustriesSection from '../components/HomeIndustriesSection';
-import BulkOrders from '../components/BulkOrders';
 import CTA from '../components/CTA';
 import Layout from '../components/Layout';
 
@@ -37,9 +37,9 @@ export default function HomePage() {
       <Hero />
       <About />
       <HomeProductCategories />
-      <ValueProposition />
+      <ProductsIndustryExcellenceSection imageSrc="/manufacturing-excellence-home.png" />
+      <HomeAssuranceSection />
       <HomeIndustriesSection />
-      <BulkOrders />
       <CTA />
     </Layout>
   );

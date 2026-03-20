@@ -8,6 +8,7 @@ import VentilationPage from './pages/VentilationPage';
 import IndustriesPage from './pages/IndustriesPage';
 import ContactPage from './pages/ContactPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
+import BulkOrdersPage from './pages/BulkOrdersPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/ventilation" element={<PageTransition><VentilationPage /></PageTransition>} />
           <Route path="/industries" element={<PageTransition><IndustriesPage /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+          <Route path="/bulk-orders" element={<PageTransition><BulkOrdersPage /></PageTransition>} />
           <Route path="/product-details/:productId" element={<PageTransition><ProductDetailsPage /></PageTransition>} />
         </Routes>
       </div>

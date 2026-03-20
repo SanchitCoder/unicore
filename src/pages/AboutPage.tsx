@@ -1,32 +1,44 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
-import { Target, Eye, CheckCircle } from 'lucide-react';
+import { Eye, ShieldCheck, Target, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ImageTextSection from '../components/ImageTextSection';
-import ImageStrip from '../components/ImageStrip';
 
-const whatWeOffer = [
-  { title: 'Industrial Air Coolers', imageSrc: '/energy-efficient-cooler.png', imageAlt: 'Industrial air coolers' },
-  { title: 'Heavy Duty Exhaust Fans', imageSrc: '/industrial-coolers-fans.png', imageAlt: 'Heavy duty exhaust fans' },
-  { title: 'Air Circulator Fans', imageSrc: '/image.png', imageAlt: 'Air circulator fans' },
-  { title: 'Industrial Pedestal Fans', imageSrc: '/commercial-cooling.png', imageAlt: 'Industrial pedestal fans' },
-  { title: 'Ventilation Systems for Industrial Facilities', imageSrc: '/industries-we-serve.png', imageAlt: 'Ventilation systems' },
-];
-
-const ourApproach = [
-  'Collaboration with experienced manufacturers',
-  'High-performance industrial product range',
-  'Bulk supply capability for large facilities',
-  'Reliable product quality and durability',
+const drivesForward = [
+  {
+    title: 'Quality Focus',
+    description:
+      'We collaborate with trusted manufacturing partners to ensure the products we supply meet high standards of performance, durability, and reliability.',
+    Icon: Target,
+  },
+  {
+    title: 'Continuous Improvement',
+    description:
+      'We continuously expand and improve our product range to meet the evolving needs of industrial environments and large-scale facilities.',
+    Icon: Zap,
+  },
+  {
+    title: 'Customer Commitment',
+    description:
+      'We focus on building long-term relationships by providing dependable products, responsive support, and reliable supply for our business partners.',
+    Icon: Eye,
+  },
+  {
+    title: 'Responsible Practices',
+    description:
+      'We work with partners who follow responsible manufacturing practices and industry standards to support sustainable and efficient industrial operations.',
+    Icon: ShieldCheck,
+  },
 ];
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const missionRef = useRef<HTMLDivElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  const offerRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLDivElement>(null);
   const approachRef = useRef<HTMLDivElement>(null);
-  const [offerIndex, setOfferIndex] = useState(0);
+  const infrastructureRef = useRef<HTMLDivElement>(null);
+  const certifiedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (heroRef.current) {
@@ -57,59 +69,62 @@ export default function AboutPage() {
       },
       { threshold: 0.15 }
     );
-    const refs = [
-      missionRef.current,
-      backgroundRef.current,
-      offerRef.current,
-      approachRef.current,
-    ].filter(Boolean) as HTMLElement[];
+
+    const refs = [missionRef.current, approachRef.current, infrastructureRef.current, certifiedRef.current]
+      .filter(Boolean) as HTMLElement[];
+
     refs.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setOfferIndex((i) => (i >= whatWeOffer.length - 1 ? 0 : i + 1));
-    }, 2000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <Layout>
-      {/* Hero - extra top padding on mobile so heading isn't hidden under fixed navbar */}
-      <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-5 sm:px-6 md:px-5 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light to-unicore-accent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(46,203,182,0.12)_0%,transparent_50%)]" aria-hidden />
-        <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto text-center w-full px-2 sm:px-0">
-          <h1 className="about-hero-item text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4 tracking-tight drop-shadow-hero">
-            About UNICORE
-          </h1>
-          <p className="about-hero-item text-lg sm:text-xl md:text-2xl text-white/95 mb-4 sm:mb-5 drop-shadow-hero">
-            Trusted industrial cooling and ventilation solutions for businesses across India
-          </p>
+      {/* Hero */}
+      <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 px-5 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark via-unicore-dark-light/80 to-unicore-accent/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(46,203,182,0.18)_0%,transparent_55%)]" aria-hidden />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-12">
+              <div ref={heroRef} className="max-w-xl">
+                <div className="about-hero-item inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1 text-white/85 text-xs font-semibold tracking-wide mb-3">
+                  ABOUT UNICORE
+                </div>
+                <h1 className="about-hero-item text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 tracking-tight">
+                  25 Years of Manufacturing Excellence
+                </h1>
+                <p className="about-hero-item text-white/95 text-sm sm:text-base md:text-lg mb-5 sm:mb-6">
+                  Since 2000, we have been engineering reliable appliances that power industries and enhance homes worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <ImageTextSection
-        subtitle="About us"
-        title="Built on 25+ Years of Manufacturing Expertise"
-        paragraphs={[
-          'UNICORE brings together decades of industrial manufacturing experience to deliver cooling and ventilation solutions that meet the demands of large-scale operations.',
-          'Our partnership with established manufacturers ensures consistent quality, reliable supply, and products designed for the toughest environments.',
-        ]}
-        stats={[
-          { value: '25+', label: 'Years Experience' },
-          { value: '500+', label: 'Clients' },
-          { value: '100%', label: 'Satisfaction' },
-        ]}
-        imageSrc="/commercial-cooling.png"
-        imageAlt="Industrial manufacturing facility"
-        imageOnRight={true}
-        imageFit="contain"
-      />
+      {/* Our Story */}
+      <div ref={storyRef}>
+        <ImageTextSection
+          subtitle="OUR STORY"
+          title="Building Trust Through Quality Since 2000"
+          paragraphs={[
+            'UNICORE was founded with a singular vision: to manufacture appliances that combine engineering precision with long-term reliability. What started as a small industrial fan manufacturer has grown into a comprehensive solutions provider serving both industrial and residential markets across 50+ countries.',
+            'Our commitment to quality has remained unwavering throughout our 25-year journey. Every product that leaves our facility represents decades of accumulated expertise, continuous innovation, and an uncompromising dedication to customer satisfaction.',
+          ]}
+          imageSrc="/commercial-cooling.png"
+          imageAlt="Industrial manufacturing facility"
+          imageOnRight={true}
+          imageFit="contain"
+        />
+      </div>
 
       {/* Mission & Vision */}
-      <section id="mission-vision" ref={missionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
+      <section
+        id="mission-vision"
+        ref={missionRef}
+        className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-5">
             <div className="about-animate rounded-xl bg-white p-5 sm:p-6 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
@@ -121,6 +136,7 @@ export default function AboutPage() {
                 To provide efficient and dependable industrial cooling solutions that help businesses maintain comfortable and productive working environments.
               </p>
             </div>
+
             <div className="about-animate rounded-xl bg-white p-5 sm:p-6 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-4">
                 <Eye className="w-7 h-7" />
@@ -134,120 +150,178 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Background */}
-      <section id="background" ref={backgroundRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-            Our Background
+      {/* What Drives UNICORE Forward */}
+      <section id="what-drives" className="py-10 sm:py-12 md:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="about-animate text-2xl sm:text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
+            What Drives UNICORE Forward
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
-            UNICORE was established with the vision of simplifying the sourcing of industrial cooling equipment for businesses that require bulk quantities and reliable performance.
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-6" />
+          <p className="about-animate text-design-mid text-sm sm:text-base md:text-lg font-normal leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+            Our approach is guided by strong partnerships, reliable products, and a commitment to supporting industrial businesses with dependable cooling and ventilation solutions.
           </p>
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-4">
-            Through collaboration with experienced manufacturers in the cooling and ventilation industry, UNICORE brings together multiple industrial appliances into a unified product portfolio.
-          </p>
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed">
-            Each product is designed to meet the demanding conditions of industrial environments while maintaining efficiency, durability, and consistent airflow performance.
-          </p>
+
+          <div ref={approachRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 px-1">
+            {drivesForward.map((item, i) => {
+              const Icon = item.Icon;
+              return (
+                <div
+                  key={i}
+                  className="about-animate rounded-2xl border border-design-border/80 bg-white p-4 sm:p-5 hover:border-unicore-accent/40 transition-colors duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5 text-unicore-accent" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-design-dark mb-2">{item.title}</h3>
+                  <p className="text-design-mid text-[0.78rem] sm:text-sm leading-relaxed">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <ImageTextSection
-        subtitle="Capabilities"
-        title="Designed for Demanding Environments"
-        paragraphs={[
-          'Our product portfolio is built to handle heat, dust, and long operating hours. Whether you need exhaust fans for ventilation or air coolers for large floors, we deliver equipment that meets industrial standards.',
-        ]}
-        imageSrc="/energy-efficient-cooler.png"
-        imageAlt="Industrial equipment"
-        imageOnRight={true}
-        imageFit="contain"
-        className="bg-design-bg"
-      />
+      {/* World-Class Manufacturing Infrastructure */}
+      <section ref={infrastructureRef} className="py-12 sm:py-14 px-4 sm:px-5 bg-unicore-dark text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-5">
+              <h2 className="about-animate text-2xl sm:text-3xl font-semibold mb-3">
+                World-Class Manufacturing Infrastructure
+              </h2>
 
-      {/* What We Offer - Carousel */}
-      <section id="what-we-offer" ref={offerRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-            What We Offer
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-6 text-center">
-            UNICORE provides a wide range of industrial cooling and air circulation products, including:
-          </p>
+              <div className="about-animate mb-4">
+                <h3 className="text-lg font-semibold text-white/90 mb-2">Strong Manufacturing Partnerships</h3>
+                <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+                  UNICORE collaborates with established manufacturers equipped with modern production facilities, advanced machinery, and quality testing systems. These partnerships allow us to deliver reliable industrial cooling and ventilation products that meet demanding performance standards.
+                </p>
+              </div>
 
-          <div className="about-animate relative flex justify-center">
-            <div className="overflow-hidden w-full max-w-sm">
-              <div
-                className="flex transition-transform duration-300 ease-out"
-                style={{ transform: `translateX(-${offerIndex * 100}%)` }}
-              >
-                {whatWeOffer.map((item, i) => (
-                  <div
-                    key={i}
-                    className="w-full flex-shrink-0 px-0.5"
-                  >
-                    <div className="rounded-lg overflow-hidden bg-white border border-design-border/80 hover:border-design-mid/50 transition-colors duration-200">
-                      <div className="aspect-[5/3] overflow-hidden bg-design-bg">
-                        <img
-                          src={item.imageSrc}
-                          alt={item.imageAlt}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div className="px-3 py-2.5">
-                        <h3 className="text-sm font-medium text-design-dark leading-snug">{item.title}</h3>
-                      </div>
+              <div className="about-animate">
+                <h3 className="text-lg font-semibold text-white/90 mb-2">Advanced Manufacturing Capabilities</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-white/85">Efficient Production Systems</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-white/85">Quality Testing & Standards</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-white/85">Responsible Production Practices</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+                    <span className="text-sm sm:text-base text-white/85">Scalable Supply Capacity</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="rounded-3xl overflow-hidden bg-white/5 border border-white/10">
+                <div className="p-6 sm:p-7">
+                  <div className="about-animate relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 min-h-[220px]">
+                    <img
+                      src="/industrial-coolers-fans.png"
+                      alt=""
+                      aria-hidden
+                      className="absolute inset-0 w-full h-full object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark via-unicore-dark/30 to-transparent" />
+                    <div className="relative p-6 sm:p-7 flex items-end">
+                      {/* Image-only visual block (no extra copy beyond provided content) */}
                     </div>
                   </div>
-                ))}
+
+                  <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="text-white/90 font-semibold text-sm sm:text-base">Efficient Production Systems</div>
+                    </div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="text-white/90 font-semibold text-sm sm:text-base">Quality Testing & Standards</div>
+                    </div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="text-white/90 font-semibold text-sm sm:text-base">Responsible Production Practices</div>
+                    </div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="text-white/90 font-semibold text-sm sm:text-base">Scalable Supply Capacity</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mt-6 text-center">
-            Our solutions are widely used in factories, warehouses, workshops, and production facilities where maintaining airflow and temperature control is essential.
-          </p>
         </div>
       </section>
 
-      <ImageStrip
-        title="UNICORE in Action"
-        images={[
-          { src: '/commercial-cooling.png', alt: 'Commercial cooling' },
-          { src: '/industrial-coolers-fans.png', alt: 'Industrial ventilation' },
-          { src: '/energy-efficient-cooler.png', alt: 'Energy efficient cooling' },
-          { src: '/image.png', alt: 'Industrial cooling system' },
-          { src: '/industries-we-serve.png', alt: 'Industries we serve' },
-        ]}
-        className="bg-white"
-        imageFit="contain"
-      />
-
-      {/* Our Approach */}
-      <section id="approach" ref={approachRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white scroll-mt-24">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="about-animate text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-            Our Approach
+      {/* Certified Quality Standards */}
+      <section ref={certifiedRef} className="py-12 sm:py-14 px-4 sm:px-5 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="about-animate text-2xl sm:text-3xl font-semibold text-design-dark text-center mb-2">
+            Certified Quality Standards
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-          <p className="about-animate text-lg text-design-mid font-normal leading-relaxed mb-5">
-            UNICORE focuses on delivering reliable cooling and ventilation solutions in bulk quantities to meet the needs of industrial buyers. Our approach includes:
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-10" />
+
+          <p className="about-animate text-design-mid text-sm sm:text-base leading-relaxed max-w-3xl mx-auto text-center mb-8">
+            UNICORE partners with manufacturers who follow internationally recognized quality and safety standards, ensuring reliable performance and consistent product quality.
           </p>
-          <ul className="space-y-4">
-            {ourApproach.map((item, i) => (
-              <li
-                key={i}
-                className="about-animate flex items-center gap-3 p-4 rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.01] transition-all duration-300"
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
+              <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs mb-3">ISO 9001:2015</div>
+              <p className="text-design-mid text-sm leading-relaxed">
+                Products are sourced from manufacturing partners operating under ISO 9001:2015 Quality Management Systems, ensuring consistent production and quality control.
+              </p>
+            </div>
+
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
+              <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs mb-3">ISO 14001:2015</div>
+              <p className="text-design-mid text-sm leading-relaxed">
+                Manufacturing facilities follow ISO 14001:2015 Environmental Management Systems, supporting responsible and sustainable production practices.
+              </p>
+            </div>
+
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
+              <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs mb-3">CE &amp; UL Compliance</div>
+              <p className="text-design-mid text-sm leading-relaxed">
+                Selected products comply with internationally recognized CE and UL safety standards, ensuring reliable performance and safety for industrial applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner With Industry Leaders */}
+      <section className="py-12 sm:py-14 px-4 sm:px-5 bg-gradient-to-r from-unicore-dark via-unicore-dark-light to-unicore-accent/30 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 text-center">
+            <h2 className="about-animate text-2xl sm:text-4xl font-semibold leading-tight">
+              Partner With Industry Leaders
+            </h2>
+            <p className="about-animate mt-3 text-white/80 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Join thousands of satisfied customers who trust UNICORE for their appliance needs
+            </p>
+
+            <div className="about-animate mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="/bulk-orders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-unicore-accent px-10 py-3 sm:px-12 sm:py-4 text-white font-semibold shadow-btn hover:bg-unicore-accent-hover transition-colors"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-unicore-accent flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-design-mid font-medium">{item}</span>
-              </li>
-            ))}
-          </ul>
+                Get in Touch
+              </a>
+              <Link
+                to="/products"
+                className="rounded-full border border-white/50 bg-transparent px-10 py-3 sm:px-12 sm:py-4 text-white font-semibold hover:bg-white/10 transition-colors"
+              >
+                View Products
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
