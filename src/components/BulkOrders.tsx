@@ -41,7 +41,11 @@ export default function BulkOrders() {
   };
 
   return (
-    <section id="bulk-orders" ref={sectionRef} className="py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-5 bg-design-bg">
+    <section
+      id="bulk-orders"
+      ref={sectionRef}
+      className="pt-24 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-4 sm:px-5 bg-design-bg"
+    >
       <div className="max-w-2xl mx-auto">
         <h2 className="bulk-item text-3xl md:text-4xl font-bold text-design-dark mb-3 text-center tracking-tight">
           Bulk Orders & Distributor Opportunities
