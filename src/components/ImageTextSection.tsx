@@ -11,6 +11,9 @@ interface ImageTextSectionProps {
   imageOnRight?: boolean;
   className?: string;
   imageFit?: 'cover' | 'contain';
+  subtitleClassName?: string;
+  titleClassName?: string;
+  paragraphClassName?: string;
 }
 
 export default function ImageTextSection({
@@ -23,6 +26,9 @@ export default function ImageTextSection({
   imageOnRight = true,
   className = '',
   imageFit = 'cover',
+  subtitleClassName = '',
+  titleClassName = '',
+  paragraphClassName = '',
 }: ImageTextSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -54,15 +60,22 @@ export default function ImageTextSection({
   const textBlock = (
     <div className="flex flex-col justify-center">
       {subtitle && (
-        <p className="img-txt-item text-sm font-semibold uppercase tracking-wider text-unicore-accent mb-2">
+        <p
+          className={`img-txt-item text-sm font-semibold uppercase tracking-wider text-unicore-accent mb-2 ${subtitleClassName}`.trim()}
+        >
           {subtitle}
         </p>
       )}
-      <h2 className="img-txt-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4 tracking-tight">
+      <h2
+        className={`img-txt-item text-xl sm:text-2xl md:text-3xl font-bold text-design-dark mb-3 sm:mb-4 tracking-tight ${titleClassName}`.trim()}
+      >
         {title}
       </h2>
       {paragraphs.map((p, i) => (
-        <p key={i} className="img-txt-item text-design-mid text-sm sm:text-base font-normal leading-relaxed mb-2 sm:mb-3">
+        <p
+          key={i}
+          className={`img-txt-item text-design-mid text-sm sm:text-base font-normal leading-relaxed mb-2 sm:mb-3 ${paragraphClassName}`.trim()}
+        >
           {p}
         </p>
       ))}

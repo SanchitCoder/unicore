@@ -26,7 +26,7 @@ export default function ProductsCatalogHero() {
           </p>
         </div>
 
-        <div className="relative z-10 mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+        <div className="relative z-10 mt-8 hidden sm:flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-full px-4 py-2">
             <span className="w-2 h-2 rounded-full bg-unicore-accent" />
             <span className="w-2 h-2 rounded-full bg-white/40" />

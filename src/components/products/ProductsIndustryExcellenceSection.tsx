@@ -33,7 +33,7 @@ export default function ProductsIndustryExcellenceSection({
   imageSrc?: string;
 }) {
   return (
-    <section className="py-14 sm:py-16 bg-white">
+    <section className="pt-4 pb-8 sm:py-14 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-5">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: image */}
@@ -54,7 +54,7 @@ export default function ProductsIndustryExcellenceSection({
 
           {/* Right: cards */}
           <div className="w-full lg:w-[48%]">
-            <p className="text-design-mid text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-design-mid text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed text-left">
               State-of-the-art facilities equipped with advanced automation and precision machinery, backed by decades of engineering expertise and continuous innovation.
             </p>
 
@@ -62,7 +62,7 @@ export default function ProductsIndustryExcellenceSection({
               {points.map((p) => (
                 <div
                   key={p.no}
-                  className="relative rounded-2xl bg-white shadow-card p-5 sm:p-6"
+                  className="relative rounded-2xl bg-white shadow-card p-5 sm:p-6 text-left"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-unicore-accent flex items-center justify-center text-white text-sm font-semibold flex-shrink-0">
@@ -79,7 +79,7 @@ export default function ProductsIndustryExcellenceSection({
                     </div>
                   </div>
 
-                  <div className="absolute top-5 right-5 text-unicore-accent">
+                  <div className="hidden sm:block absolute top-5 right-5 text-unicore-accent">
                     <ArrowRight className="w-5 h-5" />
                   </div>
                 </div>
