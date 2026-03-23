@@ -23,7 +23,7 @@ export default function Footer() {
     <footer className="bg-unicore-dark text-white w-full max-w-full min-w-0 overflow-x-hidden border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-8 sm:py-14 md:py-16 min-w-0">
         {/* Mobile: brand full width; Company | Get in touch side-by-side. lg: 3 equal columns */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-10 mb-6 sm:mb-10">
+        <div className="grid grid-cols-2 items-start gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-10 mb-6 sm:mb-10">
           <div className="col-span-2 sm:col-span-2 lg:col-span-1 max-sm:text-center">
             <Link
               to="/"
@@ -40,24 +40,24 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="min-w-0 col-span-1 max-sm:text-left max-sm:justify-self-start max-sm:w-full">
+          <div className="min-w-0 col-span-1 max-sm:text-left max-sm:justify-self-start max-sm:w-full max-sm:flex max-sm:flex-col max-sm:items-start max-sm:col-start-1">
             <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.16em] max-sm:tracking-[0.12em] whitespace-nowrap text-white/50 mb-3 sm:text-[0.8rem] sm:tracking-widest sm:text-white/60 sm:mb-3.5 sm:text-left max-sm:self-start text-left w-full">
               Company
             </h4>
-            <ul className="space-y-2 sm:space-y-2.5 text-left pl-0">
+            <ul className="space-y-2 sm:space-y-2.5 text-left pl-0 w-full">
               {companyLinks.map((item, i) => (
                 <li key={i}>
                   {item.to === '#' ? (
                     <a
                       href="#"
-                      className="text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
+                      className="block text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       to={item.to}
-                      className="text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
+                      className="block text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
                     >
                       {item.label}
                     </Link>
@@ -67,16 +67,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="min-w-0 col-span-1 max-sm:text-left max-sm:justify-self-start max-sm:w-full">
+          <div className="min-w-0 col-span-1 max-sm:text-left max-sm:justify-self-start max-sm:w-full max-sm:flex max-sm:flex-col max-sm:items-start max-sm:col-start-2">
             <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.16em] max-sm:tracking-[0.12em] whitespace-nowrap text-white/50 mb-3 sm:text-[0.8rem] sm:tracking-widest sm:text-white/60 sm:mb-3.5 sm:text-left max-sm:self-start text-left w-full">
               Products
             </h4>
-            <ul className="space-y-2 sm:space-y-2.5 text-left pl-0">
+            <ul className="space-y-2 sm:space-y-2.5 text-left pl-0 w-full">
               {productsLinks.map((item, i) => (
                 <li key={i}>
                   <Link
                     to={item.to}
-                    className="text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
+                    className="block text-white/70 hover:text-white text-sm font-normal leading-snug sm:text-base sm:text-white/80"
                   >
                     {item.label}
                   </Link>
