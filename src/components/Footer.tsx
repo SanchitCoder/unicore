@@ -41,10 +41,10 @@ export default function Footer() {
           </div>
 
           <div className="min-w-0 col-span-1 max-sm:text-left max-sm:justify-self-start max-sm:w-full max-sm:flex max-sm:flex-col max-sm:items-start max-sm:col-start-1">
-            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.16em] max-sm:tracking-[0.12em] whitespace-nowrap text-white/50 mb-3 sm:text-[0.8rem] sm:tracking-widest sm:text-white/60 sm:mb-3.5 sm:text-left max-sm:self-start text-left w-full">
+            <h4 className="text-[0.7rem] font-medium uppercase tracking-[0.16em] max-sm:tracking-[0.12em] whitespace-nowrap text-white/50 mb-3 sm:text-[0.8rem] sm:tracking-widest sm:text-white/60 sm:mb-3.5 sm:text-left max-sm:self-start max-sm:mr-auto text-left w-full">
               Company
             </h4>
-            <ul className="space-y-2 sm:space-y-2.5 text-left pl-0 w-full">
+            <ul className="space-y-2 sm:space-y-2.5 text-left list-none m-0 p-0 w-full">
               {companyLinks.map((item, i) => (
                 <li key={i}>
                   {item.to === '#' ? (

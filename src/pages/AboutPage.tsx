@@ -121,14 +121,14 @@ export default function AboutPage() {
             'UNICORE was founded with a singular vision: to manufacture appliances that combine engineering precision with long-term reliability. What started as a small industrial fan manufacturer has grown into a comprehensive solutions provider serving both industrial and residential markets across 50+ countries.',
             'Our commitment to quality has remained unwavering throughout our 25-year journey. Every product that leaves our facility represents decades of accumulated expertise, continuous innovation, and an uncompromising dedication to customer satisfaction.',
           ]}
-          subtitleClassName="text-xs sm:text-sm tracking-wider"
-          titleClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight"
-          paragraphClassName="text-sm sm:text-base leading-relaxed"
-          className="py-6 sm:py-8 md:py-10 lg:py-12"
+          subtitleClassName="text-xs sm:text-sm tracking-[0.2em] font-semibold text-unicore-accent/95"
+          titleClassName="text-[1.7rem] sm:text-3xl md:text-4xl lg:text-5xl leading-[1.12] max-w-[26rem]"
+          paragraphClassName="text-[0.95rem] sm:text-base leading-7 sm:leading-relaxed text-design-mid/95"
+          className="py-5 sm:py-7 md:py-10 lg:py-12"
           imageSrc="/commercial-cooling.png"
           imageAlt="Industrial manufacturing facility"
           imageOnRight={true}
-          imageFit="contain"
+          imageFit="cover"
         />
       </div>
 
@@ -141,7 +141,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="about-animate rounded-xl bg-white p-3 sm:p-5 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-2">
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-1 sm:mb-2">
                 <Target className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-design-dark mb-1.5 text-center sm:text-left">Our Mission</h3>
@@ -150,12 +150,12 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="about-animate rounded-xl bg-white p-3 sm:p-5 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-2">
+            <div className="about-animate rounded-xl bg-unicore-accent/20 p-3 sm:p-5 border border-unicore-accent/40 hover:bg-unicore-accent/25 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-unicore-dark mb-1 sm:mb-2">
                 <Eye className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-design-dark mb-1.5 text-center sm:text-left">Our Vision</h3>
-              <p className="text-design-mid text-sm sm:text-base font-normal leading-relaxed text-center sm:text-left">
+              <h3 className="text-lg sm:text-xl font-semibold text-unicore-dark mb-1.5 text-center sm:text-left">Our Vision</h3>
+              <p className="text-unicore-dark/90 text-sm sm:text-base font-normal leading-relaxed text-center sm:text-left">
                 To become a trusted supplier of industrial cooling and ventilation equipment across India, supporting manufacturing units and commercial facilities with high-quality products.
               </p>
             </div>
