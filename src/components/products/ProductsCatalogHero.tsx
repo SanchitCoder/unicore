@@ -1,14 +1,15 @@
 export default function ProductsCatalogHero() {
   return (
-    <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-unicore-dark via-unicore-dark-light/80 to-unicore-accent/30" />
+    <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pb-16 overflow-hidden min-h-[min(88vw,380px)] sm:min-h-[min(52vw,440px)]">
       <img
-        src="/industrial-coolers-fans.png"
+        src="/our-product-banner.png"
         alt=""
         aria-hidden
-        className="absolute inset-0 w-full h-full object-cover opacity-15"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(46,203,182,0.25)_0%,transparent_55%)]" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark/95 via-unicore-dark/55 to-transparent sm:from-unicore-dark/90 sm:via-unicore-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark/80 via-transparent to-unicore-dark/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(46,203,182,0.18)_0%,transparent_55%)]" aria-hidden />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-5">
         <div className="max-w-2xl">

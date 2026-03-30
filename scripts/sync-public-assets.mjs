@@ -1,0 +1,49 @@
+/**
+ * Copies marketing/product images from the repo root into `public/` so Vite
+ * serves them at `/filename` in dev and production. Safe to run on CI when
+ * root sources are absent (skips missing files; `public/` remains the source of truth).
+ */
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(__dirname, '..');
+const pub = path.join(root, 'public');
+
+/** [source filename in repo root, destination filename in public/] */
+const ROOT_TO_PUBLIC = [
+  ['About Us top.png', 'about-us-top.png'],
+  ['Exhaust Fan.png', 'exhaust-fan.png'],
+  ['Industrial Coolers.png', 'industrial-coolers-banner.png'],
+  ['Industrial Fan.png', 'industrial-fan.png'],
+  ['Our Product banner.png', 'our-product-banner.png'],
+  ['Airmaxxx.png', 'Airmaxxx.png'],
+  ['Building-hero.png', 'Building-hero.png'],
+  ['CoolBreeze.png', 'CoolBreeze.png'],
+  ['Glacier.png', 'Glacier.png'],
+  ['Manufacturing Industries.jpeg', 'manufacturing-industries.jpeg'],
+  ['Production Unit.jpeg', 'production-unit.jpeg'],
+  ['Warehouses.jpg', 'warehouses.jpg'],
+  ['Workshop.webp', 'workshop.webp'],
+];
+
+if (!fs.existsSync(pub)) {
+  fs.mkdirSync(pub, { recursive: true });
+}
+
+let synced = 0;
+for (const [fromName, toName] of ROOT_TO_PUBLIC) {
+  const from = path.join(root, fromName);
+  const to = path.join(pub, toName);
+  if (!fs.existsSync(from)) continue;
+  fs.copyFileSync(from, to);
+  synced += 1;
+  console.log(`[sync-public-assets] ${fromName} → public/${toName}`);
+}
+
+if (synced === 0) {
+  console.log('[sync-public-assets] No root image sources found; using existing public/ assets.');
+} else {
+  console.log(`[sync-public-assets] Synced ${synced} file(s).`);
+}

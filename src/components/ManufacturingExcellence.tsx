@@ -5,25 +5,25 @@ const industrySections = [
   {
     title: 'Manufacturing Industries',
     description: 'Factories and manufacturing plants generate significant heat due to machinery and continuous production processes. UNICORE cooling and ventilation systems help improve air circulation, worker comfort, and operational efficiency.',
-    imageSrc: '/industrial-coolers-fans.png',
+    imageSrc: '/manufacturing-industries.jpeg',
     imageAlt: 'Manufacturing facility',
   },
   {
     title: 'Warehouses & Logistics Centers',
     description: 'Large warehouses require proper ventilation to maintain air circulation and reduce heat buildup. UNICORE solutions help create a more comfortable environment for storage operations and workforce productivity.',
-    imageSrc: '/commercial-cooling.png',
+    imageSrc: '/warehouses.jpg',
     imageAlt: 'Warehouse and logistics',
   },
   {
     title: 'Industrial Workshops',
     description: 'Workshops require strong airflow to maintain ventilation and remove heat from machines and tools. UNICORE industrial fans and coolers help maintain consistent airflow across large workshop areas.',
-    imageSrc: '/image.png',
+    imageSrc: '/workshop.webp',
     imageAlt: 'Industrial workshop',
   },
   {
     title: 'Production & Assembly Units',
     description: 'Assembly lines and production areas require controlled airflow to maintain safe working conditions. UNICORE systems provide reliable ventilation and cooling support for continuous operations.',
-    imageSrc: '/energy-efficient-cooler.png',
+    imageSrc: '/production-unit.jpeg',
     imageAlt: 'Production and assembly',
   },
   {

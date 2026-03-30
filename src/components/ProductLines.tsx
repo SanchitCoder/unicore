@@ -283,49 +283,49 @@ export default function ProductLines() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/energy-efficient-cooler.png" alt="THAR Series Industrial Air Coolers" className="w-full h-full object-contain" />
+                <img src="/Airmaxxx.png" alt="AirMaxx industrial air cooler" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
-                <h4 className="font-semibold text-design-dark text-sm mb-1">THAR Series Industrial Air Coolers</h4>
-                <p className="text-design-mid text-xs mb-2">THAR 800, THAR 1100</p>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">AirMaxx</h4>
+                <p className="text-design-mid text-xs mb-2">19&quot; centrifugal • 4800 CMH</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-3">
-                  <li>• Airflow: Up to 12,000 CMH</li>
-                  <li>• 800 W • 3 Speed</li>
+                  <li>• 120 L tank • Cu motor</li>
+                  <li>• 880 × 630 × 1480 mm</li>
                 </ul>
-                <p className="text-design-mid text-xs mb-3">Medium-sized factories &amp; workshops.</p>
-                <button type="button" onClick={() => openProductDetails('THAR Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
+                <p className="text-design-mid text-xs mb-3">Factories, warehouses &amp; workshops.</p>
+                <button type="button" onClick={() => openProductDetails('AirMaxx')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/commercial-cooling.png" alt="THUNDER Series Industrial Air Coolers" className="w-full h-full object-contain" />
+                <img src="/CoolBreeze.png" alt="CoolBreeze industrial air cooler" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
-                <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Series Industrial Air Coolers</h4>
-                <p className="text-design-mid text-xs mb-2">THUNDER 1100, THUNDER 1500</p>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">CoolBreeze</h4>
+                <p className="text-design-mid text-xs mb-2">20&quot; centrifugal • 60 ft throw</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-3">
-                  <li>• Airflow: Up to 23,000 CMH</li>
-                  <li>• 1100–1500 W • 70L Tank</li>
+                  <li>• 135 L tank • Al motor 1350 RPM</li>
+                  <li>• 825 × 596 × 1370 mm</li>
                 </ul>
-                <p className="text-design-mid text-xs mb-3">Large warehouses &amp; manufacturing plants.</p>
-                <button type="button" onClick={() => openProductDetails('THUNDER Series Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
+                <p className="text-design-mid text-xs mb-3">Large industrial &amp; commercial spaces.</p>
+                <button type="button" onClick={() => openProductDetails('CoolBreeze')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/industrial-coolers-fans.png" alt="THUNDER Advanced Industrial Air Coolers" className="w-full h-full object-contain" />
+                <img src="/Glacier.png" alt="Glacier industrial air cooler" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
-                <h4 className="font-semibold text-design-dark text-sm mb-1">THUNDER Advanced Industrial Air Coolers</h4>
-                <p className="text-design-mid text-xs mb-2">1100A, 1500A, 2200A, 3000A</p>
+                <h4 className="font-semibold text-design-dark text-sm mb-1">Glacier</h4>
+                <p className="text-design-mid text-xs mb-2">30&quot; centrifugal • 200 L tank</p>
                 <ul className="list-none space-y-0.5 text-design-mid text-xs mb-3">
-                  <li>• Airflow: Up to 30,000 CMH</li>
-                  <li>• 12 Speed • Remote Control</li>
+                  <li>• Premium matte finish body</li>
+                  <li>• 1140 × 745 × 1840 mm</li>
                 </ul>
-                <p className="text-design-mid text-xs mb-3">Large plants, high cooling demand.</p>
-                <button type="button" onClick={() => openProductDetails('THUNDER Advanced Industrial Air Coolers')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
+                <p className="text-design-mid text-xs mb-3">Large facilities &amp; high cooling demand.</p>
+                <button type="button" onClick={() => openProductDetails('Glacier')} className="block w-full text-center py-2 px-3 rounded-lg bg-unicore-accent text-white text-sm font-medium hover:bg-unicore-accent-hover transition-colors">View Details</button>
               </div>
             </div>
           </div>

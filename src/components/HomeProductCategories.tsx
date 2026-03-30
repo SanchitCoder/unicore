@@ -38,9 +38,9 @@ export default function HomeProductCategories() {
           {/* Big card */}
           <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square">
             <img
-              src="/energy-efficient-cooler.png"
+              src="/industrial-coolers-banner.png"
               alt="Industrial Air Coolers"
-              className="absolute inset-0 w-full h-full object-cover opacity-90"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark/95 via-unicore-dark/30 to-transparent" />
 
@@ -51,12 +51,12 @@ export default function HomeProductCategories() {
               <h3 className="text-white text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem]">
                 Industrial Air Coolers
               </h3>
-              <p className="text-white/85 text-xs sm:text-base leading-relaxed mt-2 sm:mt-3 line-clamp-2 sm:line-clamp-3">
+              <p className="text-white/85 text-xs sm:text-base leading-relaxed mt-2 sm:mt-3">
                 High-capacity cooling systems designed for factories, warehouses, and large industrial spaces. Built for powerful airflow, wide coverage, and reliable performance in demanding environments.
               </p>
               <div className="mt-3 sm:mt-6">
                 <Link
-                  to="/products"
+                  to="/products?tab=coolers"
                   className="inline-flex items-center gap-2 font-semibold text-sm sm:text-base text-unicore-accent hover:text-unicore-accent/90 transition-colors"
                 >
                   Learn more →
@@ -72,23 +72,23 @@ export default function HomeProductCategories() {
               <div className="flex flex-col sm:flex-row h-full">
                 <div className="w-full sm:w-5/12 bg-design-bg overflow-hidden sm:h-full sm:p-4 p-3 aspect-[16/9] sm:aspect-[4/3] flex items-center justify-center">
                   <img
-                    src="/industrial-coolers-fans.png"
-                    alt="Exhaust fans"
+                    src="/industrial-fan.png"
+                    alt="Industrial fans"
                     className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col">
                   <div className="text-unicore-accent uppercase tracking-widest text-xs font-semibold mb-2">
-                    Exhaust Fans
+                    Industrial Fans
                   </div>
                   <h4 className="text-design-dark font-bold text-[0.95rem] sm:text-lg md:text-xl mb-1.5 sm:mb-2 group-hover:text-unicore-accent transition-colors">
-                    Exhaust Fans
+                    Industrial Fans
                   </h4>
-                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
-                    Industrial exhaust fans designed to remove heat, smoke, dust, and humidity from large facilities. Built to ensure effective ventilation and improved air quality in demanding environments.
+                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
+                    Heavy-duty fans engineered for strong air circulation in industrial and commercial environments. Designed for continuous operation and efficient airflow across large spaces.
                   </p>
                   <Link
-                    to="/products"
+                    to="/products?tab=circulators"
                     className="inline-flex items-center gap-2 text-unicore-accent font-semibold text-xs sm:text-sm mt-auto"
                   >
                     Learn More →
@@ -102,8 +102,8 @@ export default function HomeProductCategories() {
               <div className="flex flex-col sm:flex-row h-full">
                 <div className="w-full sm:w-5/12 bg-design-bg overflow-hidden sm:h-full sm:p-4 p-3 aspect-[16/9] sm:aspect-[4/3] flex items-center justify-center">
                   <img
-                    src="/industrial-coolers-fans.png"
-                    alt="Exhaust fans"
+                    src="/exhaust-fan.png"
+                    alt="Industrial exhaust fans"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -114,11 +114,11 @@ export default function HomeProductCategories() {
                   <h4 className="text-design-dark font-bold text-[0.95rem] sm:text-lg md:text-xl mb-1.5 sm:mb-2 group-hover:text-unicore-accent transition-colors">
                     Exhaust Fans
                   </h4>
-                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
+                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                     Industrial exhaust fans designed to remove heat, smoke, dust, and humidity from large facilities. Built to ensure effective ventilation and improved air quality in demanding environments.
                   </p>
                   <Link
-                    to="/products"
+                    to="/products?tab=exhaust"
                     className="inline-flex items-center gap-2 text-unicore-accent font-semibold text-xs sm:text-sm mt-auto"
                   >
                     Learn More →

@@ -3,27 +3,21 @@ import { ArrowRight } from 'lucide-react';
 const points = [
   {
     no: '01',
-    title: 'Advanced CNC Machining',
+    title: 'Trusted Manufacturing Partnerships',
     description:
-      'Computer-controlled precision manufacturing for consistent quality and tight tolerances.',
+      'UNICORE collaborates with experienced manufacturers specializing in industrial cooling and ventilation equipment to deliver reliable solutions for large-scale applications.',
   },
   {
     no: '02',
-    title: 'Automated Assembly Lines',
+    title: 'Quality Assured Products',
     description:
-      'Streamlined production processes ensuring efficiency and reliability at scale.',
+      'All products supplied through UNICORE undergo strict quality standards to ensure reliable performance, durability, and efficiency in demanding industrial environments.',
   },
   {
     no: '03',
-    title: 'Rigorous Quality Testing',
+    title: 'Reliable Supply Network',
     description:
-      'Multi-stage inspection protocols verifying performance before shipment.',
-  },
-  {
-    no: '04',
-    title: 'Energy Efficiency Standards',
-    description:
-      'Sustainable design principles reduce environmental impact and operating costs.',
+      'UNICORE enables businesses to source industrial cooling equipment efficiently for large-scale and project-based requirements.',
   },
 ] as const;
 
@@ -39,14 +33,14 @@ export default function ProductsIndustryExcellenceSection({
           {/* Left: image */}
           <div className="w-full lg:w-[52%]">
             <h2 className="text-[2.3rem] sm:text-[2.8rem] leading-[1.05] font-bold text-design-dark mb-8">
-              <span className="block">Manufacturing</span>
-              <span className="block">Excellence</span>
+              <span className="block">Strong Manufacturing</span>
+              <span className="block">Partnerships</span>
             </h2>
 
             <div className="rounded-[26px] border-[12px] border-unicore-dark/40 overflow-hidden shadow-card">
               <img
                 src={imageSrc}
-                alt="Manufacturing Excellence"
+                alt="Strong manufacturing partnerships"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -55,7 +49,7 @@ export default function ProductsIndustryExcellenceSection({
           {/* Right: cards */}
           <div className="w-full lg:w-[48%]">
             <p className="text-design-mid text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed text-left">
-              State-of-the-art facilities equipped with advanced automation and precision machinery, backed by decades of engineering expertise and continuous innovation.
+              UNICORE combines trusted manufacturing partners, rigorous quality assurance, and a responsive supply network to deliver industrial cooling and ventilation solutions at scale.
             </p>
 
             <div className="space-y-4 sm:space-y-5">

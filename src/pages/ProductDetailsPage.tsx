@@ -38,6 +38,7 @@ export default function ProductDetailsPage() {
         description: string[];
         specs: Spec[];
         images: string[];
+        features?: string[];
       }
     > = {
       'SUPREME PLUS Industrial Exhaust Fan': {
@@ -175,47 +176,84 @@ export default function ProductDetailsPage() {
           '/products/aerothrust-24/7.jpg',
         ],
       },
-      'THAR Series Industrial Air Coolers': {
-        title: 'THAR Series Industrial Air Coolers',
+      AirMaxx: {
+        title: 'AirMaxx',
         category: 'Industrial Air Coolers',
         description: [
-          'THAR series is designed for efficient cooling and dependable airflow in factories and workshops.',
-          'With a multi-speed setup, it helps maintain comfortable working conditions while supporting long-term operation.',
+          'AirMaxx pairs a 19" centrifugal fan with honeycomb cooling media for powerful, consistent airflow in factories, warehouses, and workshops.',
+          'Anti-rust construction, heavy-duty castors, and a 120 L tank support dependable day-to-day industrial use.',
         ],
         specs: [
-          { label: 'Airflow', value: 'Up to 12,000 CMH' },
-          { label: 'Power', value: '800 W' },
-          { label: 'Speed', value: '3 Speed' },
+          { label: 'Fan Type', value: '19" Centrifugal blade, 4 leaf' },
+          { label: 'Air Flow', value: '4800 CMH' },
+          { label: 'Water Tank Capacity', value: '120 L' },
+          { label: 'Motor Type', value: 'Cu Motor' },
+          { label: 'Product Dimensions (mm)', value: '880L × 630W × 1480H' },
         ],
-        images: ['/energy-efficient-cooler.png'],
+        images: ['/Airmaxxx.png'],
+        features: [
+          '19" FAN - POWERFUL AIR DELIVERY',
+          'ANTI RUST VIRGIN - STURDY BODY',
+          'HEAVY DUTY CASTOR WHEELS',
+          'WATER LEVEL INDICATOR',
+          'ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
+          'FITTED WITH UNIFLOW PUMP',
+          'COMFORT COOLING',
+          'LOW NOISE',
+          'EASY DRAIN',
+        ],
       },
-      'THUNDER Series Industrial Air Coolers': {
-        title: 'THUNDER Series Industrial Air Coolers',
+      CoolBreeze: {
+        title: 'CoolBreeze',
         category: 'Industrial Air Coolers',
         description: [
-          'THUNDER series provides high-capacity cooling for larger spaces like warehouses and manufacturing plants.',
-          'It is built for stable performance and effective airflow across big work environments.',
+          'CoolBreeze delivers a 20" centrifugal airflow pattern with strong air throw for large industrial and commercial spaces.',
+          'Three-side honeycomb pads and a 135 L tank help maintain effective cooling during continuous operation.',
         ],
         specs: [
-          { label: 'Airflow', value: 'Up to 23,000 CMH' },
-          { label: 'Power', value: '1100–1500 W' },
-          { label: 'Tank', value: '70L' },
+          { label: 'Fan Type', value: '20" Centrifugal blade, 4 leaf' },
+          { label: 'Air Throw', value: '60 ft' },
+          { label: 'Water Tank Capacity', value: '135 ltr' },
+          { label: 'Motor Type', value: 'Al Motor, 1350 RPM' },
+          { label: 'Product Dimensions (mm)', value: '825L × 596W × 1370H' },
         ],
-        images: ['/commercial-cooling.png'],
+        images: ['/CoolBreeze.png'],
+        features: [
+          '20" FAN - POWERFUL AIR DELIVERY',
+          'STURDY BODY',
+          'HEAVY DUTY CASTOR WHEELS',
+          'WATER LEVEL INDICATOR',
+          '3 SIDE ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
+          'FITTED WITH UNIFLOW PUMP',
+          'COMFORT COOLING',
+          'LOW NOISE',
+          'EASY DRAIN',
+        ],
       },
-      'THUNDER Advanced Industrial Air Coolers': {
-        title: 'THUNDER Advanced Industrial Air Coolers',
+      Glacier: {
+        title: 'Glacier',
         category: 'Industrial Air Coolers',
         description: [
-          'THUNDER Advanced is engineered for higher cooling demands in large industrial settings.',
-          'The extended speed range and remote control option make it easier to optimize airflow during operation.',
+          'Glacier is built around a 30" centrifugal fan for high-volume cooling in the largest industrial layouts.',
+          'Premium matte finish, 200 L capacity, and rugged mobility make it suited to demanding, project-scale requirements.',
         ],
         specs: [
-          { label: 'Airflow', value: 'Up to 30,000 CMH' },
-          { label: 'Speed', value: '12 Speed' },
-          { label: 'Control', value: 'Remote Control' },
+          { label: 'Fan Type', value: '30" Centrifugal blade, 4 leaf' },
+          { label: 'Water Tank Capacity', value: '200 Ltrs.' },
+          { label: 'Product Dimensions (mm)', value: '1140L × 745W × 1840H' },
         ],
-        images: ['/industrial-coolers-fans.png'],
+        images: ['/Glacier.png'],
+        features: [
+          '30" FAN - POWERFUL AIR DELIVERY',
+          'PREMIUM MATTE FINISH - STURDY BODY',
+          'HEAVY DUTY CASTOR WHEELS',
+          'WATER LEVEL INDICATOR',
+          'ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
+          'FITTED WITH UNIFLOW PUMP',
+          'COMFORT COOLING',
+          'LOW NOISE',
+          'EASY DRAIN',
+        ],
       },
     };
 
@@ -318,6 +356,24 @@ export default function ProductDetailsPage() {
               </div>
             ))}
           </div>
+
+          {details.features && details.features.length > 0 ? (
+            <div className="mt-10">
+              <h2 className="text-2xl font-semibold text-design-dark mb-2">Key Features</h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-6" />
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {details.features.map((line, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-3 rounded-xl border border-design-border bg-design-bg/60 px-4 py-3 text-sm font-medium text-design-dark"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-unicore-accent" />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
 
           <div className="mt-8">
             <button

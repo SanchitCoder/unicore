@@ -82,10 +82,10 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pt-28 md:pb-16 px-5 overflow-hidden">
         <img
-          src="/Building-hero.png"
+          src="/about-us-top.png"
           alt=""
           aria-hidden
-          className="absolute inset-0 w-full h-full object-cover opacity-90 saturate-125 contrast-110 brightness-110"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark/50 via-unicore-dark-light/20 to-unicore-accent/8" />
         <div
@@ -194,18 +194,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* World-Class Manufacturing Infrastructure */}
+      {/* Manufacturing partnerships & capabilities */}
       <section ref={infrastructureRef} className="py-12 sm:py-14 px-4 sm:px-5 bg-unicore-dark text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5">
-              <h2 className="about-animate text-2xl sm:text-3xl font-semibold mb-3">
-                World-Class Manufacturing Infrastructure
-              </h2>
-
-              <div className="about-animate mb-4">
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Strong Manufacturing Partnerships</h3>
-                <p className="text-white/80 text-sm sm:text-base leading-relaxed">
+              <div className="mb-4">
+                <h2 className="about-animate text-2xl sm:text-3xl font-semibold text-white mb-3">
+                  Strong Manufacturing Partnerships
+                </h2>
+                <p className="about-animate text-white/80 text-sm sm:text-base leading-relaxed">
                   UNICORE collaborates with established manufacturers equipped with modern production facilities, advanced machinery, and quality testing systems. These partnerships allow us to deliver reliable industrial cooling and ventilation products that meet demanding performance standards.
                 </p>
               </div>

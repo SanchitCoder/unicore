@@ -69,31 +69,34 @@ export const airCirculatorCards: CatalogCard[] = [
 
 export const airCoolerCards: CatalogCard[] = [
   {
-    title: 'THAR Series Industrial Air Coolers',
+    title: 'AirMaxx',
     badge: 'Air Coolers',
-    description: 'Medium-sized factories & workshops—powerful cooling for demanding conditions.',
-    bullets: ['Airflow: Up to 12,000 CMH', '800 W • 3 Speed'],
-    imageSrc: '/energy-efficient-cooler.png',
-    imageAlt: 'THAR Series Industrial Air Coolers',
-    productDetailsName: 'THAR Series Industrial Air Coolers',
+    description:
+      'High-capacity cooling with a 19" centrifugal fan, 4800 CMH airflow, and a 120 L tank—built for factories, warehouses, and demanding industrial spaces.',
+    bullets: ['Air Flow: 4800 CMH', '120 L tank • Cu motor', '880 × 630 × 1480 mm'],
+    imageSrc: '/Airmaxxx.png',
+    imageAlt: 'AirMaxx industrial air cooler',
+    productDetailsName: 'AirMaxx',
   },
   {
-    title: 'THUNDER Series Industrial Air Coolers',
+    title: 'CoolBreeze',
     badge: 'Air Coolers',
-    description: 'Large warehouses & manufacturing plants—advanced cooling with tank support.',
-    bullets: ['Airflow: Up to 23,000 CMH', '1100–1500 W • 70L Tank'],
-    imageSrc: '/commercial-cooling.png',
-    imageAlt: 'THUNDER Series Industrial Air Coolers',
-    productDetailsName: 'THUNDER Series Industrial Air Coolers',
+    description:
+      '20" centrifugal cooling with 60 ft air throw, 135 L tank, and three-side honeycomb pads for strong airflow across large industrial and commercial areas.',
+    bullets: ['Air Throw: 60 ft', '135 L tank • Al motor 1350 RPM', '825 × 596 × 1370 mm'],
+    imageSrc: '/CoolBreeze.png',
+    imageAlt: 'CoolBreeze industrial air cooler',
+    productDetailsName: 'CoolBreeze',
   },
   {
-    title: 'THUNDER Advanced Industrial Air Coolers',
+    title: 'Glacier',
     badge: 'Air Coolers',
-    description: 'Large plants, high cooling demand—speed control with remote operation.',
-    bullets: ['Airflow: Up to 30,000 CMH', '12 Speed • Remote Control'],
-    imageSrc: '/industrial-coolers-fans.png',
-    imageAlt: 'THUNDER Advanced Industrial Air Coolers',
-    productDetailsName: 'THUNDER Advanced Industrial Air Coolers',
+    description:
+      'Large-format 30" industrial cooler with premium matte finish, 200 L tank, and heavy-duty mobility for high-demand ventilation and cooling.',
+    bullets: ['30" Centrifugal blade, 4 leaf', '200 L tank', '1140 × 745 × 1840 mm'],
+    imageSrc: '/Glacier.png',
+    imageAlt: 'Glacier industrial air cooler',
+    productDetailsName: 'Glacier',
   },
 ];
 
