@@ -60,7 +60,13 @@ export default function Hero() {
         <p className="hero-text text-lg sm:text-lg md:text-xl text-white/95 font-normal mb-6 sm:mb-6 max-w-2xl">
           UNICORE delivers reliable bulk supply solutions backed by 25+ years of manufacturing expertise.
         </p>
-        <div className="hero-text flex justify-center mt-1 sm:mt-0">
+        <div className="hero-text flex flex-col sm:flex-row items-center justify-center gap-3 mt-1 sm:mt-0">
+          <a
+            href="/products"
+            className="inline-block text-center px-6 py-3 rounded-lg border border-white/45 text-white font-semibold hover:bg-white/10 transition-colors"
+          >
+            View Products
+          </a>
           <a
             href="/bulk-orders"
             target="_blank"

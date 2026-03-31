@@ -27,12 +27,12 @@ export default function ProductsIndustryExcellenceSection({
   imageSrc?: string;
 }) {
   return (
-    <section className="pt-4 pb-8 sm:py-14 md:py-16 bg-white">
+    <section className="pt-1 pb-8 sm:py-14 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-5">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: image */}
           <div className="w-full lg:w-[52%]">
-            <h2 className="text-[2.3rem] sm:text-[2.8rem] leading-[1.05] font-bold text-design-dark mb-8">
+            <h2 className="text-[2.3rem] sm:text-[2.8rem] leading-[1.05] font-bold text-design-dark mb-4 sm:mb-8">
               <span className="block">Strong Manufacturing</span>
               <span className="block">Partnerships</span>
             </h2>
@@ -63,11 +63,11 @@ export default function ProductsIndustryExcellenceSection({
                       {p.no}
                     </div>
 
-                    <div className="flex-1">
-                      <h3 className="text-design-dark font-semibold text-sm sm:text-base">
+                    <div className="flex-1 w-full text-left">
+                      <h3 className="block w-full !text-left text-design-dark font-semibold text-sm sm:text-base">
                         {p.title}
                       </h3>
-                      <p className="text-design-mid text-xs sm:text-sm leading-relaxed mt-2">
+                      <p className="block w-full !text-left text-design-mid text-xs sm:text-sm leading-relaxed mt-2">
                         {p.description}
                       </p>
                     </div>
