@@ -338,7 +338,7 @@ export default function AboutPage() {
                 Get in Touch
               </Link>
               <Link
-                to="/contact"
+                to="/products"
                 className="rounded-full border border-white/50 bg-transparent px-10 py-3 sm:px-12 sm:py-4 text-white font-semibold hover:bg-white/10 transition-colors"
               >
                 View Products

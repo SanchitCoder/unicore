@@ -41,7 +41,7 @@ export default function ProductsIndustryExcellenceSection({
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: image */}
           <div className="w-full lg:w-[52%]">
-            <h2 className="text-[1.62rem] sm:text-[2.5rem] leading-[1.08] font-semibold tracking-tight text-design-dark mb-2 sm:mb-4 whitespace-nowrap">
+            <h2 className="text-[1.5rem] sm:text-[2.35rem] leading-[1.08] font-semibold tracking-tight text-design-dark mb-2 sm:mb-4 whitespace-nowrap text-center">
               Strong Manufacturing Partnerships
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-5 mx-auto" />
