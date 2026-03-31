@@ -71,7 +71,7 @@ export default function HomeProductCategories() {
           {/* Two small cards */}
           <div className="pcat-item w-full flex flex-col gap-3 md:gap-4 md:max-w-2xl md:mx-0">
             {/* Industrial Fans */}
-            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square">
+            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square lg:w-[78%] lg:mx-auto">
               <img
                 src="/industrial-fan.png"
                 alt="Industrial fans"
@@ -104,7 +104,7 @@ export default function HomeProductCategories() {
             </div>
 
             {/* Exhaust Fans */}
-            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square">
+            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square md:w-[88%] md:mx-auto">
               <img
                 src="/exhaust-fan.png"
                 alt="Industrial exhaust fans"
