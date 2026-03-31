@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
-import { BadgeCheck, Eye, Leaf, ShieldCheck, Target, Zap } from 'lucide-react';
+import { BadgeCheck, Eye, Gauge, Leaf, Recycle, ShieldCheck, Target, TestTube, Wrench, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ImageTextSection from '../components/ImageTextSection';
@@ -186,13 +186,13 @@ export default function AboutPage() {
                   key={i}
                   className="about-animate rounded-2xl border border-design-border/80 bg-white p-3 sm:p-4 hover:border-unicore-accent/40 transition-colors duration-300"
                 >
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-unicore-accent" />
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-design-bg border border-design-border flex items-center justify-center mb-2.5">
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-unicore-accent" />
                     </div>
-                    <h3 className="text-sm sm:text-base font-semibold text-design-dark leading-tight">{item.title}</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-design-dark leading-tight mb-1.5">{item.title}</h3>
+                    <p className="text-design-mid text-[0.78rem] sm:text-sm leading-relaxed text-center">{item.description}</p>
                   </div>
-                  <p className="text-design-mid text-[0.76rem] sm:text-sm leading-relaxed">{item.description}</p>
                 </div>
               );
             })}
@@ -214,27 +214,6 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="about-animate">
-                <h3 className="text-lg font-semibold text-white/90 mb-2">Advanced Manufacturing Capabilities</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                    <span className="text-sm sm:text-base text-white/85">Efficient Production Systems</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                    <span className="text-sm sm:text-base text-white/85">Quality Testing & Standards</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                    <span className="text-sm sm:text-base text-white/85">Responsible Production Practices</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                    <span className="text-sm sm:text-base text-white/85">Scalable Supply Capacity</span>
-                  </li>
-                </ul>
-              </div>
             </div>
 
             <div className="lg:col-span-7">
@@ -254,17 +233,37 @@ export default function AboutPage() {
                   </div>
 
                   <div className="mt-6 grid sm:grid-cols-2 gap-4">
-                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <div className="text-white/90 font-semibold text-sm sm:text-base">Efficient Production Systems</div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-3.5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-unicore-accent text-unicore-dark flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-white/25">
+                          <Wrench className="w-6 h-6 stroke-[2.4]" />
+                        </div>
+                        <div className="text-white/95 font-semibold text-sm sm:text-base">Efficient Production Systems</div>
+                      </div>
                     </div>
-                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <div className="text-white/90 font-semibold text-sm sm:text-base">Quality Testing & Standards</div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-3.5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-unicore-accent text-unicore-dark flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-white/25">
+                          <TestTube className="w-6 h-6 stroke-[2.4]" />
+                        </div>
+                        <div className="text-white/95 font-semibold text-sm sm:text-base">Quality Testing & Standards</div>
+                      </div>
                     </div>
-                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <div className="text-white/90 font-semibold text-sm sm:text-base">Responsible Production Practices</div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-3.5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-unicore-accent text-unicore-dark flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-white/25">
+                          <Recycle className="w-6 h-6 stroke-[2.4]" />
+                        </div>
+                        <div className="text-white/95 font-semibold text-sm sm:text-base">Responsible Production Practices</div>
+                      </div>
                     </div>
-                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <div className="text-white/90 font-semibold text-sm sm:text-base">Scalable Supply Capacity</div>
+                    <div className="about-animate rounded-2xl border border-white/10 bg-white/5 p-3.5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-unicore-accent text-unicore-dark flex items-center justify-center flex-shrink-0 shadow-md ring-1 ring-white/25">
+                          <Gauge className="w-6 h-6 stroke-[2.4]" />
+                        </div>
+                        <div className="text-white/95 font-semibold text-sm sm:text-base">Scalable Supply Capacity</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -275,60 +274,45 @@ export default function AboutPage() {
       </section>
 
       {/* Certified Quality Standards */}
-      <section ref={certifiedRef} className="py-12 sm:py-14 px-4 sm:px-5 bg-white">
+      <section ref={certifiedRef} className="py-12 sm:py-14 px-4 sm:px-5 bg-design-bg">
         <div className="max-w-7xl mx-auto">
-          <h2 className="about-animate text-2xl sm:text-3xl font-semibold text-design-dark text-center mb-2">
-            Certified Quality Standards
+          <h2 className="about-animate text-2xl sm:text-4xl font-semibold text-design-dark text-center mb-2">
+            Certified Excellence
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-10" />
+          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-6" />
 
-          <p className="about-animate text-design-mid text-sm sm:text-base leading-relaxed max-w-3xl mx-auto text-center mb-8">
-            UNICORE partners with manufacturers who follow internationally recognized quality and safety standards, ensuring reliable performance and consistent product quality.
+          <p className="about-animate text-design-mid text-sm sm:text-base leading-relaxed max-w-2xl mx-auto text-center mb-8 sm:mb-10">
+            Our commitment to quality is validated by international certifications and rigorous internal standards.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-11 h-11 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center text-unicore-accent flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs">ISO 9001:2015</div>
-                  <div className="text-design-mid text-sm font-medium mt-1">Quality Management Systems</div>
-                </div>
+          <div className="grid md:grid-cols-3 gap-5 sm:gap-6">
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white/70 p-6 sm:p-7 text-center">
+              <div className="w-16 h-16 rounded-full bg-white shadow-card mx-auto mb-5 flex items-center justify-center text-unicore-accent">
+                <ShieldCheck className="w-7 h-7" />
               </div>
-              <p className="text-design-mid text-sm leading-relaxed">
-                Products are sourced from manufacturing partners operating under ISO 9001:2015 Quality Management Systems, ensuring consistent production and quality control.
+              <div className="text-design-dark font-semibold text-xl mb-2">ISO 9001:2015</div>
+              <p className="text-design-mid text-sm sm:text-base leading-relaxed">
+                Quality Management System certification ensuring consistent product excellence.
               </p>
             </div>
 
-            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-11 h-11 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center text-unicore-accent flex-shrink-0">
-                  <Leaf className="w-5 h-5" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs">ISO 14001:2015</div>
-                  <div className="text-design-mid text-sm font-medium mt-1">Environmental Management Systems</div>
-                </div>
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white/70 p-6 sm:p-7 text-center">
+              <div className="w-16 h-16 rounded-full bg-white shadow-card mx-auto mb-5 flex items-center justify-center text-unicore-accent">
+                <Leaf className="w-7 h-7" />
               </div>
-              <p className="text-design-mid text-sm leading-relaxed">
-                Manufacturing facilities follow ISO 14001:2015 Environmental Management Systems, supporting responsible and sustainable production practices.
+              <div className="text-design-dark font-semibold text-xl mb-2">ISO 14001:2015</div>
+              <p className="text-design-mid text-sm sm:text-base leading-relaxed">
+                Environmental Management System for sustainable manufacturing practices.
               </p>
             </div>
 
-            <div className="about-animate rounded-2xl border border-design-border/80 bg-white p-6 shadow-card">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-11 h-11 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center text-unicore-accent flex-shrink-0">
-                  <BadgeCheck className="w-5 h-5" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-unicore-accent font-semibold uppercase tracking-wider text-xs">CE &amp; UL Compliance</div>
-                  <div className="text-design-mid text-sm font-medium mt-1">Safety &amp; Performance Standards</div>
-                </div>
+            <div className="about-animate rounded-2xl border border-design-border/80 bg-white/70 p-6 sm:p-7 text-center">
+              <div className="w-16 h-16 rounded-full bg-white shadow-card mx-auto mb-5 flex items-center justify-center text-unicore-accent">
+                <BadgeCheck className="w-7 h-7" />
               </div>
-              <p className="text-design-mid text-sm leading-relaxed">
-                Selected products comply with internationally recognized CE and UL safety standards, ensuring reliable performance and safety for industrial applications.
+              <div className="text-design-dark font-semibold text-xl mb-2">CE &amp; UL Certified</div>
+              <p className="text-design-mid text-sm sm:text-base leading-relaxed">
+                International safety and performance standards compliance.
               </p>
             </div>
           </div>
