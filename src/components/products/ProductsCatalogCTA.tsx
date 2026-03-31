@@ -15,19 +15,12 @@ export default function ProductsCatalogCTA() {
           <a
             href="/contact"
             className="inline-flex justify-center px-7 py-3 rounded-xl bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Talk to an Expert
           </a>
           <Link
-            to="/bulk-orders"
+            to="/contact"
             className="inline-flex justify-center px-7 py-3 rounded-xl border border-white/30 bg-white/5 text-white font-semibold hover:bg-white/10 transition-colors"
-            onClick={(e) => {
-              // Keep navigation behavior consistent with "open in other tab" requirement.
-              e.preventDefault();
-              window.open('/bulk-orders', '_blank', 'noopener,noreferrer');
-            }}
           >
             Get a Bulk Quote
           </Link>

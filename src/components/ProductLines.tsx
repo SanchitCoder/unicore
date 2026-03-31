@@ -39,7 +39,7 @@ const pedestalFanModels = [
     voltage: 'AC 220 – 240 V, 50 Hz',
     usage: 'Domestic Fans',
     blades: '3 Leaf',
-    imageSrc: '/products/super-star-20/main.jpg',
+    imageSrc: '/super-20.jpg',
     imageAlt: 'SUPER STAR 20 inch non-oscillating pedestal fan',
   },
 ];
@@ -68,7 +68,7 @@ const circulatorFanModels = [
     usage: 'Industrial',
     blades: '3 Leaf',
     motor: 'Copper Winding',
-    imageSrc: '/products/aerothrust-24/main.jpg',
+    imageSrc: '/aero-front.jpg',
     imageAlt: 'AEROTHRUST 24 inch air circulator fan',
   },
 ];
@@ -76,9 +76,8 @@ const circulatorFanModels = [
 export default function ProductLines() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const openProductDetails = (productName: string) => {
-    const url = new URL(`/product-details/${encodeURIComponent(productName)}`, window.location.origin).toString();
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const openProductDetails = (_productName: string) => {
+    window.location.href = '/contact';
   };
 
   useEffect(() => {
@@ -179,7 +178,7 @@ export default function ProductLines() {
             {exhaustFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
+                  <img src={m.imageSrc} alt={m.imageAlt} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
@@ -213,7 +212,7 @@ export default function ProductLines() {
             {pedestalFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
+                  <img src={m.imageSrc} alt={m.imageAlt} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
@@ -250,7 +249,7 @@ export default function ProductLines() {
             {circulatorFanModels.map((m, i) => (
               <div key={i} className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
                 <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                  <img src={m.imageSrc} alt={m.imageAlt} className="w-full h-full object-contain" />
+                  <img src={m.imageSrc} alt={m.imageAlt} loading="lazy" decoding="async" className="w-full h-full object-contain" />
                 </div>
                 <div className="p-3">
                   <p className="font-semibold text-design-dark text-sm mb-1.5 line-clamp-2">{m.name}</p>
@@ -283,7 +282,7 @@ export default function ProductLines() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/Airmaxxx.png" alt="AirMaxx industrial air cooler" className="w-full h-full object-contain" />
+                <img src="/airmaxx-front.jpeg" alt="AirMaxx industrial air cooler" loading="lazy" decoding="async" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">AirMaxx</h4>
@@ -299,7 +298,7 @@ export default function ProductLines() {
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/CoolBreeze.png" alt="CoolBreeze industrial air cooler" className="w-full h-full object-contain" />
+                <img src="/cool-front.png" alt="CoolBreeze industrial air cooler" loading="lazy" decoding="async" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">CoolBreeze</h4>
@@ -315,7 +314,7 @@ export default function ProductLines() {
 
             <div className="model-card-zoom opacity-0 scale-[0.92] rounded-xl border border-design-border bg-white overflow-hidden shadow-card hover:scale-[1.01] hover:shadow-card-hover hover:border-unicore-accent/40 transition-all duration-300">
               <div className="aspect-[4/3] max-h-36 w-full bg-design-bg overflow-hidden flex items-center justify-center">
-                <img src="/Glacier.png" alt="Glacier industrial air cooler" className="w-full h-full object-contain" />
+                <img src="/glacier-front.jpeg" alt="Glacier industrial air cooler" loading="lazy" decoding="async" className="w-full h-full object-contain" />
               </div>
               <div className="p-3">
                 <h4 className="font-semibold text-design-dark text-sm mb-1">Glacier</h4>
@@ -341,9 +340,7 @@ export default function ProductLines() {
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-6" />
           <a
-            href="/bulk-orders"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="inline-flex items-center justify-center px-6 py-2.5 rounded-xl bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover hover:shadow-btn-hover transition-colors text-sm"
           >
             Submit Bulk Enquiry

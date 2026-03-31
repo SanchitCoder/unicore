@@ -56,7 +56,7 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Contact details */}
-            <div className="space-y-6">
+            <div className="space-y-6 order-2 lg:order-1">
               <h2 className="text-xl font-semibold text-design-dark mb-4">Reach us</h2>
               <div className="flex items-start gap-3">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
@@ -94,7 +94,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 order-1 lg:order-2">
               <h2 className="text-xl font-semibold text-design-dark mb-4">Send a message</h2>
               {formSubmitted ? (
                 <div className="rounded-lg border border-unicore-accent/30 bg-unicore-accent/5 p-6 text-center">

@@ -332,15 +332,13 @@ export default function AboutPage() {
 
             <div className="about-animate mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="/bulk-orders"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
                 className="rounded-full bg-unicore-accent px-10 py-3 sm:px-12 sm:py-4 text-white font-semibold shadow-btn hover:bg-unicore-accent-hover transition-colors"
               >
                 Get in Touch
               </a>
               <Link
-                to="/products"
+                to="/contact"
                 className="rounded-full border border-white/50 bg-transparent px-10 py-3 sm:px-12 sm:py-4 text-white font-semibold hover:bg-white/10 transition-colors"
               >
                 View Products

@@ -41,7 +41,7 @@ export default function ProductsIndustryExcellenceSection({
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: image */}
           <div className="w-full lg:w-[52%]">
-            <h2 className="text-[1.42rem] sm:text-[2.5rem] leading-[1.08] font-semibold tracking-tight text-design-dark mb-2 sm:mb-4 whitespace-nowrap">
+            <h2 className="text-[1.62rem] sm:text-[2.5rem] leading-[1.08] font-semibold tracking-tight text-design-dark mb-2 sm:mb-4 whitespace-nowrap">
               Strong Manufacturing Partnerships
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-5 mx-auto" />
@@ -68,19 +68,17 @@ export default function ProductsIndustryExcellenceSection({
               >
                 {points.map((p) => (
                   <div key={p.no} className="w-full flex-shrink-0">
-                    <div className="relative rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300 p-4 sm:p-5 text-left min-h-[190px] sm:min-h-[220px]">
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-unicore-accent flex items-center justify-center text-white text-xs sm:text-sm font-semibold flex-shrink-0">
+                    <div className="relative rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300 p-5 sm:p-6 text-center min-h-[250px] sm:min-h-[280px] flex items-center justify-center">
+                      <div className="flex flex-col items-center justify-center text-center h-full">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-unicore-accent flex items-center justify-center text-white text-sm sm:text-base font-semibold mb-3">
                           {p.no}
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-design-dark font-semibold text-sm sm:text-base leading-snug">
-                            {p.title}
-                          </h3>
-                          <p className="text-design-mid text-xs sm:text-sm leading-relaxed mt-2">
-                            {p.description}
-                          </p>
-                        </div>
+                        <h3 className="text-design-dark font-semibold text-xl sm:text-2xl leading-snug">
+                          {p.title}
+                        </h3>
+                        <p className="text-design-mid text-base sm:text-lg leading-relaxed mt-3 max-w-[95%]">
+                          {p.description}
+                        </p>
                       </div>
                     </div>
                   </div>

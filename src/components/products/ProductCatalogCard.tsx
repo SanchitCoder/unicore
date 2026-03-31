@@ -8,6 +8,9 @@ export default function ProductCatalogCard({ card }: { card: CatalogCard }) {
         <img
           src={card.imageSrc}
           alt={card.imageAlt}
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           className="w-full h-full object-contain group-hover:scale-[1.04] transition-transform duration-500"
         />
         <div className="absolute top-2 right-2 sm:top-3 sm:right-3 rounded-full bg-unicore-accent px-3 py-1 text-white text-[0.65rem] font-semibold uppercase tracking-wide">

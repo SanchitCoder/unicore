@@ -167,6 +167,7 @@ export default function ProductDetailsPage() {
           { label: 'Watts', value: '200 W' },
         ],
         images: [
+          '/aero-front.jpg',
           '/products/aerothrust-24/1.jpg',
           '/products/aerothrust-24/2.jpg',
           '/products/aerothrust-24/3.png',
@@ -190,7 +191,7 @@ export default function ProductDetailsPage() {
           { label: 'Motor Type', value: 'Cu Motor' },
           { label: 'Product Dimensions (mm)', value: '880L × 630W × 1480H' },
         ],
-        images: ['/Airmaxxx.png'],
+        images: ['/airmaxx-front.jpeg', '/airmaxx-1.jpeg', '/airmaxx-2.jpeg'],
         features: [
           '19" FAN - POWERFUL AIR DELIVERY',
           'ANTI RUST VIRGIN - STURDY BODY',
@@ -217,7 +218,7 @@ export default function ProductDetailsPage() {
           { label: 'Motor Type', value: 'Al Motor, 1350 RPM' },
           { label: 'Product Dimensions (mm)', value: '825L × 596W × 1370H' },
         ],
-        images: ['/CoolBreeze.png'],
+        images: ['/cool-front.png', '/coolbreeze-2.png'],
         features: [
           '20" FAN - POWERFUL AIR DELIVERY',
           'STURDY BODY',
@@ -242,7 +243,7 @@ export default function ProductDetailsPage() {
           { label: 'Water Tank Capacity', value: '200 Ltrs.' },
           { label: 'Product Dimensions (mm)', value: '1140L × 745W × 1840H' },
         ],
-        images: ['/Glacier.png'],
+        images: ['/glacier-front.jpeg'],
         features: [
           '30" FAN - POWERFUL AIR DELIVERY',
           'PREMIUM MATTE FINISH - STURDY BODY',
@@ -315,7 +316,14 @@ export default function ProductDetailsPage() {
                   {details.images.map((src, i) => (
                     <div key={i} className="w-full flex-shrink-0">
                       <div className="aspect-[16/10] w-full bg-design-bg overflow-hidden">
-                        <img src={src} alt={`${details.title} ${i + 1}`} className="w-full h-full object-contain" />
+                        <img
+                          src={src}
+                          alt={`${details.title} ${i + 1}`}
+                          loading={i === 0 ? 'eager' : 'lazy'}
+                          fetchPriority={i === 0 ? 'high' : 'low'}
+                          decoding="async"
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
                   ))}

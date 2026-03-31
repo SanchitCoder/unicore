@@ -80,12 +80,12 @@ export default function Products() {
                     {product.description}
                   </p>
 
-                  <button className="flex items-center gap-2 text-unicore-accent font-semibold group-hover:gap-4 transition-all duration-300">
+                  <a href="/contact" className="flex items-center gap-2 text-unicore-accent font-semibold group-hover:gap-4 transition-all duration-300">
                     Learn More
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </a>
                 </div>
 
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-unicore-accent/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

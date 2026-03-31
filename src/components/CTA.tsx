@@ -39,9 +39,7 @@ export default function CTA() {
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
           <a
-            href="/bulk-orders"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="btn-primary-large rounded-lg inline-block text-center"
           >
             Contact UNICORE Today

@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react';
 import { animate, stagger } from 'animejs';
 import Layout from '../components/Layout';
 import ManufacturingExcellence from '../components/ManufacturingExcellence';
-import ImageTextSection from '../components/ImageTextSection';
 
 export default function IndustriesPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,17 +35,18 @@ export default function IndustriesPage() {
       </section>
 
       <ManufacturingExcellence />
-      <ImageTextSection
-        title="Partner with UNICORE for Your Sector"
-        paragraphs={[
-          'Whether you run a factory, a logistics hub, or a large commercial space, we can support your cooling and ventilation needs with bulk supply and consistent quality.',
-        ]}
-        imageSrc="/industries-we-serve.png"
-        imageAlt="Industrial partnership"
-        imageOnRight={true}
-        imageFit="contain"
-        className="bg-design-bg"
-      />
+      <section className="py-12 sm:py-14 px-4 sm:px-5 bg-gradient-to-r from-unicore-dark via-unicore-dark-light to-unicore-accent/30 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 text-center">
+            <h2 className="text-2xl sm:text-4xl font-semibold leading-tight">
+            Partner with UNICORE for Your Sector
+            </h2>
+            <p className="mt-3 text-white/80 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Whether you run a factory, a logistics hub, or a large commercial space, we can support your cooling and ventilation needs with bulk supply and consistent quality.
+            </p>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

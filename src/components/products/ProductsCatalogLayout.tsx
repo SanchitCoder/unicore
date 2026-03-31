@@ -66,7 +66,7 @@ export default function ProductsCatalogLayout() {
 
       {/* Category navigation tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-5 -mt-2 sm:-mt-3 mb-10 relative z-20 overflow-visible">
-        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-x-4 sm:gap-x-6 gap-y-3 overflow-x-auto pb-1">
+        <div className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-x-3 sm:gap-x-6 gap-y-3 overflow-x-auto pb-1">
           {tabs.map((t) => {
             const selected = t.key === activeTab;
             return (
@@ -81,10 +81,10 @@ export default function ProductsCatalogLayout() {
                     setSearchParams({ tab: t.key });
                   }
                 }}
-                className={`px-4 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold leading-none whitespace-nowrap transition-colors duration-200 ${
+                className={`px-6 sm:px-7 lg:px-8 py-3.5 sm:py-3 rounded-full text-[1rem] sm:text-base font-semibold leading-none whitespace-nowrap border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-unicore-accent/40 transition-all duration-200 ${
                   selected
-                    ? 'bg-unicore-dark text-white shadow-card'
-                    : 'bg-white text-unicore-accent border border-unicore-dark/10 hover:bg-unicore-accent/5'
+                    ? 'bg-unicore-dark text-white border-unicore-accent shadow-[0_0_0_2px_rgba(46,203,182,0.22)]'
+                    : 'bg-white text-unicore-accent border-unicore-accent/55 hover:bg-unicore-accent/10 hover:border-unicore-accent'
                 }`}
               >
                 {t.label}

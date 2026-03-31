@@ -5,7 +5,10 @@ export default function ProductsCatalogHero() {
         src="/our-product-banner.png"
         alt=""
         aria-hidden
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-contain object-center bg-unicore-dark"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark/95 via-unicore-dark/55 to-transparent sm:from-unicore-dark/90 sm:via-unicore-dark/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark/80 via-transparent to-unicore-dark/30" />
@@ -25,15 +28,6 @@ export default function ProductsCatalogHero() {
           <p className="text-white/90 text-base sm:text-lg md:text-xl font-normal leading-relaxed">
             Cooling and ventilation solutions built for industrial demands and reliable everyday comfort.
           </p>
-        </div>
-
-        <div className="relative z-10 mt-8 hidden sm:flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-unicore-accent" />
-            <span className="w-2 h-2 rounded-full bg-white/40" />
-            <span className="w-2 h-2 rounded-full bg-white/40" />
-            <span className="w-2 h-2 rounded-full bg-white/40" />
-          </div>
         </div>
       </div>
     </section>
