@@ -1,16 +1,16 @@
 import { CatalogCard } from '../../data/productsCatalog';
 import { Link } from 'react-router-dom';
 
-export default function ProductCatalogCard({ card }: { card: CatalogCard }) {
+export default function ProductCatalogCard({ card, priority = false }: { card: CatalogCard; priority?: boolean }) {
   return (
     <div className="group rounded-xl sm:rounded-2xl bg-white border border-design-border shadow-card overflow-hidden hover:border-unicore-accent/30 transition-all duration-300">
       <div className="relative aspect-[6/3] sm:aspect-[4/3] bg-design-bg overflow-hidden">
         <img
           src={card.imageSrc}
           alt={card.imageAlt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
           decoding="async"
-          fetchPriority="low"
+          fetchPriority={priority ? 'high' : 'low'}
           className="w-full h-full object-contain group-hover:scale-[1.04] transition-transform duration-500"
         />
         <div className="absolute top-2 right-2 sm:top-3 sm:right-3 rounded-full bg-unicore-accent px-3 py-1 text-white text-[0.65rem] font-semibold uppercase tracking-wide">

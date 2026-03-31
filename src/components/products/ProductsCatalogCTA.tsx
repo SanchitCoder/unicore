@@ -12,12 +12,12 @@ export default function ProductsCatalogCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex justify-center px-7 py-3 rounded-xl bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover transition-colors"
           >
             Talk to an Expert
-          </a>
+          </Link>
           <Link
             to="/contact"
             className="inline-flex justify-center px-7 py-3 rounded-xl border border-white/30 bg-white/5 text-white font-semibold hover:bg-white/10 transition-colors"

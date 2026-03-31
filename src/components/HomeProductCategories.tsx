@@ -57,7 +57,7 @@ export default function HomeProductCategories() {
                   </p>
                   <div className="mt-2 sm:mt-6">
                     <Link
-                      to="/contact"
+                      to="/products?tab=coolers"
                       className="inline-flex items-center gap-2 font-bold text-sm sm:text-base text-black hover:text-black/80 transition-colors"
                     >
                       Learn more →
@@ -92,7 +92,7 @@ export default function HomeProductCategories() {
                     </p>
                     <div className="mt-2.5 sm:mt-4">
                       <Link
-                        to="/contact"
+                        to="/products?tab=circulators"
                         className="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-black hover:text-black/80 transition-colors"
                       >
                         Learn More →
@@ -125,7 +125,7 @@ export default function HomeProductCategories() {
                     </p>
                     <div className="mt-2.5 sm:mt-4">
                       <Link
-                        to="/contact"
+                        to="/products?tab=exhaust"
                         className="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-black hover:text-black/80 transition-colors"
                       >
                         Learn More →

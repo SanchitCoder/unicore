@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CTA() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,12 +39,12 @@ export default function CTA() {
           Get in touch for bulk orders and partnerships.
         </p>
         <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="btn-primary-large rounded-lg inline-block text-center"
           >
             Contact UNICORE Today
-          </a>
+          </Link>
         </div>
 
         <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm font-normal">

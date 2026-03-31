@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
+import { Link } from 'react-router-dom';
 
 const stats = [
   { value: '25+', label: 'Years', target: 25, suffix: '+' },
@@ -92,7 +93,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/Unicore_hero_video.mp4" type="video/mp4" />
@@ -111,18 +112,18 @@ export default function Hero() {
           UNICORE delivers reliable bulk supply solutions backed by 25+ years of manufacturing expertise.
         </p>
         <div className="hero-text flex flex-row items-center justify-center gap-3 sm:gap-3 mt-4 sm:mt-0">
-          <a
-            href="/contact"
+          <Link
+            to="/products"
             className="inline-flex items-center justify-center text-center px-4 sm:px-6 py-2.5 sm:py-3 min-h-[48px] rounded-2xl border border-white/45 text-white font-semibold text-sm sm:text-base hover:bg-white/10 transition-colors"
           >
             View Products
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="btn-primary-large rounded-2xl inline-block text-center"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
 

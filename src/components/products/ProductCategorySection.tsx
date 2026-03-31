@@ -17,8 +17,8 @@ export default function ProductCategorySection({
         <div className="h-1 w-20 sm:w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-6 sm:mb-8" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {cards.map((card) => (
-            <ProductCatalogCard key={card.title} card={card} />
+          {cards.map((card, index) => (
+            <ProductCatalogCard key={card.title} card={card} priority={index < 3} />
           ))}
         </div>
       </div>
