@@ -57,7 +57,7 @@ export default function ProductsIndustryExcellenceSection({
 
           {/* Right: cards */}
           <div className="w-full lg:w-[48%]">
-            <p className="text-design-mid text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed text-left">
+            <p className="text-design-mid text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed text-center sm:text-left">
               UNICORE combines trusted manufacturing partners, rigorous quality assurance, and a responsive supply network to deliver industrial cooling and ventilation solutions at scale.
             </p>
 

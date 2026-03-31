@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProductCatalogCard({ card, priority = false }: { card: CatalogCard; priority?: boolean }) {
   return (
-    <div className="group rounded-xl sm:rounded-2xl bg-white border border-design-border shadow-card overflow-hidden hover:border-unicore-accent/30 transition-all duration-300">
+    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-design-border shadow-xl shadow-black/10 overflow-hidden hover:border-unicore-accent/50 hover:shadow-2xl hover:shadow-black/15 transition-all duration-300">
       <div className="relative aspect-[6/3] sm:aspect-[4/3] bg-design-bg overflow-hidden">
         <img
           src={card.imageSrc}

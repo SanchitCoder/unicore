@@ -1,6 +1,6 @@
 export default function ProductsCatalogHero() {
   return (
-    <section className="relative pt-20 pb-10 sm:pt-24 sm:pb-14 md:pb-16 overflow-hidden min-h-[min(88vw,380px)] sm:min-h-[min(52vw,440px)]">
+    <section className="relative pt-24 pb-10 sm:pt-24 sm:pb-14 md:pb-16 overflow-hidden min-h-[min(88vw,380px)] sm:min-h-[min(52vw,440px)]">
       <img
         src="/our-product-banner.png"
         alt=""
@@ -8,7 +8,7 @@ export default function ProductsCatalogHero() {
         loading="eager"
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-contain object-center bg-unicore-dark"
+        className="absolute inset-0 w-full h-full object-contain object-[center_58%] sm:object-center bg-unicore-dark"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark/95 via-unicore-dark/55 to-transparent sm:from-unicore-dark/90 sm:via-unicore-dark/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark/80 via-transparent to-unicore-dark/30" />
