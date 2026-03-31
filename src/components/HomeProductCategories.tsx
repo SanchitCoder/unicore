@@ -40,18 +40,19 @@ export default function HomeProductCategories() {
             <img
               src="/industrial-coolers-banner.png"
               alt="Industrial Air Coolers"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-75"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-unicore-dark/95 via-unicore-dark/30 to-transparent" />
+            <div className="absolute inset-0 bg-white/22" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
 
             <div className="relative p-4 sm:p-7 md:p-8 h-full flex flex-col justify-end">
-              <div className="text-white/60 uppercase tracking-widest text-xs mb-3">
+              <div className="text-design-mid uppercase tracking-widest text-xs font-semibold mb-3">
                 COOLING SYSTEMS
               </div>
-              <h3 className="text-white text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem]">
+              <h3 className="text-design-dark text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem]">
                 Industrial Air Coolers
               </h3>
-              <p className="text-white/85 text-xs sm:text-base leading-relaxed mt-2 sm:mt-3">
+              <p className="text-design-mid text-xs sm:text-base leading-relaxed mt-2 sm:mt-3">
                 High-capacity cooling systems designed for factories, warehouses, and large industrial spaces. Built for powerful airflow, wide coverage, and reliable performance in demanding environments.
               </p>
               <div className="mt-3 sm:mt-6">
@@ -68,28 +69,29 @@ export default function HomeProductCategories() {
           {/* Two small cards */}
           <div className="pcat-item flex flex-col gap-3 md:gap-4 md:max-w-2xl mx-auto md:mx-0">
             {/* Industrial Fans */}
-            <div className="pcat-item group rounded-xl sm:rounded-2xl border border-design-border bg-white overflow-hidden shadow-card hover:border-unicore-accent/40 transition-all duration-300">
-              <div className="flex flex-col sm:flex-row h-full">
-                <div className="w-full sm:w-5/12 bg-design-bg overflow-hidden sm:h-full sm:p-4 p-3 aspect-[16/9] sm:aspect-[4/3] flex items-center justify-center">
-                  <img
-                    src="/industrial-fan.png"
-                    alt="Industrial fans"
-                    className="w-full h-full object-contain"
-                  />
+            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/9] sm:aspect-[16/8]">
+              <img
+                src="/industrial-fan.png"
+                alt="Industrial fans"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-75"
+              />
+              <div className="absolute inset-0 bg-white/22" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
+
+              <div className="relative p-4 sm:p-5 h-full flex flex-col justify-end">
+                <div className="text-design-mid uppercase tracking-widest text-[0.65rem] sm:text-xs font-semibold mb-2">
+                  Industrial Fans
                 </div>
-                <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col">
-                  <div className="text-unicore-accent uppercase tracking-widest text-xs font-semibold mb-2">
-                    Industrial Fans
-                  </div>
-                  <h4 className="text-design-dark font-bold text-[0.95rem] sm:text-lg md:text-xl mb-1.5 sm:mb-2 group-hover:text-unicore-accent transition-colors">
-                    Industrial Fans
-                  </h4>
-                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                    Heavy-duty fans engineered for strong air circulation in industrial and commercial environments. Designed for continuous operation and efficient airflow across large spaces.
-                  </p>
+                <h4 className="text-design-dark text-base sm:text-xl font-bold leading-tight">
+                  Industrial Fans
+                </h4>
+                <p className="text-design-mid text-[0.72rem] sm:text-sm leading-relaxed mt-1.5 sm:mt-2">
+                  Heavy-duty fans engineered for strong air circulation in industrial and commercial environments. Designed for continuous operation and efficient airflow across large spaces.
+                </p>
+                <div className="mt-2.5 sm:mt-4">
                   <Link
                     to="/products?tab=circulators"
-                    className="inline-flex items-center gap-2 text-unicore-accent font-semibold text-xs sm:text-sm mt-auto"
+                    className="inline-flex items-center gap-2 font-semibold text-xs sm:text-sm text-unicore-accent hover:text-unicore-accent/90 transition-colors"
                   >
                     Learn More →
                   </Link>
@@ -98,28 +100,29 @@ export default function HomeProductCategories() {
             </div>
 
             {/* Exhaust Fans */}
-            <div className="pcat-item group rounded-xl sm:rounded-2xl border border-design-border bg-white overflow-hidden shadow-card hover:border-unicore-accent/40 transition-all duration-300">
-              <div className="flex flex-col sm:flex-row h-full">
-                <div className="w-full sm:w-5/12 bg-design-bg overflow-hidden sm:h-full sm:p-4 p-3 aspect-[16/9] sm:aspect-[4/3] flex items-center justify-center">
-                  <img
-                    src="/exhaust-fan.png"
-                    alt="Industrial exhaust fans"
-                    className="w-full h-full object-contain"
-                  />
+            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/9] sm:aspect-[16/8]">
+              <img
+                src="/exhaust-fan.png"
+                alt="Industrial exhaust fans"
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-75"
+              />
+              <div className="absolute inset-0 bg-white/22" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
+
+              <div className="relative p-4 sm:p-5 h-full flex flex-col justify-end">
+                <div className="text-design-mid uppercase tracking-widest text-[0.65rem] sm:text-xs font-semibold mb-2">
+                  Exhaust Fans
                 </div>
-                <div className="p-3 sm:p-5 md:p-6 flex-1 flex flex-col">
-                  <div className="text-unicore-accent uppercase tracking-widest text-xs font-semibold mb-2">
-                    Exhaust Fans
-                  </div>
-                  <h4 className="text-design-dark font-bold text-[0.95rem] sm:text-lg md:text-xl mb-1.5 sm:mb-2 group-hover:text-unicore-accent transition-colors">
-                    Exhaust Fans
-                  </h4>
-                  <p className="text-design-mid text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                    Industrial exhaust fans designed to remove heat, smoke, dust, and humidity from large facilities. Built to ensure effective ventilation and improved air quality in demanding environments.
-                  </p>
+                <h4 className="text-design-dark text-base sm:text-xl font-bold leading-tight">
+                  Exhaust Fans
+                </h4>
+                <p className="text-design-mid text-[0.72rem] sm:text-sm leading-relaxed mt-1.5 sm:mt-2">
+                  Industrial exhaust fans designed to remove heat, smoke, dust, and humidity from large facilities. Built to ensure effective ventilation and improved air quality in demanding environments.
+                </p>
+                <div className="mt-2.5 sm:mt-4">
                   <Link
                     to="/products?tab=exhaust"
-                    className="inline-flex items-center gap-2 text-unicore-accent font-semibold text-xs sm:text-sm mt-auto"
+                    className="inline-flex items-center gap-2 font-semibold text-xs sm:text-sm text-unicore-accent hover:text-unicore-accent/90 transition-colors"
                   >
                     Learn More →
                   </Link>

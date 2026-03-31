@@ -60,8 +60,7 @@ export default function HomeIndustriesSection() {
             >
               {industries.map((item, i) => (
                 <div key={i} className="w-full flex-shrink-0 px-1">
-                  <div className="flex items-center gap-3 p-5 sm:p-6 rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300">
-                    <span className="w-3 h-3 rounded-full bg-unicore-accent flex-shrink-0" />
+                  <div className="flex items-center justify-center text-center p-5 sm:p-6 rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300">
                     <span className="text-design-dark font-medium text-lg">{item}</span>
                   </div>
                 </div>

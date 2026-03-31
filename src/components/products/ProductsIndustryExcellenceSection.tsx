@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const points = [
   {
@@ -26,16 +26,25 @@ export default function ProductsIndustryExcellenceSection({
 }: {
   imageSrc?: string;
 }) {
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setSlideIndex((i) => (i >= points.length - 1 ? 0 : i + 1));
+    }, 2400);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
-    <section className="pt-1 pb-8 sm:py-14 md:py-16 bg-white">
+    <section className="pt-5 pb-4 sm:py-14 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-5">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: image */}
           <div className="w-full lg:w-[52%]">
-            <h2 className="text-[2.3rem] sm:text-[2.8rem] leading-[1.05] font-bold text-design-dark mb-4 sm:mb-8">
-              <span className="block">Strong Manufacturing</span>
-              <span className="block">Partnerships</span>
+            <h2 className="text-[1.42rem] sm:text-[2.5rem] leading-[1.08] font-semibold tracking-tight text-design-dark mb-2 sm:mb-4 whitespace-nowrap">
+              Strong Manufacturing Partnerships
             </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-5 mx-auto" />
 
             <div className="rounded-[26px] border-[12px] border-unicore-dark/40 overflow-hidden shadow-card">
               <img
@@ -52,31 +61,43 @@ export default function ProductsIndustryExcellenceSection({
               UNICORE combines trusted manufacturing partners, rigorous quality assurance, and a responsive supply network to deliver industrial cooling and ventilation solutions at scale.
             </p>
 
-            <div className="space-y-4 sm:space-y-5">
-              {points.map((p) => (
-                <div
+            <div className="overflow-hidden rounded-2xl">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${slideIndex * 100}%)` }}
+              >
+                {points.map((p) => (
+                  <div key={p.no} className="w-full flex-shrink-0">
+                    <div className="relative rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300 p-4 sm:p-5 text-left min-h-[190px] sm:min-h-[220px]">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-unicore-accent flex items-center justify-center text-white text-xs sm:text-sm font-semibold flex-shrink-0">
+                          {p.no}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-design-dark font-semibold text-sm sm:text-base leading-snug">
+                            {p.title}
+                          </h3>
+                          <p className="text-design-mid text-xs sm:text-sm leading-relaxed mt-2">
+                            {p.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-4">
+              {points.map((p, i) => (
+                <button
                   key={p.no}
-                  className="relative rounded-2xl bg-white shadow-card p-5 sm:p-6 text-left"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-unicore-accent flex items-center justify-center text-white text-sm font-semibold flex-shrink-0">
-                      {p.no}
-                    </div>
-
-                    <div className="flex-1 w-full text-left">
-                      <h3 className="block w-full !text-left text-design-dark font-semibold text-sm sm:text-base">
-                        {p.title}
-                      </h3>
-                      <p className="block w-full !text-left text-design-mid text-xs sm:text-sm leading-relaxed mt-2">
-                        {p.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="hidden sm:block absolute top-5 right-5 text-unicore-accent">
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                </div>
+                  type="button"
+                  onClick={() => setSlideIndex(i)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    i === slideIndex ? 'bg-unicore-accent scale-125' : 'bg-design-mid/40 hover:bg-design-mid/60'
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
               ))}
             </div>
           </div>

@@ -9,25 +9,25 @@ const drivesForward = [
   {
     title: 'Quality Focus',
     description:
-      'We collaborate with trusted manufacturing partners to ensure the products we supply meet high standards of performance, durability, and reliability.',
+      'We work with trusted manufacturing partners to deliver reliable and durable products.',
     Icon: Target,
   },
   {
     title: 'Continuous Improvement',
     description:
-      'We continuously expand and improve our product range to meet the evolving needs of industrial environments and large-scale facilities.',
+      'We regularly enhance our product range to meet evolving industrial needs.',
     Icon: Zap,
   },
   {
     title: 'Customer Commitment',
     description:
-      'We focus on building long-term relationships by providing dependable products, responsive support, and reliable supply for our business partners.',
+      'We build long-term partnerships through dependable products and responsive support.',
     Icon: Eye,
   },
   {
     title: 'Responsible Practices',
     description:
-      'We work with partners who follow responsible manufacturing practices and industry standards to support sustainable and efficient industrial operations.',
+      'We collaborate with partners following industry standards and responsible practices.',
     Icon: ShieldCheck,
   },
 ];
@@ -136,25 +136,29 @@ export default function AboutPage() {
       <section
         id="mission-vision"
         ref={missionRef}
-        className="py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-5 bg-design-bg scroll-mt-24"
+        className="py-4 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-5 bg-design-bg scroll-mt-24"
       >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="about-animate rounded-xl bg-white p-3 sm:p-5 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark mb-1 sm:mb-2">
-                <Target className="w-6 h-6 sm:w-7 sm:h-7" />
+            <div className="about-animate rounded-xl bg-white px-3 py-2.5 sm:p-5 border border-design-border hover:border-unicore-accent hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-design-dark flex-shrink-0">
+                  <Target className="w-6 h-6 sm:w-7 sm:h-7" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-design-dark text-center">Our Mission</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-design-dark mb-1.5 text-center sm:text-left">Our Mission</h3>
               <p className="text-design-mid text-sm sm:text-base font-normal leading-relaxed text-center sm:text-left">
                 To provide efficient and dependable industrial cooling solutions that help businesses maintain comfortable and productive working environments.
               </p>
             </div>
 
-            <div className="about-animate rounded-xl bg-unicore-accent/20 p-3 sm:p-5 border border-unicore-accent/40 hover:bg-unicore-accent/25 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-unicore-dark mb-1 sm:mb-2">
-                <Eye className="w-6 h-6 sm:w-7 sm:h-7" />
+            <div className="about-animate rounded-xl bg-unicore-accent/20 px-3 py-2.5 sm:p-5 border border-unicore-accent/40 hover:bg-unicore-accent/25 hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-unicore-accent bg-white text-unicore-dark flex-shrink-0">
+                  <Eye className="w-6 h-6 sm:w-7 sm:h-7" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-unicore-dark text-center">Our Vision</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-unicore-dark mb-1.5 text-center sm:text-left">Our Vision</h3>
               <p className="text-unicore-dark/90 text-sm sm:text-base font-normal leading-relaxed text-center sm:text-left">
                 To become a trusted supplier of industrial cooling and ventilation equipment across India, supporting manufacturing units and commercial facilities with high-quality products.
               </p>
@@ -182,11 +186,13 @@ export default function AboutPage() {
                   key={i}
                   className="about-animate rounded-2xl border border-design-border/80 bg-white p-3 sm:p-4 hover:border-unicore-accent/40 transition-colors duration-300"
                 >
-                  <div className="w-10 h-10 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center mb-2">
-                    <Icon className="w-5 h-5 text-unicore-accent" />
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-unicore-accent/10 border border-unicore-accent/30 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-unicore-accent" />
+                    </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-design-dark leading-tight">{item.title}</h3>
                   </div>
-                  <h3 className="text-sm sm:text-base font-semibold text-design-dark mb-1">{item.title}</h3>
-                  <p className="text-design-mid text-[0.78rem] sm:text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-design-mid text-[0.76rem] sm:text-sm leading-relaxed">{item.description}</p>
                 </div>
               );
             })}
