@@ -9,8 +9,14 @@ import IndustriesPage from './pages/IndustriesPage';
 import ContactPage from './pages/ContactPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import BulkOrdersPage from './pages/BulkOrdersPage';
+import MaintenancePage from './pages/MaintenancePage';
+import { SITE_UNDER_MAINTENANCE } from './config/siteMode';
 
 function App() {
+  if (SITE_UNDER_MAINTENANCE) {
+    return <MaintenancePage />;
+  }
+
   return (
     <BrowserRouter>
       <ScrollToTop />
