@@ -48,9 +48,9 @@ export default function CTA() {
         </div>
 
         <div className="cta-content flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-6 text-white/95 text-sm font-normal">
-          <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-white transition-colors duration-300 font-medium">
+          <a href="tel:+917042526555" className="flex items-center gap-2 hover:text-white transition-colors duration-300 font-medium">
             <Phone className="w-5 h-5 flex-shrink-0" />
-            <span>(+91) 9876543210</span>
+            <span>+91 70425 26555</span>
           </a>
           <a href="mailto:info@unicore.com" className="flex items-center gap-2 hover:text-white transition-colors duration-300 font-medium">
             <Mail className="w-5 h-5 flex-shrink-0" />
