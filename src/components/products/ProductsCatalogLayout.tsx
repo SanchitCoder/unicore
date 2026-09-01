@@ -7,9 +7,16 @@ import {
   allProductsCards,
   exhaustFanCards,
   farrataFanCards,
+  wallFanCards,
   airCirculatorCards,
+  ductCoolerCards,
   airCoolerCards,
+  centrifugalFanCards,
 } from '../../data/productsCatalog';
+
+type TabKey = 'all' | 'exhaust' | 'farrata' | 'wall' | 'circulators' | 'duct-coolers' | 'coolers' | 'centrifugal';
+
+const TAB_KEYS: TabKey[] = ['all', 'exhaust', 'farrata', 'wall', 'circulators', 'duct-coolers', 'coolers', 'centrifugal'];
 
 export default function ProductsCatalogLayout() {
   const tabs = useMemo(
@@ -17,20 +24,23 @@ export default function ProductsCatalogLayout() {
       { key: 'all', label: 'All Products' },
       { key: 'exhaust', label: 'Exhaust Fans' },
       { key: 'farrata', label: 'Farrata Fans' },
+      { key: 'wall', label: 'Wall Fans' },
       { key: 'circulators', label: 'Air Circulators' },
+      { key: 'duct-coolers', label: 'Duct Coolers' },
       { key: 'coolers', label: 'Air Coolers' },
-    ],
+      { key: 'centrifugal', label: 'Centrifugal Fans' },
+    ] satisfies { key: TabKey; label: string }[],
     []
   );
-  const [activeTab, setActiveTab] = useState<'all' | 'exhaust' | 'farrata' | 'circulators' | 'coolers'>('all');
+  const [activeTab, setActiveTab] = useState<TabKey>('all');
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tab = searchParams.get('tab');
     if (!tab) return;
-    const normalized = tab.toLowerCase() as typeof activeTab;
-    if (['all', 'exhaust', 'farrata', 'circulators', 'coolers'].includes(normalized)) {
+    const normalized = tab.toLowerCase() as TabKey;
+    if (TAB_KEYS.includes(normalized)) {
       setActiveTab(normalized);
     }
   }, [searchParams]);
@@ -51,11 +61,20 @@ export default function ProductsCatalogLayout() {
     if (activeTab === 'farrata') {
       return { title: 'Farrata Fans', cards: farrataFanCards };
     }
+    if (activeTab === 'wall') {
+      return { title: 'Wall Fans', cards: wallFanCards };
+    }
     if (activeTab === 'circulators') {
       return { title: 'Air Circulators', cards: airCirculatorCards };
     }
+    if (activeTab === 'duct-coolers') {
+      return { title: 'Duct Coolers', cards: ductCoolerCards };
+    }
     if (activeTab === 'coolers') {
       return { title: 'Air Coolers', cards: airCoolerCards };
+    }
+    if (activeTab === 'centrifugal') {
+      return { title: 'Centrifugal Fans', cards: centrifugalFanCards };
     }
     return { title: 'All Products', cards: allProductsCards };
   }, [activeTab]);

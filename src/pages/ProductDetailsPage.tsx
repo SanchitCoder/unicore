@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
+import { getProductBySlug } from '../data/products';
 
-type Spec = { label: string; value: string };
-
-function useAutoSlider(length: number, intervalMs: number) {
+function useAutoSlider(length: number, intervalMs: number): [number, (i: number) => void] {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -15,251 +14,23 @@ function useAutoSlider(length: number, intervalMs: number) {
     return () => window.clearInterval(id);
   }, [length, intervalMs]);
 
-  return index;
+  return [index, setIndex];
 }
 
 export default function ProductDetailsPage() {
   const { productId } = useParams();
-  const decodedProductName = useMemo(() => {
-    const raw = productId ?? '';
-    try {
-      return decodeURIComponent(raw);
-    } catch {
-      return raw;
-    }
-  }, [productId]);
-
+  const product = useMemo(() => getProductBySlug(productId), [productId]);
   const details = useMemo(() => {
-    const map: Record<
-      string,
-      {
-        title: string;
-        category: string;
-        description: string[];
-        specs: Spec[];
-        images: string[];
-        features?: string[];
-      }
-    > = {
-      'SUPREME PLUS Industrial Exhaust Fan': {
-        title: 'SUPREME PLUS Industrial Exhaust Fan',
-        category: 'Heavy Duty Exhaust Fans',
-        description: [
-          'The SUPREME PLUS series is built for continuous industrial exhaust where stable airflow and long service life matter.',
-          'Featuring an aluminum hub with an MS blade configuration, these fans are designed for dependable performance in heavy-duty environments.',
-        ],
-        specs: [
-          { label: 'Fan Type', value: 'Heavy Duty Exhaust Fan 18"' },
-          { label: 'Blade Material', value: 'Aluminum Hub with MS Blade' },
-          { label: 'Speed', value: '1360 RPM' },
-          { label: 'Sweep', value: '450 mm' },
-          { label: 'Usage', value: 'Industrial' },
-          { label: 'Blades', value: '4 Leaf' },
-          { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-          { label: 'Watts', value: '320 W' },
-        ],
-        images: [
-          '/products/supreme-plus/1.jpg',
-          '/products/supreme-plus/2.jpg',
-          '/products/supreme-plus/3.jpg',
-          '/products/supreme-plus/4.jpg',
-          '/products/supreme-plus/5.jpg',
-          '/products/supreme-plus/6.jpg',
-          '/products/supreme-plus/7.jpg',
-        ],
-      },
-      'EURUS 18" WALL (Oscillating)': {
-        title: 'EURUS 18" WALL (Oscillating)',
-        category: 'Pedestal / Circulator Fans',
-        description: [
-          'EURUS is engineered for reliable everyday circulation in domestic and commercial spaces.',
-          'With an oscillating airflow pattern and lightweight aluminum blades, it balances comfort with efficient air movement.',
-        ],
-        specs: [
-          { label: 'Motor', value: 'Aluminium Winding' },
-          { label: 'Fan Type', value: 'Wall Fans 18" (Oscillating)' },
-          { label: 'Blade Material', value: 'Aluminum Blade (light weight)' },
-          { label: 'Speed', value: '1400 rpm' },
-          { label: 'Sweep', value: '450 mm' },
-          { label: 'Usage', value: 'Domestic Fans' },
-          { label: 'Blades', value: '3 Leaf' },
-          { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-          { label: 'Watts', value: '105 W' },
-        ],
-        images: [
-          '/products/eurus-18/1.jpg',
-          '/products/eurus-18/2.jpg',
-          '/products/eurus-18/3.jpg',
-          '/products/eurus-18/4.jpg',
-          '/products/eurus-18/5.jpg',
-          '/products/eurus-18/6.jpg',
-        ],
-      },
-      'SUPER STAR 20" (Non-Oscillating)': {
-        title: 'SUPER STAR 20" (Non-Oscillating)',
-        category: 'Pedestal Fans',
-        description: [
-          'The SUPER STAR series offers strong airflow with a lightweight, durable blade setup suitable for regular use.',
-          'Designed for stable performance, it is an ideal choice for domestic cooling and circulation.',
-        ],
-        specs: [
-          { label: 'Fan Type', value: 'Pedestal Fans 20" (Non-Oscillating)' },
-          { label: 'Blade Material', value: 'Aluminum Blade (light weight)' },
-          { label: 'Speed', value: '1350 rpm' },
-          { label: 'Sweep', value: '500 mm' },
-          { label: 'Usage', value: 'Domestic Fans' },
-          { label: 'Blades', value: '3 Leaf' },
-          { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-          { label: 'Watts', value: '135 W' },
-        ],
-        images: [
-          '/products/super-star-20/1.jpg',
-          '/products/super-star-20/2.jpg',
-          '/products/super-star-20/3.jpg',
-          '/products/super-star-20/4.jpg',
-          '/products/super-star-20/5.jpg',
-          '/products/super-star-20/6.jpg',
-          '/products/super-star-20/7.jpg',
-        ],
-      },
-      'AEROTHRUST 18" (Oscillating)': {
-        title: 'AEROTHRUST 18" (Oscillating)',
-        category: 'Air Circulator Fans',
-        description: [
-          'AEROTHRUST 18" delivers focused circulation with an oscillating airflow pattern designed for comfort and consistency.',
-          'Copper winding motor and aluminum casted blades help support reliable performance in demanding environments.',
-        ],
-        specs: [
-          { label: 'Motor', value: 'Copper Winding' },
-          { label: 'Fan Type', value: 'Pedestal & Wall Fans 18" (Oscillating)' },
-          { label: 'Blade Material', value: 'Aluminum Casted Blade' },
-          { label: 'Speed', value: '1400 rpm' },
-          { label: 'Sweep', value: '450 mm' },
-          { label: 'Usage', value: 'Industrial' },
-          { label: 'Blades', value: '3 Leaf' },
-          { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-          { label: 'Watts', value: '105 W' },
-        ],
-        images: [
-          '/products/aerothrust-18/1.jpg',
-          '/products/aerothrust-18/2.jpg',
-          '/products/aerothrust-18/3.jpg',
-          '/products/aerothrust-18/4.jpg',
-          '/products/aerothrust-18/5.jpg',
-        ],
-      },
-      'AEROTHRUST 24" (Oscillating)': {
-        title: 'AEROTHRUST 24" (Oscillating)',
-        category: 'Air Circulator Fans',
-        description: [
-          'AEROTHRUST 24" is designed to move larger volumes of air with an oscillating pattern for broader coverage.',
-          'Built with copper winding and durable aluminum casted blades, it supports long-running industrial circulation.',
-        ],
-        specs: [
-          { label: 'Motor', value: 'Copper Winding' },
-          { label: 'Fan Type', value: 'Pedestal & Wall Fans 24" (Oscillating)' },
-          { label: 'Blade Material', value: 'Aluminum Casted Blade' },
-          { label: 'Speed', value: '1400 rpm' },
-          { label: 'Sweep', value: '600 mm' },
-          { label: 'Usage', value: 'Industrial' },
-          { label: 'Blades', value: '3 Leaf' },
-          { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-          { label: 'Watts', value: '200 W' },
-        ],
-        images: [
-          '/aero-front.jpg',
-          '/products/aerothrust-24/1.jpg',
-          '/products/aerothrust-24/2.jpg',
-          '/products/aerothrust-24/3.png',
-          '/products/aerothrust-24/4.jpg',
-          '/products/aerothrust-24/5.jpg',
-          '/products/aerothrust-24/6.jpg',
-          '/products/aerothrust-24/7.jpg',
-        ],
-      },
-      AirMaxx: {
-        title: 'AirMaxx',
-        category: 'Industrial Air Coolers',
-        description: [
-          'AirMaxx pairs a 19" centrifugal fan with honeycomb cooling media for powerful, consistent airflow in factories, warehouses, and workshops.',
-          'Anti-rust construction, heavy-duty castors, and a 120 L tank support dependable day-to-day industrial use.',
-        ],
-        specs: [
-          { label: 'Fan Type', value: '19" Centrifugal blade, 4 leaf' },
-          { label: 'Air Flow', value: '4800 CMH' },
-          { label: 'Water Tank Capacity', value: '120 L' },
-          { label: 'Motor Type', value: 'Cu Motor' },
-          { label: 'Product Dimensions (mm)', value: '880L × 630W × 1480H' },
-        ],
-        images: ['/airmaxx-front.jpeg', '/airmaxx-1.jpeg', '/airmaxx-2.jpeg'],
-        features: [
-          '19" FAN - POWERFUL AIR DELIVERY',
-          'ANTI RUST VIRGIN - STURDY BODY',
-          'HEAVY DUTY CASTOR WHEELS',
-          'WATER LEVEL INDICATOR',
-          'ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
-          'FITTED WITH UNIFLOW PUMP',
-          'COMFORT COOLING',
-          'LOW NOISE',
-          'EASY DRAIN',
-        ],
-      },
-      CoolBreeze: {
-        title: 'CoolBreeze',
-        category: 'Industrial Air Coolers',
-        description: [
-          'CoolBreeze delivers a 20" centrifugal airflow pattern with strong air throw for large industrial and commercial spaces.',
-          'Three-side honeycomb pads and a 135 L tank help maintain effective cooling during continuous operation.',
-        ],
-        specs: [
-          { label: 'Fan Type', value: '20" Centrifugal blade, 4 leaf' },
-          { label: 'Air Throw', value: '60 ft' },
-          { label: 'Water Tank Capacity', value: '135 ltr' },
-          { label: 'Motor Type', value: 'Al Motor, 1350 RPM' },
-          { label: 'Product Dimensions (mm)', value: '825L × 596W × 1370H' },
-        ],
-        images: ['/cool-front.png', '/coolbreeze-2.png'],
-        features: [
-          '20" FAN - POWERFUL AIR DELIVERY',
-          'STURDY BODY',
-          'HEAVY DUTY CASTOR WHEELS',
-          'WATER LEVEL INDICATOR',
-          '3 SIDE ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
-          'FITTED WITH UNIFLOW PUMP',
-          'COMFORT COOLING',
-          'LOW NOISE',
-          'EASY DRAIN',
-        ],
-      },
-      Glacier: {
-        title: 'Glacier',
-        category: 'Industrial Air Coolers',
-        description: [
-          'Glacier is built around a 30" centrifugal fan for high-volume cooling in the largest industrial layouts.',
-          'Premium matte finish, 200 L capacity, and rugged mobility make it suited to demanding, project-scale requirements.',
-        ],
-        specs: [
-          { label: 'Fan Type', value: '30" Centrifugal blade, 4 leaf' },
-          { label: 'Water Tank Capacity', value: '200 Ltrs.' },
-          { label: 'Product Dimensions (mm)', value: '1140L × 745W × 1840H' },
-        ],
-        images: ['/glacier-front.jpeg'],
-        features: [
-          '30" FAN - POWERFUL AIR DELIVERY',
-          'PREMIUM MATTE FINISH - STURDY BODY',
-          'HEAVY DUTY CASTOR WHEELS',
-          'WATER LEVEL INDICATOR',
-          'ANTI BACTERIAL COOLING MEDIA - HONEYCOMB PADS',
-          'FITTED WITH UNIFLOW PUMP',
-          'COMFORT COOLING',
-          'LOW NOISE',
-          'EASY DRAIN',
-        ],
-      },
+    if (!product) return null;
+    return {
+      title: product.name,
+      category: product.categoryLabel,
+      description: product.description,
+      specs: product.specs,
+      images: product.images,
+      features: product.features,
     };
-
-    return map[decodedProductName] ?? null;
-  }, [decodedProductName]);
+  }, [product]);
 
   const [requestOpen, setRequestOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -271,7 +42,7 @@ export default function ProductDetailsPage() {
     message: '',
   });
 
-  const galleryIndex = useAutoSlider(details?.images?.length ?? 0, 2000);
+  const [galleryIndex, setGalleryIndex] = useAutoSlider(details?.images?.length ?? 0, 2000);
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -337,12 +108,7 @@ export default function ProductDetailsPage() {
                     type="button"
                     aria-label={`Slide ${i + 1}`}
                     className={`h-2 w-2 rounded-full transition-colors ${i === galleryIndex ? 'bg-unicore-accent' : 'bg-white/30'}`}
-                    onClick={() => {
-                      // Keep dots clickable only when there are multiple slides.
-                      // Slider auto-advances; clicking simply sets the index via remount trick.
-                      // (We rely on the interval for the rest.)
-                      // No-op if single slide.
-                    }}
+                    onClick={() => setGalleryIndex(i)}
                   />
                 ))}
               </div>

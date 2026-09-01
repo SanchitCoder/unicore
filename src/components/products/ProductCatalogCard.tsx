@@ -36,13 +36,11 @@ export default function ProductCatalogCard({ card, priority = false }: { card: C
         </ul>
 
         <Link
-          to={`/product-details/${encodeURIComponent(card.productDetailsName)}`}
+          to={`/product-details/${card.slug}`}
           className="block w-full text-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-unicore-dark text-white text-sm font-semibold hover:bg-unicore-dark-light transition-colors"
         >
           Learn More
         </Link>
-
-        {/* Card navigation uses external link to product-details in a new tab */}
       </div>
     </div>
   );

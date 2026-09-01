@@ -11,8 +11,11 @@ const companyLinks = [
 const productsLinks = [
   { label: 'Industrial Exhaust Fans', to: '/products?tab=exhaust' },
   { label: 'Farrata Fans', to: '/products?tab=farrata' },
+  { label: 'Wall Fans', to: '/products?tab=wall' },
   { label: 'Air Circulators', to: '/products?tab=circulators' },
+  { label: 'Duct Coolers', to: '/products?tab=duct-coolers' },
   { label: 'Air Coolers', to: '/products?tab=coolers' },
+  { label: 'Centrifugal Fans', to: '/products?tab=centrifugal' },
 ];
 
 const socialIconClass =

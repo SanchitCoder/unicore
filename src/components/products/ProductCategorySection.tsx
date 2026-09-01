@@ -18,7 +18,7 @@ export default function ProductCategorySection({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {cards.map((card, index) => (
-            <ProductCatalogCard key={card.title} card={card} priority={index < 3} />
+            <ProductCatalogCard key={card.slug} card={card} priority={index < 3} />
           ))}
         </div>
       </div>
