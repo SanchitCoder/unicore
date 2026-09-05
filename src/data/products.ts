@@ -45,12 +45,22 @@ const FAN_RANGE_FEATURES = [
 
 const DUCT_COOLER_RANGE_FEATURES = [
   'Swivel Louvers',
+  '24" Axial Fan',
   'Industrial Grade Heavy Cord',
   '100% Virgin UV Resistant Grade Plastic Body',
   'Heavy Duty Castor Wheels',
   'Anti Bacterial Honeycomb Pads',
   'Fitted with Uniflow Copper Pump',
   'Large Water Tank Capacity',
+];
+
+const AIR_CIRCULATOR_RANGE_FEATURES = [
+  'Superior Paint Finish',
+  'Higher Air Delivery',
+  'ZZ Double Ball Bearing',
+  'Stay Cool Motor',
+  'Powerful Motor',
+  'High Air Coverage',
 ];
 
 const VENT_PRO_ADD_ONS = [
@@ -335,7 +345,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '150 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-450-pedestal-18', 1),
   },
   {
@@ -360,7 +370,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '150 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-450-wall-18', 1),
   },
   {
@@ -385,7 +395,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '200 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-600-pedestal-24', 1),
   },
   {
@@ -410,7 +420,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '200 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-600-wall-24', 1),
   },
   {
@@ -435,7 +445,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '260 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-750-pedestal-30', 1),
   },
   {
@@ -460,7 +470,7 @@ export const products: Product[] = [
       { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
       { label: 'Watts', value: '260 W' },
     ],
-    features: FAN_RANGE_FEATURES,
+    features: AIR_CIRCULATOR_RANGE_FEATURES,
     ...productImages('aerothrust-750-wall-30', 1),
   },
 
@@ -843,6 +853,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '0.56 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1066H x 1066W x 450D (mm)' },
     ],
+    features: FAN_RANGE_FEATURES,
     ...productImages('scf-43', 1),
   },
   {
@@ -865,6 +876,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '1.1 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1380H x 1380W x 450D (mm)' },
     ],
+    features: FAN_RANGE_FEATURES,
     ...productImages('scf-54', 1),
   },
   {
@@ -887,6 +899,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '1.1 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1380H x 1380W x 450D (mm)' },
     ],
+    features: FAN_RANGE_FEATURES,
     ...productImages('pcf-54', 1),
   },
 ];
