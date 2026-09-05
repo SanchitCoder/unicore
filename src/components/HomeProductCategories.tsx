@@ -6,7 +6,6 @@ import { ArrowRight } from 'lucide-react';
 const categories = [
   { label: 'Industrial Coolers', image: '/products/airmaxx/main.jpg', tab: 'coolers' },
   { label: 'Exhaust Fans', image: '/products/pure-air-hdef-18/main.jpg', tab: 'exhaust' },
-  { label: 'HVLS Fans', image: '/ceiling-fan.png', tab: null },
   { label: 'Farrata Fans', image: '/products/air-jet-16/main.jpg', tab: 'farrata' },
   { label: 'Wall Fans', image: '/products/metawing-16-wall/main.jpg', tab: 'wall' },
   { label: 'Air Circulators', image: '/products/aerothrust-450-pedestal-18/main.jpg', tab: 'circulators' },
@@ -50,7 +49,7 @@ export default function HomeProductCategories() {
           Engineered to deliver performance, efficiency and reliability in every environment.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
           {categories.map((c) => (
             <Link
               key={c.label}
