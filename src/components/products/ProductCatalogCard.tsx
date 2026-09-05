@@ -1,9 +1,10 @@
 import { CatalogCard } from '../../data/productsCatalog';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 export default function ProductCatalogCard({ card, priority = false }: { card: CatalogCard; priority?: boolean }) {
   return (
-    <div className="group rounded-xl sm:rounded-2xl bg-white border-2 border-design-border shadow-xl shadow-black/10 overflow-hidden hover:border-unicore-accent/50 hover:shadow-2xl hover:shadow-black/15 transition-all duration-300">
+    <div className="group rounded-2xl bg-white border border-design-border shadow-card overflow-hidden hover:border-unicore-accent/50 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
       <div className="relative aspect-[6/3] sm:aspect-[4/3] bg-design-bg overflow-hidden">
         <img
           src={card.imageSrc}
@@ -37,9 +38,12 @@ export default function ProductCatalogCard({ card, priority = false }: { card: C
 
         <Link
           to={`/product-details/${card.slug}`}
-          className="block w-full text-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-unicore-dark text-white text-sm font-semibold hover:bg-unicore-dark-light transition-colors"
+          className="group/btn flex items-center justify-center gap-2 w-full pl-4 pr-1.5 py-1.5 sm:py-2 rounded-full bg-unicore-dark text-white text-sm font-semibold hover:bg-unicore-dark-light transition-colors"
         >
           Learn More
+          <span className="grid place-items-center w-6 h-6 rounded-full bg-white/15 group-hover/btn:bg-white/25 group-hover/btn:translate-x-0.5 transition-all duration-300">
+            <ArrowRight className="w-3.5 h-3.5" />
+          </span>
         </Link>
       </div>
     </div>

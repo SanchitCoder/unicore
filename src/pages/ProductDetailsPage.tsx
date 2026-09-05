@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import Layout from '../components/Layout';
 import { getProductBySlug } from '../data/products';
 
@@ -120,7 +121,7 @@ export default function ProductDetailsPage() {
       <section className="py-8 sm:py-10 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-semibold text-design-dark mb-2">Key Specifications</h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-6" />
+          <div className="h-1 w-20 bg-unicore-accent rounded-full mb-6" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {details.specs.map((s, i) => (
@@ -134,7 +135,7 @@ export default function ProductDetailsPage() {
           {details.features && details.features.length > 0 ? (
             <div className="mt-10">
               <h2 className="text-2xl font-semibold text-design-dark mb-2">Key Features</h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-6" />
+              <div className="h-1 w-20 bg-unicore-accent rounded-full mb-6" />
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {details.features.map((line, i) => (
                   <li
@@ -152,10 +153,13 @@ export default function ProductDetailsPage() {
           <div className="mt-8">
             <button
               type="button"
-              className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-unicore-accent text-white font-semibold hover:bg-unicore-accent-hover shadow-btn transition-colors"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover hover:shadow-btn-hover transition-all duration-300"
               onClick={() => setRequestOpen(true)}
             >
               Request Quote
+              <span className="grid place-items-center w-8 h-8 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all duration-300">
+                <ArrowRight className="w-4 h-4" />
+              </span>
             </button>
             <p className="text-design-mid text-sm mt-3">
               Share your requirements and we will get back with availability, specifications, and a competitive quote.
@@ -246,8 +250,14 @@ export default function ProductDetailsPage() {
                     placeholder="Quantity, installation details, and any requirements..."
                   />
                 </div>
-                <button type="submit" className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-unicore-accent text-white font-semibold hover:bg-unicore-accent-hover transition-colors">
+                <button
+                  type="submit"
+                  className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-unicore-accent text-white font-semibold hover:bg-unicore-accent-hover transition-all duration-300"
+                >
                   Submit Request
+                  <span className="grid place-items-center w-8 h-8 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all duration-300">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </button>
               </form>
             </div>

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { animate, stagger } from 'animejs';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import Layout from '../components/Layout';
 
 export default function ContactPage() {
@@ -48,44 +48,44 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-design-mid text-lg text-center mb-10">
-            Have a question about our industrial cooling and ventilation products? We’re here to help with quotes, specifications, and bulk orders.
+      <section className="py-14 sm:py-16 md:py-20 px-4 sm:px-5 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-design-mid text-lg text-center mb-12 max-w-2xl mx-auto">
+            Have a question about our industrial cooling and ventilation products? We're here to help with quotes, specifications, and bulk orders.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {/* Contact details */}
-            <div className="space-y-6 order-2 lg:order-1">
-              <h2 className="text-xl font-semibold text-design-dark mb-4">Reach us</h2>
+            <div className="order-2 lg:order-1 rounded-2xl border border-design-border bg-design-bg p-6 sm:p-7 space-y-6 h-fit">
+              <h2 className="text-xl font-bold text-unicore-dark">Reach us</h2>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
+                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-design-dark">Email</p>
+                  <p className="text-sm font-semibold text-unicore-dark">Email</p>
                   <a href="mailto:contact@unicore.com" className="text-design-mid text-sm hover:text-unicore-accent transition-colors">
                     contact@unicore.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
+                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-design-dark">Phone</p>
+                  <p className="text-sm font-semibold text-unicore-dark">Phone</p>
                   <a href="tel:+917042526555" className="text-design-mid text-sm hover:text-unicore-accent transition-colors">
                     +91 70425 26555
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
+                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-unicore-accent/10 flex items-center justify-center text-unicore-accent">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-design-dark">Address</p>
+                  <p className="text-sm font-semibold text-unicore-dark">Address</p>
                   <p className="text-design-mid text-sm">
                     India
                   </p>
@@ -94,12 +94,12 @@ export default function ContactPage() {
             </div>
 
             {/* Contact form */}
-            <div className="lg:col-span-2 order-1 lg:order-2">
-              <h2 className="text-xl font-semibold text-design-dark mb-4">Send a message</h2>
+            <div className="lg:col-span-2 order-1 lg:order-2 rounded-2xl border border-design-border shadow-card p-6 sm:p-7">
+              <h2 className="text-xl font-bold text-unicore-dark mb-4">Send a message</h2>
               {formSubmitted ? (
-                <div className="rounded-lg border border-unicore-accent/30 bg-unicore-accent/5 p-6 text-center">
+                <div className="rounded-xl border border-unicore-accent/30 bg-unicore-accent/5 p-6 text-center">
                   <p className="text-design-dark font-medium mb-1">Thank you for your message.</p>
-                  <p className="text-design-mid text-sm">We’ll get back to you shortly.</p>
+                  <p className="text-design-mid text-sm">We'll get back to you shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -165,9 +165,12 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-unicore-accent text-white font-medium hover:bg-unicore-accent-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-colors text-sm"
+                    className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-unicore-accent text-white font-semibold hover:bg-unicore-accent-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-all duration-300 text-sm"
                   >
                     Send Message
+                    <span className="grid place-items-center w-8 h-8 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all duration-300">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
                   </button>
                 </form>
               )}

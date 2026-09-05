@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function CTA() {
@@ -15,7 +15,7 @@ export default function CTA() {
               translateY: { to: 0, from: 28 },
               opacity: { to: 1, from: 0 },
               duration: 600,
-              delay: stagger(50),
+              delay: stagger(60),
               ease: 'out-cubic',
             });
           }
@@ -28,22 +28,27 @@ export default function CTA() {
   }, []);
 
   return (
-    <section id="contact-cta" ref={sectionRef} className="relative py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-5 overflow-hidden">
+    <section id="contact-cta" ref={sectionRef} className="relative py-14 sm:py-16 md:py-20 px-4 sm:px-5 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-unicore-dark via-unicore-dark-light to-unicore-accent" />
+      <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-black/10 blur-3xl" aria-hidden="true" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <h2 className="cta-content text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-2 sm:mb-3 leading-snug">
+        <h2 className="cta-content text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 leading-snug">
           Reliable cooling and ventilation for your operations.
         </h2>
-        <p className="cta-content text-base sm:text-lg text-white/90 font-normal mb-4 sm:mb-6">
+        <p className="cta-content text-base sm:text-lg text-white/90 font-normal mb-8">
           Get in touch for bulk orders and partnerships.
         </p>
-        <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-10">
+        <div className="cta-content flex flex-col sm:flex-row gap-3 justify-center mb-10">
           <Link
             to="/contact"
-            className="btn-primary-large rounded-lg inline-block text-center"
+            className="group inline-flex items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-white text-unicore-dark font-semibold text-sm sm:text-base shadow-card hover:shadow-card-hover transition-all duration-300"
           >
             Contact UNICORE Today
+            <span className="grid place-items-center w-8 h-8 rounded-full bg-unicore-dark/10 group-hover:bg-unicore-dark/15 group-hover:translate-x-0.5 transition-all duration-300">
+              <ArrowRight className="w-4 h-4" />
+            </span>
           </Link>
         </div>
 

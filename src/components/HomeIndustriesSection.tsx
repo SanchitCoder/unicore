@@ -1,28 +1,28 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
+import { Building2, Factory, HardHat, Warehouse, Wrench } from 'lucide-react';
 
 const industries = [
-  'Manufacturing Units',
-  'Warehouses & Logistics Centers',
-  'Industrial Workshops',
-  'Construction Sites',
-  'Commercial & Institutional Facilities',
+  { label: 'Manufacturing Units', Icon: Factory },
+  { label: 'Warehouses & Logistics Centers', Icon: Warehouse },
+  { label: 'Industrial Workshops', Icon: Wrench },
+  { label: 'Construction Sites', Icon: HardHat },
+  { label: 'Commercial & Institutional Facilities', Icon: Building2 },
 ];
 
 export default function HomeIndustriesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            animate(entry.target.querySelectorAll('.ind-item'), {
-              translateY: { to: 0, from: 28 },
+            animate(entry.target.querySelectorAll('.ind-card'), {
+              translateY: { to: 0, from: 24 },
               opacity: { to: 1, from: 0 },
               duration: 550,
-              delay: stagger(40),
+              delay: stagger(60),
               ease: 'out-cubic',
             });
           }
@@ -34,56 +34,35 @@ export default function HomeIndustriesSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => (i >= industries.length - 1 ? 0 : i + 1));
-    }, 2000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="ind-item text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-          Industries We Serve
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-5" />
-        <p className="ind-item text-lg text-design-mid font-normal text-center mb-8">
-          Our industrial cooling and ventilation systems are widely used in:
-        </p>
-
-        <div className="ind-item relative">
-          <div className="overflow-hidden rounded-xl">
-            <div
-              className="flex transition-transform duration-300 ease-out"
-              style={{ transform: `translateX(-${index * 100}%)` }}
-            >
-              {industries.map((item, i) => (
-                <div key={i} className="w-full flex-shrink-0 px-1">
-                  <div className="flex items-center justify-center text-center p-5 sm:p-6 rounded-xl bg-design-bg border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300">
-                    <span className="text-design-dark font-medium text-lg">{item}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex justify-center gap-2 mt-4">
-            {industries.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setIndex(i)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  i === index ? 'bg-unicore-accent scale-125' : 'bg-design-mid/40 hover:bg-design-mid/60'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
+    <section ref={sectionRef} className="py-14 sm:py-16 md:py-20 px-4 sm:px-5 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+            <span className="text-unicore-dark">Industries We </span>
+            <span className="text-unicore-accent">Serve</span>
+          </h2>
+          <div className="h-1 w-20 bg-unicore-accent mx-auto rounded-full mb-4" />
+          <p className="text-design-mid text-sm sm:text-base max-w-2xl mx-auto">
+            Our industrial cooling and ventilation systems are widely used in demanding, large-scale environments across sectors.
+          </p>
         </div>
 
-        <p className="ind-item text-lg text-design-mid font-normal text-center mt-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          {industries.map(({ label, Icon }) => (
+            <div
+              key={label}
+              className="ind-card bg-white rounded-2xl border border-design-border shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 p-5 sm:p-6 flex flex-col items-center text-center gap-3"
+            >
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-unicore-accent/10 text-unicore-accent flex items-center justify-center">
+                <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
+              </div>
+              <span className="text-unicore-dark font-semibold text-sm sm:text-base leading-snug">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-design-mid text-sm sm:text-base text-center mt-10 max-w-2xl mx-auto">
           We understand operational challenges in large-scale environments and provide solutions designed for continuous performance.
         </p>
       </div>

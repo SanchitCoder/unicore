@@ -67,30 +67,6 @@ function productImages(slug: string, count: number): { cardImage: string; images
 export const products: Product[] = [
   // ===================== EXHAUST FANS =====================
   {
-    slug: 'supreme-plus',
-    name: 'SUPREME PLUS Industrial Exhaust Fan',
-    categoryKey: 'exhaust',
-    categoryLabel: categoryLabels.exhaust,
-    tagline: 'Heavy-duty exhaust ventilation designed to remove heat, smoke, dust, and humidity from large facilities.',
-    bullets: ['Speed: 1360 RPM', 'Sweep: 450 mm', 'Power: 320 W', 'Usage: Industrial'],
-    description: [
-      'The SUPREME PLUS series is built for continuous industrial exhaust where stable airflow and long service life matter.',
-      'Featuring an aluminum hub with an MS blade configuration, these fans are designed for dependable performance in heavy-duty environments.',
-    ],
-    specs: [
-      { label: 'Fan Type', value: 'Heavy Duty Exhaust Fan 18"' },
-      { label: 'Blade Material', value: 'Aluminum Hub with MS Blade' },
-      { label: 'Speed', value: '1360 RPM' },
-      { label: 'Sweep', value: '450 mm' },
-      { label: 'Usage', value: 'Industrial' },
-      { label: 'Blades', value: '4 Leaf' },
-      { label: 'Power Requirement', value: 'AC 220 – 240 V, 50 Hz' },
-      { label: 'Watts', value: '320 W' },
-    ],
-    features: FAN_RANGE_FEATURES,
-    ...productImages('supreme-plus', 8),
-  },
-  {
     slug: 'pure-air-hdef-12',
     name: 'PURE Air HDEF-12"',
     categoryKey: 'exhaust',
@@ -112,7 +88,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '90 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('pure-air-hdef-12', 3),
+    ...productImages('pure-air-hdef-12', 1),
   },
   {
     slug: 'pure-air-hdef-15',
@@ -136,7 +112,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '145 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('pure-air-hdef-15', 3),
+    ...productImages('pure-air-hdef-15', 1),
   },
   {
     slug: 'pure-air-hdef-18',
@@ -160,7 +136,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '350 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('pure-air-hdef-18', 3),
+    ...productImages('pure-air-hdef-18', 1),
   },
   {
     slug: 'pure-air-hdef-24',
@@ -184,7 +160,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '600 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('pure-air-hdef-24', 3),
+    ...productImages('pure-air-hdef-24', 1),
   },
 
   // ===================== FARRATA FANS (PEDESTAL) =====================
@@ -210,7 +186,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '100 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('air-jet-16', 3),
+    ...productImages('air-jet-16', 2),
   },
   {
     slug: 'eurus-plus-osc-18',
@@ -234,7 +210,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '120 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('eurus-plus-osc-18', 3),
+    ...productImages('eurus-plus-osc-18', 2),
   },
   {
     slug: 'super-star-20',
@@ -258,16 +234,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '145 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    cardImage: '/super-20.jpg',
-    images: [
-      '/products/super-star-20/1.jpg',
-      '/products/super-star-20/2.jpg',
-      '/products/super-star-20/3.jpg',
-      '/products/super-star-20/4.jpg',
-      '/products/super-star-20/5.jpg',
-      '/products/super-star-20/6.jpg',
-      '/products/super-star-20/7.jpg',
-    ],
+    ...productImages('super-star-20', 2),
   },
 
   // ===================== WALL FANS =====================
@@ -293,7 +260,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '65 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('metawing-16-wall', 3),
+    ...productImages('metawing-16-wall', 1),
   },
   {
     slug: 'eurus-18-wall',
@@ -318,15 +285,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '120 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    cardImage: '/eurus-front.jpg',
-    images: [
-      '/products/eurus-18/1.jpg',
-      '/products/eurus-18/2.jpg',
-      '/products/eurus-18/3.jpg',
-      '/products/eurus-18/4.jpg',
-      '/products/eurus-18/5.jpg',
-      '/products/eurus-18/6.jpg',
-    ],
+    ...productImages('eurus-18-wall', 1),
   },
   {
     slug: 'super-star-20-wall',
@@ -350,7 +309,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '145 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('super-star-20-wall', 3),
+    ...productImages('super-star-20-wall', 1),
   },
 
   // ===================== AIR CIRCULATORS (AEROTHRUST) =====================
@@ -377,7 +336,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '150 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-450-pedestal-18', 5),
+    ...productImages('aerothrust-450-pedestal-18', 1),
   },
   {
     slug: 'aerothrust-450-wall-18',
@@ -402,7 +361,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '150 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-450-wall-18', 6),
+    ...productImages('aerothrust-450-wall-18', 1),
   },
   {
     slug: 'aerothrust-600-pedestal-24',
@@ -427,7 +386,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '200 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-600-pedestal-24', 5),
+    ...productImages('aerothrust-600-pedestal-24', 1),
   },
   {
     slug: 'aerothrust-600-wall-24',
@@ -452,7 +411,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '200 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-600-wall-24', 8),
+    ...productImages('aerothrust-600-wall-24', 1),
   },
   {
     slug: 'aerothrust-750-pedestal-30',
@@ -477,7 +436,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '260 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-750-pedestal-30', 3),
+    ...productImages('aerothrust-750-pedestal-30', 1),
   },
   {
     slug: 'aerothrust-750-wall-30',
@@ -502,7 +461,7 @@ export const products: Product[] = [
       { label: 'Watts', value: '260 W' },
     ],
     features: FAN_RANGE_FEATURES,
-    ...productImages('aerothrust-750-wall-30', 3),
+    ...productImages('aerothrust-750-wall-30', 1),
   },
 
   // ===================== DUCT COOLERS =====================
@@ -530,7 +489,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '890L x 890W x 1800H (mm)' },
     ],
     features: DUCT_COOLER_RANGE_FEATURES,
-    ...productImages('go-cool-800', 3),
+    ...productImages('go-cool-800', 1),
   },
   {
     slug: 'go-cool-1100',
@@ -557,7 +516,7 @@ export const products: Product[] = [
       { label: 'Air Outlet Size', value: '670 x 670 mm' },
     ],
     features: DUCT_COOLER_RANGE_FEATURES,
-    ...productImages('go-cool-1100', 3),
+    ...productImages('go-cool-1100', 1),
   },
   {
     slug: 'vent-pro-1100',
@@ -583,7 +542,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 920H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES],
-    ...productImages('vent-pro-1100', 2),
+    ...productImages('vent-pro-1100', 1),
   },
   {
     slug: 'vent-pro-1100i',
@@ -609,7 +568,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 920H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES, ...VENT_PRO_ADD_ONS],
-    ...productImages('vent-pro-1100i', 2),
+    ...productImages('vent-pro-1100i', 1),
   },
   {
     slug: 'vent-pro-1500',
@@ -635,7 +594,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 1120H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES],
-    ...productImages('vent-pro-1500', 2),
+    ...productImages('vent-pro-1500', 1),
   },
   {
     slug: 'vent-pro-1500i',
@@ -661,7 +620,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 1120H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES, ...VENT_PRO_ADD_ONS],
-    ...productImages('vent-pro-1500i', 2),
+    ...productImages('vent-pro-1500i', 1),
   },
   {
     slug: 'vent-pro-2200',
@@ -687,7 +646,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 1120H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES],
-    ...productImages('vent-pro-2200', 2),
+    ...productImages('vent-pro-2200', 1),
   },
   {
     slug: 'vent-pro-2200i',
@@ -713,7 +672,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1080L x 1080W x 1120H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES, ...VENT_PRO_ADD_ONS],
-    ...productImages('vent-pro-2200i', 2),
+    ...productImages('vent-pro-2200i', 1),
   },
   {
     slug: 'vent-pro-3000',
@@ -739,7 +698,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1300L x 1300W x 1180H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES],
-    ...productImages('vent-pro-3000', 2),
+    ...productImages('vent-pro-3000', 1),
   },
   {
     slug: 'vent-pro-3000i',
@@ -765,7 +724,7 @@ export const products: Product[] = [
       { label: 'Machine Dimension', value: '1300L x 1300W x 1180H (mm)' },
     ],
     features: [...DUCT_COOLER_RANGE_FEATURES, ...VENT_PRO_ADD_ONS],
-    ...productImages('vent-pro-3000i', 2),
+    ...productImages('vent-pro-3000i', 1),
   },
 
   // ===================== AIR COOLERS (INDUSTRIAL COOLERS) =====================
@@ -798,8 +757,7 @@ export const products: Product[] = [
       'LOW NOISE',
       'EASY DRAIN',
     ],
-    cardImage: '/airmaxx-front.jpeg',
-    images: ['/airmaxx-front.jpeg', '/airmaxx-1.jpeg', '/airmaxx-2.jpeg'],
+    ...productImages('airmaxx', 1),
   },
   {
     slug: 'coolbreeze',
@@ -830,8 +788,7 @@ export const products: Product[] = [
       'LOW NOISE',
       'EASY DRAIN',
     ],
-    cardImage: '/cool-front.png',
-    images: ['/cool-front.png', '/coolbreeze-2.png'],
+    ...productImages('coolbreeze', 1),
   },
   {
     slug: 'glacier',
@@ -862,8 +819,7 @@ export const products: Product[] = [
       'LOW NOISE',
       'EASY DRAIN',
     ],
-    cardImage: '/glacier-front.jpeg',
-    images: ['/glacier-front.jpeg'],
+    ...productImages('glacier', 1),
   },
 
   // ===================== CENTRIFUGAL FANS =====================
@@ -887,7 +843,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '0.56 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1066H x 1066W x 450D (mm)' },
     ],
-    ...productImages('scf-43', 2),
+    ...productImages('scf-43', 1),
   },
   {
     slug: 'scf-54',
@@ -909,7 +865,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '1.1 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1380H x 1380W x 450D (mm)' },
     ],
-    ...productImages('scf-54', 2),
+    ...productImages('scf-54', 1),
   },
   {
     slug: 'pcf-54',
@@ -931,7 +887,7 @@ export const products: Product[] = [
       { label: 'Power/Phase', value: '1.1 kW, 3 Ph' },
       { label: 'Product Dimension', value: '1380H x 1380W x 450D (mm)' },
     ],
-    ...productImages('pcf-54', 2),
+    ...productImages('pcf-54', 1),
   },
 ];
 

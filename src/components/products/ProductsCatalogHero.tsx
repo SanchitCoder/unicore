@@ -16,12 +16,9 @@ export default function ProductsCatalogHero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-5">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="w-2 h-2 rounded-full bg-unicore-accent" />
-            <span className="text-white/80 text-sm font-semibold uppercase tracking-widest">
-              Products
-            </span>
-          </div>
+          <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1 text-white/85 text-xs font-semibold tracking-wide mb-4">
+            PRODUCTS
+          </span>
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Engineered for Performance &amp; Reliability
           </h1>

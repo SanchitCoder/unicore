@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
+import { ArrowRight } from 'lucide-react';
 
 export default function BulkOrders() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,9 +48,15 @@ export default function BulkOrders() {
       className="pt-24 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20 px-4 sm:px-5 bg-design-bg"
     >
       <div className="max-w-2xl mx-auto">
-        <h2 className="bulk-item text-3xl md:text-4xl font-bold text-design-dark mb-3 text-center tracking-tight">
-          Bulk Orders & Distributor Opportunities
+        <div className="text-center mb-3">
+          <span className="bulk-item inline-flex items-center px-4 py-1.5 rounded-full bg-unicore-accent/10 text-unicore-accent text-xs font-bold uppercase tracking-wider">
+            Bulk &amp; Distribution
+          </span>
+        </div>
+        <h2 className="bulk-item text-3xl md:text-4xl font-bold text-unicore-dark mb-3 text-center tracking-tight">
+          Bulk Orders &amp; Distributor Opportunities
         </h2>
+        <div className="bulk-item h-1 w-20 bg-unicore-accent rounded-full mx-auto mb-5" />
         <p className="bulk-item text-design-mid text-center mb-8">
           Looking for a reliable industrial cooler supplier or industrial fan manufacturer for bulk procurement? Submit your details below.
         </p>
@@ -60,7 +67,7 @@ export default function BulkOrders() {
             <p className="text-design-mid text-sm">Our team will get back to you shortly to discuss bulk pricing and partnership opportunities.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bulk-item space-y-4">
+          <form onSubmit={handleSubmit} className="bulk-item space-y-4 bg-white rounded-2xl border border-design-border shadow-card p-6 sm:p-7">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="bulk-orders-name" className="block text-sm font-medium text-design-dark mb-1.5">Name</label>
@@ -136,9 +143,12 @@ export default function BulkOrders() {
             </div>
             <button
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover hover:shadow-btn-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-all duration-300 text-sm"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full bg-unicore-accent text-white font-semibold shadow-btn hover:bg-unicore-accent-hover hover:shadow-btn-hover focus:outline-none focus:ring-2 focus:ring-unicore-accent focus:ring-offset-2 transition-all duration-300 text-sm"
             >
               Submit Enquiry
+              <span className="grid place-items-center w-8 h-8 rounded-full bg-white/15 group-hover:bg-white/25 group-hover:translate-x-0.5 transition-all duration-300">
+                <ArrowRight className="w-4 h-4" />
+              </span>
             </button>
           </form>
         )}

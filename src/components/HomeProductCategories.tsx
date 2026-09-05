@@ -1,6 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { animate, stagger } from 'animejs';
+import { ArrowRight } from 'lucide-react';
+
+const categories = [
+  { label: 'Industrial Coolers', image: '/products/airmaxx/main.jpg', tab: 'coolers' },
+  { label: 'Exhaust Fans', image: '/products/pure-air-hdef-18/main.jpg', tab: 'exhaust' },
+  { label: 'HVLS Fans', image: '/ceiling-fan.png', tab: null },
+  { label: 'Farrata Fans', image: '/products/air-jet-16/main.jpg', tab: 'farrata' },
+  { label: 'Wall Fans', image: '/products/metawing-16-wall/main.jpg', tab: 'wall' },
+  { label: 'Air Circulators', image: '/products/aerothrust-450-pedestal-18/main.jpg', tab: 'circulators' },
+  { label: 'Duct Coolers', image: '/products/go-cool-800/main.jpg', tab: 'duct-coolers' },
+];
 
 export default function HomeProductCategories() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -10,11 +21,11 @@ export default function HomeProductCategories() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            animate(entry.target.querySelectorAll('.pcat-item'), {
-              translateY: { to: 0, from: 28 },
+            animate(entry.target.querySelectorAll('.cat-card'), {
+              translateY: { to: 0, from: 24 },
               opacity: { to: 1, from: 0 },
-              duration: 550,
-              delay: stagger(45),
+              duration: 500,
+              delay: stagger(60),
               ease: 'out-cubic',
             });
           }
@@ -27,115 +38,40 @@ export default function HomeProductCategories() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-8 pb-4 sm:py-12 md:py-14 px-4 sm:px-5 bg-white">
+    <section ref={sectionRef} className="py-14 sm:py-16 md:py-20 px-4 sm:px-5 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="pcat-item text-2xl sm:text-3xl md:text-4xl font-semibold text-design-dark mb-4 text-center">
-          Our Product Categories
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-3 leading-tight">
+          <span className="text-unicore-dark">Complete Range of </span>
+          <span className="text-unicore-dark-light">Ventilation</span>{' '}
+          <span className="text-unicore-accent">Solutions</span>
         </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mx-auto mb-8" />
+        <div className="h-1 w-20 bg-unicore-accent mx-auto mb-4 rounded-full" />
+        <p className="text-design-mid text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-12">
+          Engineered to deliver performance, efficiency and reliability in every environment.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 items-start">
-          {/* Big card */}
-          <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square">
-            <img
-              src="/industrial-coolers-banner.png"
-              alt="Industrial Air Coolers"
-              className="absolute inset-0 w-full h-full object-contain object-center opacity-75"
-            />
-            <div className="absolute inset-0 bg-white/22" />
-            <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
-
-            <div className="relative p-3 sm:p-7 md:p-8 h-full flex flex-col justify-start sm:justify-end pt-14 sm:pt-7 md:pt-8">
-              <div className="rounded-xl bg-white/78 backdrop-blur-[2px] px-3 py-2.5 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 flex flex-col h-full">
-                <h3 className="text-black text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem] ml-4 sm:ml-5">
-                  Industrial Air Coolers
-                </h3>
-
-                <div className="mt-auto pt-2">
-                  <p className="text-black font-semibold text-sm sm:text-base leading-relaxed">
-                    High-capacity cooling for large industrial spaces.
-                  </p>
-                  <div className="mt-2 sm:mt-6">
-                    <Link
-                      to="/products?tab=coolers"
-                      className="inline-flex items-center gap-2 font-bold text-sm sm:text-base text-black hover:text-black/80 transition-colors"
-                    >
-                      Learn more →
-                    </Link>
-                  </div>
-                </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+          {categories.map((c) => (
+            <Link
+              key={c.label}
+              to={c.tab ? `/products?tab=${c.tab}` : '/products'}
+              className="cat-card group flex flex-col rounded-2xl border border-design-border bg-white p-3 sm:p-4 hover:border-unicore-accent/50 hover:shadow-card-hover transition-all duration-300"
+            >
+              <div className="aspect-square bg-design-bg rounded-xl overflow-hidden mb-3">
+                <img
+                  src={c.image}
+                  alt={c.label}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-            </div>
-          </div>
-
-          {/* Two small cards */}
-          <div className="pcat-item w-full flex flex-col gap-3 md:gap-4 md:max-w-2xl md:mx-0">
-            {/* Industrial Fans */}
-            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square lg:w-[78%] lg:mx-auto">
-              <img
-                src="/industrial-fan.png"
-                alt="Industrial fans"
-                    className="absolute inset-0 w-full h-full object-contain object-center opacity-75"
-              />
-              <div className="absolute inset-0 bg-white/22" />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
-
-              <div className="relative p-3 sm:p-5 h-full flex flex-col justify-start sm:justify-end pt-14 sm:pt-5">
-                <div className="rounded-xl bg-white/78 backdrop-blur-[2px] px-3 py-2.5 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 flex flex-col h-full">
-                  <h3 className="text-black text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem]">
-                    Industrial Fans
-                  </h3>
-
-                  <div className="mt-auto pt-2">
-                    <p className="text-black font-semibold text-sm sm:text-sm leading-relaxed">
-                      Heavy-duty fans for strong air circulation.
-                    </p>
-                    <div className="mt-2.5 sm:mt-4">
-                      <Link
-                        to="/products?tab=circulators"
-                        className="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-black hover:text-black/80 transition-colors"
-                      >
-                        Learn More →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+              <div className="flex items-center justify-between gap-1">
+                <span className="text-xs sm:text-sm font-bold text-unicore-dark leading-snug">{c.label}</span>
+                <ArrowRight className="w-4 h-4 text-unicore-accent shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
               </div>
-            </div>
-
-            {/* Exhaust Fans */}
-            <div className="pcat-item relative overflow-hidden rounded-xl sm:rounded-2xl border border-unicore-accent/10 bg-unicore-dark aspect-[16/10] sm:aspect-square md:w-[88%] md:mx-auto">
-              <img
-                src="/exhaust-fan.png"
-                alt="Industrial exhaust fans"
-                className="absolute inset-0 w-full h-full object-contain object-center opacity-75"
-              />
-              <div className="absolute inset-0 bg-white/22" />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/58 via-white/26 to-white/8" />
-
-              <div className="relative p-3 sm:p-5 h-full flex flex-col justify-start sm:justify-end pt-14 sm:pt-5">
-                <div className="rounded-xl bg-white/78 backdrop-blur-[2px] px-3 py-2.5 sm:bg-transparent sm:backdrop-blur-0 sm:p-0 flex flex-col h-full">
-                  <h3 className="text-black text-lg sm:text-2xl md:text-3xl font-bold leading-tight max-w-[20rem]">
-                    Exhaust Fans
-                  </h3>
-
-                  <div className="mt-auto pt-2">
-                    <p className="text-black font-semibold text-sm sm:text-sm leading-relaxed">
-                      Efficient ventilation for heat and air control.
-                    </p>
-                    <div className="mt-2.5 sm:mt-4">
-                      <Link
-                        to="/products?tab=exhaust"
-                        className="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-black hover:text-black/80 transition-colors"
-                      >
-                        Learn More →
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

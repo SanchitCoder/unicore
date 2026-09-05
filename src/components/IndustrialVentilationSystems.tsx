@@ -30,6 +30,22 @@ const bulkPartners = [
   'Distributors',
 ];
 
+function FeatureList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-1.5 mb-4">
+      {items.map((item, i) => (
+        <li
+          key={i}
+          className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300"
+        >
+          <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
+          <span className="text-design-mid">{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function IndustrialVentilationSystems() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -55,124 +71,101 @@ export default function IndustrialVentilationSystems() {
   }, []);
 
   return (
-    <section id="ventilation" ref={sectionRef} className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-5 bg-design-bg scroll-mt-24">
-      <div className="max-w-4xl mx-auto">
-        {/* H1 + intro */}
-        <div className="mb-8 md:mb-10">
-          <h1 className="ivs-item text-3xl md:text-4xl lg:text-5xl font-semibold text-design-dark mb-4 leading-tight">
-            Industrial Ventilation Systems and High-Performance Industrial Fans
-          </h1>
-          <p className="ivs-item text-lg text-design-mid leading-relaxed mb-4">
-            Proper ventilation is essential for maintaining airflow, removing heat, and improving air quality in industrial environments.
-          </p>
-          <p className="ivs-item text-lg text-design-mid leading-relaxed mb-4">
-            UNICORE provides a range of industrial ventilation systems and high-performance fans designed to support large facilities such as factories, warehouses, and workshops.
-          </p>
-          <p className="ivs-item text-lg text-design-mid leading-relaxed">
-            Our products are engineered to deliver powerful air circulation, durability, and reliable performance in demanding industrial conditions.
-          </p>
-        </div>
-
+    <section id="ventilation" ref={sectionRef} className="py-14 sm:py-16 md:py-20 px-4 sm:px-5 bg-design-bg scroll-mt-24">
+      <div className="max-w-6xl mx-auto">
         {/* Industrial Exhaust Fans */}
-        <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
-            Industrial Exhaust Fans
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
-            UNICORE heavy duty exhaust fans are designed to remove hot air, smoke, dust, and humidity from industrial environments.
-          </p>
-          <p className="text-design-mid font-medium mb-2">Key features include:</p>
-          <ul className="space-y-1.5 mb-4">
-            {exhaustFanFeatures.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md hover:scale-[1.01] transition-all duration-300"
-              >
-                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                <span className="text-design-mid">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-design-mid text-lg font-normal leading-relaxed">
-            These fans help maintain proper air circulation and improve ventilation in large industrial spaces.
-          </p>
+        <div className="ivs-item mb-10 md:mb-14 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-unicore-dark mb-3">Industrial Exhaust Fans</h2>
+            <div className="h-1 w-20 bg-unicore-accent rounded-full mb-4" />
+            <p className="text-design-mid text-base leading-relaxed mb-4">
+              UNICORE heavy duty exhaust fans are designed to remove hot air, smoke, dust, and humidity from industrial environments.
+            </p>
+            <p className="text-design-mid font-semibold mb-2">Key features include:</p>
+            <FeatureList items={exhaustFanFeatures} />
+            <p className="text-design-mid text-base leading-relaxed">
+              These fans help maintain proper air circulation and improve ventilation in large industrial spaces.
+            </p>
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-design-border shadow-card-hover order-first md:order-last">
+            <img
+              src="/products/pure-air-hdef-24/main.jpg"
+              alt="UNICORE heavy-duty industrial exhaust fan"
+              className="w-full h-64 sm:h-80 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
 
         {/* Air Circulator Fans */}
-        <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
-            Air Circulator Fans
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
-            UNICORE air circulator fans help distribute airflow evenly across large areas, ensuring consistent ventilation.
-          </p>
-          <p className="text-design-mid font-medium mb-3">Key benefits include:</p>
-          <ul className="space-y-2 mb-6">
-            {circulatorBenefits.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md hover:scale-[1.01] transition-all duration-300"
-              >
-                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                <span className="text-design-mid">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-design-mid text-lg font-normal leading-relaxed">
-            These fans are widely used in factories, warehouses, and production units where effective air movement is required.
-          </p>
+        <div className="ivs-item mb-10 md:mb-14 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="rounded-3xl overflow-hidden border border-design-border shadow-card-hover">
+            <img
+              src="/products/aerothrust-600-pedestal-24/main.jpg"
+              alt="UNICORE AEROTHRUST air circulator fan"
+              className="w-full h-64 sm:h-80 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-unicore-dark mb-3">Air Circulator Fans</h2>
+            <div className="h-1 w-20 bg-unicore-accent rounded-full mb-4" />
+            <p className="text-design-mid text-base leading-relaxed mb-4">
+              UNICORE air circulator fans help distribute airflow evenly across large areas, ensuring consistent ventilation.
+            </p>
+            <p className="text-design-mid font-semibold mb-2">Key benefits include:</p>
+            <FeatureList items={circulatorBenefits} />
+            <p className="text-design-mid text-base leading-relaxed">
+              These fans are widely used in factories, warehouses, and production units where effective air movement is required.
+            </p>
+          </div>
         </div>
 
         {/* Ventilation for Large Industrial Spaces */}
-        <div className="ivs-item mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-3">
-            Ventilation for Large Industrial Spaces
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
+        <div className="ivs-item mb-10 md:mb-14 max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-unicore-dark mb-3">Ventilation for Large Industrial Spaces</h2>
+          <div className="h-1 w-20 bg-unicore-accent rounded-full mx-auto mb-4" />
+          <p className="text-design-mid text-base leading-relaxed mb-4">
             Industrial ventilation plays a critical role in maintaining a safe and productive working environment.
           </p>
-          <p className="text-design-mid font-medium mb-3">UNICORE ventilation systems help:</p>
-          <ul className="space-y-2 mb-6">
+          <p className="text-design-mid font-semibold mb-3">UNICORE ventilation systems help:</p>
+          <div className="grid sm:grid-cols-2 gap-3 text-left mb-4">
             {ventilationHelp.map((item, i) => (
-              <li
+              <div
                 key={i}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md hover:scale-[1.01] transition-all duration-300"
+                className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md transition-all duration-300"
               >
                 <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
                 <span className="text-design-mid">{item}</span>
-              </li>
+              </div>
             ))}
-          </ul>
-          <p className="text-design-mid text-lg font-normal leading-relaxed">
+          </div>
+          <p className="text-design-mid text-base leading-relaxed">
             Our ventilation products are designed to support the needs of modern industrial environments.
           </p>
         </div>
 
         {/* Bulk Orders and Distributor Enquiries */}
-        <div className="ivs-item">
-          <h2 className="text-2xl md:text-3xl font-semibold text-design-dark mb-4">
-            Bulk Orders and Distributor Enquiries
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-unicore-accent to-design-mid mb-4" />
-          <p className="text-design-mid text-lg font-normal leading-relaxed mb-4">
+        <div className="ivs-item max-w-3xl mx-auto rounded-3xl bg-white border border-design-border shadow-card p-6 sm:p-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-unicore-dark mb-3">Bulk Orders and Distributor Enquiries</h2>
+          <div className="h-1 w-20 bg-unicore-accent rounded-full mx-auto mb-4" />
+          <p className="text-design-mid text-base leading-relaxed mb-4">
             UNICORE supplies industrial fans and ventilation systems in bulk quantities to businesses across multiple industries.
           </p>
-          <p className="text-design-mid font-medium mb-3">We work with:</p>
-          <ul className="space-y-2 mb-8">
+          <p className="text-design-mid font-semibold mb-3">We work with:</p>
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
             {bulkPartners.map((item, i) => (
-              <li
+              <span
                 key={i}
-                className="flex items-center gap-3 p-2.5 rounded-xl bg-white border border-design-border hover:border-unicore-accent hover:shadow-md hover:scale-[1.01] transition-all duration-300"
+                className="px-4 py-2 rounded-full bg-unicore-accent/10 text-unicore-dark text-sm font-semibold"
               >
-                <span className="w-2 h-2 rounded-full bg-unicore-accent flex-shrink-0" />
-                <span className="text-design-mid">{item}</span>
-              </li>
+                {item}
+              </span>
             ))}
-          </ul>
-          <p className="text-design-mid text-lg font-normal leading-relaxed">
+          </div>
+          <p className="text-design-mid text-base leading-relaxed">
             For product details, technical specifications, or bulk supply enquiries, connect with the UNICORE team.
           </p>
         </div>
